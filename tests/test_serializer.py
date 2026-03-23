@@ -9,13 +9,17 @@ def _sample_func(model: str, messages: list, api_key: str = "sk-xxx") -> None:
 
 class TestSerializeInput:
     def test_basic_serialization(self):
-        result = serialize_input(_sample_func, (), {"model": "gpt-4", "messages": [{"role": "user", "content": "hi"}]})
+        result = serialize_input(
+            _sample_func, (), {"model": "gpt-4", "messages": [{"role": "user", "content": "hi"}]}
+        )
         assert result is not None
         assert result["model"] == "gpt-4"
         assert result["messages"] == [{"role": "user", "content": "hi"}]
 
     def test_redacts_sensitive_keys(self):
-        result = serialize_input(_sample_func, (), {"model": "gpt-4", "messages": [], "api_key": "sk-secret"})
+        result = serialize_input(
+            _sample_func, (), {"model": "gpt-4", "messages": [], "api_key": "sk-secret"}
+        )
         assert result is not None
         assert result["api_key"] == "***REDACTED***"
 
@@ -23,7 +27,9 @@ class TestSerializeInput:
         def func(model: str, custom_secret: str = ""):
             pass
 
-        result = serialize_input(func, (), {"model": "gpt-4", "custom_secret": "val"}, redact_keys={"custom_secret"})
+        result = serialize_input(
+            func, (), {"model": "gpt-4", "custom_secret": "val"}, redact_keys={"custom_secret"}
+        )
         assert result is not None
         assert result["custom_secret"] == "***REDACTED***"
 
