@@ -17,6 +17,7 @@ def extract_google(response: Any, provider: str) -> ExtractedResponse:
             prompt_tokens=_safe_int(usage_meta, "prompt_token_count"),
             completion_tokens=_safe_int(usage_meta, "candidates_token_count"),
             total_tokens=_safe_int(usage_meta, "total_token_count"),
+            cache_read_input_tokens=_safe_int(usage_meta, "cached_content_token_count"),
         )
 
     return ExtractedResponse(
@@ -112,6 +113,7 @@ async def collect_google_stream(
                 prompt_tokens=_safe_int(usage_meta, "prompt_token_count"),
                 completion_tokens=_safe_int(usage_meta, "candidates_token_count"),
                 total_tokens=_safe_int(usage_meta, "total_token_count"),
+                cache_read_input_tokens=_safe_int(usage_meta, "cached_content_token_count"),
             )
 
     return ExtractedResponse(

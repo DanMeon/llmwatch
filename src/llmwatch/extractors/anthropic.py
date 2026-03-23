@@ -43,6 +43,8 @@ async def collect_anthropic_stream(stream: AsyncIterator[Any]) -> ExtractedRespo
     response_id = None
     input_tokens = 0
     output_tokens = 0
+    cache_creation_input_tokens = 0
+    cache_read_input_tokens = 0
 
     async for event in stream:
         event_type = getattr(event, "type", None)
@@ -54,6 +56,8 @@ async def collect_anthropic_stream(stream: AsyncIterator[Any]) -> ExtractedRespo
                 u = getattr(msg, "usage", None)
                 if u:
                     input_tokens = _safe_int(u, "input_tokens")
+                    cache_creation_input_tokens = _safe_int(u, "cache_creation_input_tokens")
+                    cache_read_input_tokens = _safe_int(u, "cache_read_input_tokens")
         elif event_type == "content_block_delta":
             delta = getattr(event, "delta", None)
             if delta:
@@ -72,6 +76,8 @@ async def collect_anthropic_stream(stream: AsyncIterator[Any]) -> ExtractedRespo
             prompt_tokens=input_tokens,
             completion_tokens=output_tokens,
             total_tokens=input_tokens + output_tokens,
+            cache_creation_input_tokens=cache_creation_input_tokens,
+            cache_read_input_tokens=cache_read_input_tokens,
         ),
         output_text="".join(chunks),
         response_id=response_id,

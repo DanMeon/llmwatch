@@ -13,10 +13,17 @@ def extract_openai(response: Any, provider: str) -> ExtractedResponse:
 
     token_usage = TokenUsage()
     if usage_obj is not None:
+        # ^ Extract prompt caching details if available
+        cache_read = 0
+        prompt_details = getattr(usage_obj, "prompt_tokens_details", None)
+        if prompt_details is not None:
+            cache_read = _safe_int(prompt_details, "cached_tokens")
+
         token_usage = TokenUsage(
             prompt_tokens=_safe_int(usage_obj, "prompt_tokens"),
             completion_tokens=_safe_int(usage_obj, "completion_tokens"),
             total_tokens=_safe_int(usage_obj, "total_tokens"),
+            cache_read_input_tokens=cache_read,
         )
 
     output_text = None
@@ -47,10 +54,15 @@ async def collect_openai_stream(stream: AsyncIterator[Any]) -> ExtractedResponse
         if hasattr(chunk, "id") and chunk.id:
             response_id = chunk.id
         if hasattr(chunk, "usage") and chunk.usage is not None:
+            cache_read = 0
+            prompt_details = getattr(chunk.usage, "prompt_tokens_details", None)
+            if prompt_details is not None:
+                cache_read = _safe_int(prompt_details, "cached_tokens")
             token_usage = TokenUsage(
                 prompt_tokens=_safe_int(chunk.usage, "prompt_tokens"),
                 completion_tokens=_safe_int(chunk.usage, "completion_tokens"),
                 total_tokens=_safe_int(chunk.usage, "total_tokens"),
+                cache_read_input_tokens=cache_read,
             )
         if hasattr(chunk, "choices") and chunk.choices:
             delta = getattr(chunk.choices[0], "delta", None)
