@@ -1,0 +1,5401 @@
+[
+  {
+    "model": "claude-2",
+    "provider": "anthropic",
+    "input_cost_per_mtok": 8.0,
+    "output_cost_per_mtok": 24.0
+  },
+  {
+    "model": "claude-3-5-haiku-latest",
+    "provider": "anthropic",
+    "input_cost_per_mtok": 0.8,
+    "output_cost_per_mtok": 4.0,
+    "cache_creation_cost_per_mtok": 1.0,
+    "cache_read_cost_per_mtok": 0.08
+  },
+  {
+    "model": "claude-3-5-sonnet",
+    "provider": "anthropic",
+    "input_cost_per_mtok": 3.0,
+    "output_cost_per_mtok": 15.0,
+    "cache_creation_cost_per_mtok": 3.75,
+    "cache_read_cost_per_mtok": 0.3
+  },
+  {
+    "model": "claude-3-7-sonnet-latest",
+    "provider": "anthropic",
+    "input_cost_per_mtok": 3.0,
+    "output_cost_per_mtok": 15.0,
+    "cache_creation_cost_per_mtok": 3.75,
+    "cache_read_cost_per_mtok": 0.3
+  },
+  {
+    "model": "claude-3-haiku",
+    "provider": "anthropic",
+    "input_cost_per_mtok": 0.25,
+    "output_cost_per_mtok": 1.25,
+    "cache_creation_cost_per_mtok": 0.3,
+    "cache_read_cost_per_mtok": 0.03
+  },
+  {
+    "model": "claude-3-opus-latest",
+    "provider": "anthropic",
+    "input_cost_per_mtok": 15.0,
+    "output_cost_per_mtok": 75.0,
+    "cache_creation_cost_per_mtok": 18.75,
+    "cache_read_cost_per_mtok": 1.5
+  },
+  {
+    "model": "claude-3-sonnet",
+    "provider": "anthropic",
+    "input_cost_per_mtok": 3.0,
+    "output_cost_per_mtok": 15.0,
+    "cache_creation_cost_per_mtok": 3.75,
+    "cache_read_cost_per_mtok": 0.3
+  },
+  {
+    "model": "claude-haiku-4-5",
+    "provider": "anthropic",
+    "input_cost_per_mtok": 1.0,
+    "output_cost_per_mtok": 5.0,
+    "cache_creation_cost_per_mtok": 1.25,
+    "cache_read_cost_per_mtok": 0.1
+  },
+  {
+    "model": "claude-opus-4-0",
+    "provider": "anthropic",
+    "input_cost_per_mtok": 15.0,
+    "output_cost_per_mtok": 75.0,
+    "cache_creation_cost_per_mtok": 18.75,
+    "cache_read_cost_per_mtok": 1.5
+  },
+  {
+    "model": "claude-opus-4-1",
+    "provider": "anthropic",
+    "input_cost_per_mtok": 15.0,
+    "output_cost_per_mtok": 75.0,
+    "cache_creation_cost_per_mtok": 18.75,
+    "cache_read_cost_per_mtok": 1.5
+  },
+  {
+    "model": "claude-opus-4-5",
+    "provider": "anthropic",
+    "input_cost_per_mtok": 5.0,
+    "output_cost_per_mtok": 25.0,
+    "cache_creation_cost_per_mtok": 6.25,
+    "cache_read_cost_per_mtok": 0.5
+  },
+  {
+    "model": "claude-opus-4-6",
+    "provider": "anthropic",
+    "input_cost_per_mtok": 5.0,
+    "output_cost_per_mtok": 25.0,
+    "cache_creation_cost_per_mtok": 6.25,
+    "cache_read_cost_per_mtok": 0.5
+  },
+  {
+    "model": "claude-sonnet-4-0",
+    "provider": "anthropic",
+    "input_cost_per_mtok": 3.0,
+    "output_cost_per_mtok": 15.0,
+    "cache_creation_cost_per_mtok": 3.75,
+    "cache_read_cost_per_mtok": 0.3
+  },
+  {
+    "model": "claude-sonnet-4-5",
+    "provider": "anthropic",
+    "input_cost_per_mtok": 3.0,
+    "output_cost_per_mtok": 15.0,
+    "cache_creation_cost_per_mtok": 3.75,
+    "cache_read_cost_per_mtok": 0.3
+  },
+  {
+    "model": "claude-sonnet-4-6",
+    "provider": "anthropic",
+    "input_cost_per_mtok": 3.0,
+    "output_cost_per_mtok": 15.0,
+    "cache_creation_cost_per_mtok": 3.75,
+    "cache_read_cost_per_mtok": 0.3
+  },
+  {
+    "model": "claude-v1",
+    "provider": "anthropic",
+    "input_cost_per_mtok": 8.0,
+    "output_cost_per_mtok": 24.0
+  },
+  {
+    "model": "amazon.nova-lite-v1:0",
+    "provider": "aws",
+    "input_cost_per_mtok": 0.06,
+    "output_cost_per_mtok": 0.24,
+    "cache_read_cost_per_mtok": 0.015
+  },
+  {
+    "model": "amazon.nova-micro-v1:0",
+    "provider": "aws",
+    "input_cost_per_mtok": 0.035,
+    "output_cost_per_mtok": 0.14,
+    "cache_read_cost_per_mtok": 0.00875
+  },
+  {
+    "model": "amazon.nova-premier-v1:0",
+    "provider": "aws",
+    "input_cost_per_mtok": 2.5,
+    "output_cost_per_mtok": 12.5,
+    "cache_read_cost_per_mtok": 0.625
+  },
+  {
+    "model": "amazon.nova-pro-v1:0",
+    "provider": "aws",
+    "input_cost_per_mtok": 0.8,
+    "output_cost_per_mtok": 3.2,
+    "cache_read_cost_per_mtok": 0.2
+  },
+  {
+    "model": "amazon.nova-sonic-v1:0",
+    "provider": "aws",
+    "input_cost_per_mtok": 0.06,
+    "output_cost_per_mtok": 0.24
+  },
+  {
+    "model": "amazon.titan-embed-text-v1",
+    "provider": "aws",
+    "input_cost_per_mtok": 0.1,
+    "output_cost_per_mtok": 0.0
+  },
+  {
+    "model": "amazon.titan-text-express-v1",
+    "provider": "aws",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.6
+  },
+  {
+    "model": "amazon.titan-text-lite-v1",
+    "provider": "aws",
+    "input_cost_per_mtok": 0.15,
+    "output_cost_per_mtok": 0.2
+  },
+  {
+    "model": "deepseek.r1-v1:0",
+    "provider": "aws",
+    "input_cost_per_mtok": 1.35,
+    "output_cost_per_mtok": 5.4
+  },
+  {
+    "model": "global.anthropic.claude-haiku-4-5-20251001-v1:0",
+    "provider": "aws",
+    "input_cost_per_mtok": 1.0,
+    "output_cost_per_mtok": 5.0,
+    "cache_creation_cost_per_mtok": 1.25,
+    "cache_read_cost_per_mtok": 0.1
+  },
+  {
+    "model": "global.anthropic.claude-opus-4-5-v1:0",
+    "provider": "aws",
+    "input_cost_per_mtok": 5.0,
+    "output_cost_per_mtok": 25.0,
+    "cache_creation_cost_per_mtok": 6.25,
+    "cache_read_cost_per_mtok": 0.5
+  },
+  {
+    "model": "global.anthropic.claude-opus-4-6-v1:0",
+    "provider": "aws",
+    "input_cost_per_mtok": 5.0,
+    "output_cost_per_mtok": 25.0,
+    "cache_creation_cost_per_mtok": 6.25,
+    "cache_read_cost_per_mtok": 0.5
+  },
+  {
+    "model": "global.anthropic.claude-sonnet-4-20250514-v1:0",
+    "provider": "aws",
+    "input_cost_per_mtok": 3.0,
+    "output_cost_per_mtok": 15.0,
+    "cache_creation_cost_per_mtok": 3.75,
+    "cache_read_cost_per_mtok": 0.3
+  },
+  {
+    "model": "global.anthropic.claude-sonnet-4-5-20250929-v1:0",
+    "provider": "aws",
+    "input_cost_per_mtok": 3.0,
+    "output_cost_per_mtok": 15.0,
+    "cache_creation_cost_per_mtok": 3.75,
+    "cache_read_cost_per_mtok": 0.3
+  },
+  {
+    "model": "global.anthropic.claude-sonnet-4-6-v1:0",
+    "provider": "aws",
+    "input_cost_per_mtok": 3.0,
+    "output_cost_per_mtok": 15.0,
+    "cache_creation_cost_per_mtok": 3.75,
+    "cache_read_cost_per_mtok": 0.3
+  },
+  {
+    "model": "meta.llama3-1-70b-instruct-v1:0",
+    "provider": "aws",
+    "input_cost_per_mtok": 0.72,
+    "output_cost_per_mtok": 0.72
+  },
+  {
+    "model": "meta.llama3-1-8b-instruct-v1:0",
+    "provider": "aws",
+    "input_cost_per_mtok": 0.22,
+    "output_cost_per_mtok": 0.22
+  },
+  {
+    "model": "meta.llama3-2-11b-instruct-v1:0",
+    "provider": "aws",
+    "input_cost_per_mtok": 0.16,
+    "output_cost_per_mtok": 0.16
+  },
+  {
+    "model": "meta.llama3-2-1b-instruct-v1:0",
+    "provider": "aws",
+    "input_cost_per_mtok": 0.1,
+    "output_cost_per_mtok": 0.1
+  },
+  {
+    "model": "meta.llama3-2-3b-instruct-v1:0",
+    "provider": "aws",
+    "input_cost_per_mtok": 0.15,
+    "output_cost_per_mtok": 0.15
+  },
+  {
+    "model": "meta.llama3-2-90b-instruct-v1:0",
+    "provider": "aws",
+    "input_cost_per_mtok": 0.72,
+    "output_cost_per_mtok": 0.72
+  },
+  {
+    "model": "meta.llama3-3-70b-instruct-v1:0",
+    "provider": "aws",
+    "input_cost_per_mtok": 0.72,
+    "output_cost_per_mtok": 0.72
+  },
+  {
+    "model": "meta.llama3-70b-instruct-v1:0",
+    "provider": "aws",
+    "input_cost_per_mtok": 2.65,
+    "output_cost_per_mtok": 3.5
+  },
+  {
+    "model": "meta.llama3-8b-instruct-v1:0",
+    "provider": "aws",
+    "input_cost_per_mtok": 0.3,
+    "output_cost_per_mtok": 0.6
+  },
+  {
+    "model": "meta.llama4-maverick-17b-instruct-v1:0",
+    "provider": "aws",
+    "input_cost_per_mtok": 0.24,
+    "output_cost_per_mtok": 0.97
+  },
+  {
+    "model": "meta.llama4-scout-17b-instruct-v1:0",
+    "provider": "aws",
+    "input_cost_per_mtok": 0.17,
+    "output_cost_per_mtok": 0.66
+  },
+  {
+    "model": "mistral.mistral-7b-instruct-v0:2",
+    "provider": "aws",
+    "input_cost_per_mtok": 0.15,
+    "output_cost_per_mtok": 0.2
+  },
+  {
+    "model": "mistral.mistral-large-2402-v1:0",
+    "provider": "aws",
+    "input_cost_per_mtok": 4.0,
+    "output_cost_per_mtok": 12.0
+  },
+  {
+    "model": "mistral.mistral-small-2402-v1:0",
+    "provider": "aws",
+    "input_cost_per_mtok": 1.0,
+    "output_cost_per_mtok": 3.0
+  },
+  {
+    "model": "mistral.mixtral-8x7b-instruct-v0:1",
+    "provider": "aws",
+    "input_cost_per_mtok": 0.45,
+    "output_cost_per_mtok": 0.7
+  },
+  {
+    "model": "mistral.pixtral-large-2502-v1:0",
+    "provider": "aws",
+    "input_cost_per_mtok": 2.0,
+    "output_cost_per_mtok": 6.0
+  },
+  {
+    "model": "openai.gpt-oss-120b-1:0",
+    "provider": "aws",
+    "input_cost_per_mtok": 0.15,
+    "output_cost_per_mtok": 0.6
+  },
+  {
+    "model": "openai.gpt-oss-20b-1:0",
+    "provider": "aws",
+    "input_cost_per_mtok": 0.07,
+    "output_cost_per_mtok": 0.3
+  },
+  {
+    "model": "qwen.qwen3-32b-v1:0",
+    "provider": "aws",
+    "input_cost_per_mtok": 0.15,
+    "output_cost_per_mtok": 0.6
+  },
+  {
+    "model": "qwen.qwen3-coder-30b-a3b-v1:0",
+    "provider": "aws",
+    "input_cost_per_mtok": 0.15,
+    "output_cost_per_mtok": 0.6
+  },
+  {
+    "model": "qwen.qwen3-coder-480b-a35b-v1:0",
+    "provider": "aws",
+    "input_cost_per_mtok": 0.45,
+    "output_cost_per_mtok": 1.8
+  },
+  {
+    "model": "qwen.qwen3-vl-235b-a22b-v1:0",
+    "provider": "aws",
+    "input_cost_per_mtok": 0.53,
+    "output_cost_per_mtok": 2.66
+  },
+  {
+    "model": "regional.anthropic.claude-3-5-haiku-20241022-v1:0",
+    "provider": "aws",
+    "input_cost_per_mtok": 0.8,
+    "output_cost_per_mtok": 4.0,
+    "cache_creation_cost_per_mtok": 1.0,
+    "cache_read_cost_per_mtok": 0.08
+  },
+  {
+    "model": "regional.anthropic.claude-3-5-sonnet-20240620-v1:0",
+    "provider": "aws",
+    "input_cost_per_mtok": 3.0,
+    "output_cost_per_mtok": 15.0,
+    "cache_creation_cost_per_mtok": 3.75,
+    "cache_read_cost_per_mtok": 0.3
+  },
+  {
+    "model": "regional.anthropic.claude-3-5-sonnet-20241022-v2:0",
+    "provider": "aws",
+    "input_cost_per_mtok": 3.0,
+    "output_cost_per_mtok": 15.0,
+    "cache_creation_cost_per_mtok": 3.75,
+    "cache_read_cost_per_mtok": 0.3
+  },
+  {
+    "model": "regional.anthropic.claude-3-7-sonnet-20250219-v1:0",
+    "provider": "aws",
+    "input_cost_per_mtok": 3.0,
+    "output_cost_per_mtok": 15.0,
+    "cache_creation_cost_per_mtok": 3.75,
+    "cache_read_cost_per_mtok": 0.3
+  },
+  {
+    "model": "regional.anthropic.claude-3-haiku-20240307-v1:0",
+    "provider": "aws",
+    "input_cost_per_mtok": 0.25,
+    "output_cost_per_mtok": 1.25
+  },
+  {
+    "model": "regional.anthropic.claude-3-opus-20240229-v1:0",
+    "provider": "aws",
+    "input_cost_per_mtok": 15.0,
+    "output_cost_per_mtok": 75.0
+  },
+  {
+    "model": "regional.anthropic.claude-3-sonnet-20240229-v1:0",
+    "provider": "aws",
+    "input_cost_per_mtok": 3.0,
+    "output_cost_per_mtok": 15.0,
+    "cache_creation_cost_per_mtok": 3.75,
+    "cache_read_cost_per_mtok": 0.3
+  },
+  {
+    "model": "regional.anthropic.claude-haiku-4-5-20251001-v1:0",
+    "provider": "aws",
+    "input_cost_per_mtok": 1.1,
+    "output_cost_per_mtok": 5.5,
+    "cache_creation_cost_per_mtok": 1.375,
+    "cache_read_cost_per_mtok": 0.11
+  },
+  {
+    "model": "regional.anthropic.claude-opus-4-1-20250805-v1:0",
+    "provider": "aws",
+    "input_cost_per_mtok": 15.0,
+    "output_cost_per_mtok": 75.0,
+    "cache_creation_cost_per_mtok": 18.75,
+    "cache_read_cost_per_mtok": 1.5
+  },
+  {
+    "model": "regional.anthropic.claude-opus-4-20250514-v1:0",
+    "provider": "aws",
+    "input_cost_per_mtok": 15.0,
+    "output_cost_per_mtok": 75.0,
+    "cache_creation_cost_per_mtok": 18.75,
+    "cache_read_cost_per_mtok": 1.5
+  },
+  {
+    "model": "regional.anthropic.claude-opus-4-5-v1:0",
+    "provider": "aws",
+    "input_cost_per_mtok": 5.5,
+    "output_cost_per_mtok": 27.5,
+    "cache_creation_cost_per_mtok": 6.875,
+    "cache_read_cost_per_mtok": 0.55
+  },
+  {
+    "model": "regional.anthropic.claude-opus-4-6-v1:0",
+    "provider": "aws",
+    "input_cost_per_mtok": 5.5,
+    "output_cost_per_mtok": 27.5,
+    "cache_creation_cost_per_mtok": 6.875,
+    "cache_read_cost_per_mtok": 0.55
+  },
+  {
+    "model": "regional.anthropic.claude-sonnet-4-20250514-v1:0",
+    "provider": "aws",
+    "input_cost_per_mtok": 3.0,
+    "output_cost_per_mtok": 15.0,
+    "cache_creation_cost_per_mtok": 3.75,
+    "cache_read_cost_per_mtok": 0.3
+  },
+  {
+    "model": "regional.anthropic.claude-sonnet-4-5-20250929-v1:0",
+    "provider": "aws",
+    "input_cost_per_mtok": 3.3,
+    "output_cost_per_mtok": 16.5,
+    "cache_creation_cost_per_mtok": 4.125,
+    "cache_read_cost_per_mtok": 0.33
+  },
+  {
+    "model": "regional.anthropic.claude-sonnet-4-6-v1:0",
+    "provider": "aws",
+    "input_cost_per_mtok": 3.3,
+    "output_cost_per_mtok": 16.5,
+    "cache_creation_cost_per_mtok": 4.125,
+    "cache_read_cost_per_mtok": 0.33
+  },
+  {
+    "model": "ada",
+    "provider": "azure",
+    "input_cost_per_mtok": 0.1,
+    "output_cost_per_mtok": 0.0
+  },
+  {
+    "model": "babbage",
+    "provider": "azure",
+    "input_cost_per_mtok": 0.4,
+    "output_cost_per_mtok": 0.0
+  },
+  {
+    "model": "curie",
+    "provider": "azure",
+    "input_cost_per_mtok": 2.0,
+    "output_cost_per_mtok": 0.0
+  },
+  {
+    "model": "davinci",
+    "provider": "azure",
+    "input_cost_per_mtok": 2.0,
+    "output_cost_per_mtok": 0.0
+  },
+  {
+    "model": "o1",
+    "provider": "azure",
+    "input_cost_per_mtok": 15.0,
+    "output_cost_per_mtok": 60.0,
+    "cache_read_cost_per_mtok": 7.5
+  },
+  {
+    "model": "o1-mini",
+    "provider": "azure",
+    "input_cost_per_mtok": 1.1,
+    "output_cost_per_mtok": 4.4,
+    "cache_read_cost_per_mtok": 0.55
+  },
+  {
+    "model": "o3-2025-04-16",
+    "provider": "azure",
+    "input_cost_per_mtok": 2.0,
+    "output_cost_per_mtok": 8.0,
+    "cache_read_cost_per_mtok": 0.5
+  },
+  {
+    "model": "o3-mini",
+    "provider": "azure",
+    "input_cost_per_mtok": 1.1,
+    "output_cost_per_mtok": 4.4,
+    "cache_read_cost_per_mtok": 0.55
+  },
+  {
+    "model": "o4-mini",
+    "provider": "azure",
+    "input_cost_per_mtok": 1.1,
+    "output_cost_per_mtok": 4.4,
+    "cache_read_cost_per_mtok": 0.28
+  },
+  {
+    "model": "phi-3-medium-128k-instruct",
+    "provider": "azure",
+    "input_cost_per_mtok": 1.0,
+    "output_cost_per_mtok": 1.0
+  },
+  {
+    "model": "phi-3-mini-128k-instruct",
+    "provider": "azure",
+    "input_cost_per_mtok": 0.1,
+    "output_cost_per_mtok": 0.1
+  },
+  {
+    "model": "phi-3.5-mini-128k-instruct",
+    "provider": "azure",
+    "input_cost_per_mtok": 0.1,
+    "output_cost_per_mtok": 0.1
+  },
+  {
+    "model": "phi-4",
+    "provider": "azure",
+    "input_cost_per_mtok": 0.07,
+    "output_cost_per_mtok": 0.14
+  },
+  {
+    "model": "phi-4-multimodal-instruct",
+    "provider": "azure",
+    "input_cost_per_mtok": 0.05,
+    "output_cost_per_mtok": 0.1
+  },
+  {
+    "model": "phi-4-reasoning-plus",
+    "provider": "azure",
+    "input_cost_per_mtok": 0.07,
+    "output_cost_per_mtok": 0.35
+  },
+  {
+    "model": "text-embedding-3-large",
+    "provider": "azure",
+    "input_cost_per_mtok": 0.13,
+    "output_cost_per_mtok": 0.0
+  },
+  {
+    "model": "text-embedding-3-small",
+    "provider": "azure",
+    "input_cost_per_mtok": 0.02,
+    "output_cost_per_mtok": 0.0
+  },
+  {
+    "model": "wizardlm-2-8x22b",
+    "provider": "azure",
+    "input_cost_per_mtok": 0.48,
+    "output_cost_per_mtok": 0.48
+  },
+  {
+    "model": "gpt-oss-120b",
+    "provider": "cerebras",
+    "input_cost_per_mtok": 0.35,
+    "output_cost_per_mtok": 0.75
+  },
+  {
+    "model": "llama-3.3-70b",
+    "provider": "cerebras",
+    "input_cost_per_mtok": 0.85,
+    "output_cost_per_mtok": 1.2
+  },
+  {
+    "model": "llama3.1-8b",
+    "provider": "cerebras",
+    "input_cost_per_mtok": 0.1,
+    "output_cost_per_mtok": 0.1
+  },
+  {
+    "model": "qwen-3-32b",
+    "provider": "cerebras",
+    "input_cost_per_mtok": 0.4,
+    "output_cost_per_mtok": 0.8
+  },
+  {
+    "model": "command",
+    "provider": "cohere",
+    "input_cost_per_mtok": 1.0,
+    "output_cost_per_mtok": 2.0
+  },
+  {
+    "model": "command-a",
+    "provider": "cohere",
+    "input_cost_per_mtok": 2.5,
+    "output_cost_per_mtok": 10.0
+  },
+  {
+    "model": "command-r",
+    "provider": "cohere",
+    "input_cost_per_mtok": 0.15,
+    "output_cost_per_mtok": 0.6
+  },
+  {
+    "model": "command-r-plus",
+    "provider": "cohere",
+    "input_cost_per_mtok": 2.5,
+    "output_cost_per_mtok": 10.0
+  },
+  {
+    "model": "command-r7b",
+    "provider": "cohere",
+    "input_cost_per_mtok": 0.0375,
+    "output_cost_per_mtok": 0.15
+  },
+  {
+    "model": "embed-v4.0",
+    "provider": "cohere",
+    "input_cost_per_mtok": 0.12,
+    "output_cost_per_mtok": 0.0
+  },
+  {
+    "model": "deepseek-chat",
+    "provider": "deepseek",
+    "input_cost_per_mtok": 0.135,
+    "output_cost_per_mtok": 0.55,
+    "cache_read_cost_per_mtok": 0.035
+  },
+  {
+    "model": "deepseek-reasoner",
+    "provider": "deepseek",
+    "input_cost_per_mtok": 0.135,
+    "output_cost_per_mtok": 0.55,
+    "cache_read_cost_per_mtok": 0.035
+  },
+  {
+    "model": "deepseek-r1-0528",
+    "provider": "fireworks",
+    "input_cost_per_mtok": 3.0,
+    "output_cost_per_mtok": 8.0
+  },
+  {
+    "model": "deepseek-v3-0324",
+    "provider": "fireworks",
+    "input_cost_per_mtok": 0.9,
+    "output_cost_per_mtok": 0.9
+  },
+  {
+    "model": "deepseek-v3p2",
+    "provider": "fireworks",
+    "input_cost_per_mtok": 0.56,
+    "output_cost_per_mtok": 1.68,
+    "cache_read_cost_per_mtok": 0.28
+  },
+  {
+    "model": "gemma-3-27b-it",
+    "provider": "fireworks",
+    "input_cost_per_mtok": 0.1,
+    "output_cost_per_mtok": 0.1
+  },
+  {
+    "model": "glm-4p7",
+    "provider": "fireworks",
+    "input_cost_per_mtok": 0.6,
+    "output_cost_per_mtok": 2.2
+  },
+  {
+    "model": "gpt-oss-120b",
+    "provider": "fireworks",
+    "input_cost_per_mtok": 0.15,
+    "output_cost_per_mtok": 0.6,
+    "cache_read_cost_per_mtok": 0.07
+  },
+  {
+    "model": "gpt-oss-20b",
+    "provider": "fireworks",
+    "input_cost_per_mtok": 0.07,
+    "output_cost_per_mtok": 0.3,
+    "cache_read_cost_per_mtok": 0.04
+  },
+  {
+    "model": "kimi-k2p5",
+    "provider": "fireworks",
+    "input_cost_per_mtok": 0.6,
+    "output_cost_per_mtok": 3.0,
+    "cache_read_cost_per_mtok": 0.1
+  },
+  {
+    "model": "llama-v3p1-8b-instruct",
+    "provider": "fireworks",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.2
+  },
+  {
+    "model": "llama4-maverick-instruct-basic",
+    "provider": "fireworks",
+    "input_cost_per_mtok": 0.22,
+    "output_cost_per_mtok": 0.88
+  },
+  {
+    "model": "minimax-m2p1",
+    "provider": "fireworks",
+    "input_cost_per_mtok": 0.3,
+    "output_cost_per_mtok": 1.2
+  },
+  {
+    "model": "qwen2p5-vl-72b-instruct",
+    "provider": "fireworks",
+    "input_cost_per_mtok": 0.9,
+    "output_cost_per_mtok": 0.9
+  },
+  {
+    "model": "qwen3-235b-a22b",
+    "provider": "fireworks",
+    "input_cost_per_mtok": 0.22,
+    "output_cost_per_mtok": 0.88
+  },
+  {
+    "model": "claude-3-5-haiku",
+    "provider": "google",
+    "input_cost_per_mtok": 0.8,
+    "output_cost_per_mtok": 4.0,
+    "cache_creation_cost_per_mtok": 1.0,
+    "cache_read_cost_per_mtok": 0.08
+  },
+  {
+    "model": "claude-3-5-sonnet",
+    "provider": "google",
+    "input_cost_per_mtok": 3.0,
+    "output_cost_per_mtok": 15.0,
+    "cache_creation_cost_per_mtok": 3.75,
+    "cache_read_cost_per_mtok": 0.3
+  },
+  {
+    "model": "claude-3-7-sonnet",
+    "provider": "google",
+    "input_cost_per_mtok": 3.0,
+    "output_cost_per_mtok": 15.0,
+    "cache_creation_cost_per_mtok": 3.75,
+    "cache_read_cost_per_mtok": 0.3
+  },
+  {
+    "model": "claude-3-haiku",
+    "provider": "google",
+    "input_cost_per_mtok": 0.25,
+    "output_cost_per_mtok": 1.25,
+    "cache_creation_cost_per_mtok": 0.3,
+    "cache_read_cost_per_mtok": 0.03
+  },
+  {
+    "model": "claude-3-opus",
+    "provider": "google",
+    "input_cost_per_mtok": 15.0,
+    "output_cost_per_mtok": 75.0,
+    "cache_creation_cost_per_mtok": 18.75,
+    "cache_read_cost_per_mtok": 1.5
+  },
+  {
+    "model": "claude-4-opus",
+    "provider": "google",
+    "input_cost_per_mtok": 15.0,
+    "output_cost_per_mtok": 75.0,
+    "cache_creation_cost_per_mtok": 18.75,
+    "cache_read_cost_per_mtok": 1.5
+  },
+  {
+    "model": "claude-4-sonnet",
+    "provider": "google",
+    "input_cost_per_mtok": 3.0,
+    "output_cost_per_mtok": 15.0,
+    "cache_creation_cost_per_mtok": 3.75,
+    "cache_read_cost_per_mtok": 0.3
+  },
+  {
+    "model": "claude-opus-4-6",
+    "provider": "google",
+    "input_cost_per_mtok": 5.0,
+    "output_cost_per_mtok": 25.0,
+    "cache_creation_cost_per_mtok": 6.25,
+    "cache_read_cost_per_mtok": 0.5
+  },
+  {
+    "model": "gemini-1.0-pro-vision-001",
+    "provider": "google",
+    "input_cost_per_mtok": 0.125,
+    "output_cost_per_mtok": 0.375
+  },
+  {
+    "model": "gemini-1.5-flash",
+    "provider": "google",
+    "input_cost_per_mtok": 0.075,
+    "output_cost_per_mtok": 0.3,
+    "cache_read_cost_per_mtok": 0.01875
+  },
+  {
+    "model": "gemini-1.5-pro",
+    "provider": "google",
+    "input_cost_per_mtok": 1.25,
+    "output_cost_per_mtok": 5.0
+  },
+  {
+    "model": "gemini-2.0-flash",
+    "provider": "google",
+    "input_cost_per_mtok": 0.1,
+    "output_cost_per_mtok": 0.4,
+    "cache_read_cost_per_mtok": 0.025
+  },
+  {
+    "model": "gemini-2.0-flash-lite",
+    "provider": "google",
+    "input_cost_per_mtok": 0.075,
+    "output_cost_per_mtok": 0.3
+  },
+  {
+    "model": "gemini-2.5-flash",
+    "provider": "google",
+    "input_cost_per_mtok": 0.3,
+    "output_cost_per_mtok": 2.5,
+    "cache_read_cost_per_mtok": 0.03
+  },
+  {
+    "model": "gemini-2.5-flash-image",
+    "provider": "google",
+    "input_cost_per_mtok": 0.3,
+    "output_cost_per_mtok": 30.0
+  },
+  {
+    "model": "gemini-2.5-flash-lite",
+    "provider": "google",
+    "input_cost_per_mtok": 0.1,
+    "output_cost_per_mtok": 0.4,
+    "cache_read_cost_per_mtok": 0.01
+  },
+  {
+    "model": "gemini-2.5-pro",
+    "provider": "google",
+    "input_cost_per_mtok": 1.25,
+    "output_cost_per_mtok": 10.0,
+    "cache_read_cost_per_mtok": 0.125
+  },
+  {
+    "model": "gemini-3-flash-preview",
+    "provider": "google",
+    "input_cost_per_mtok": 0.5,
+    "output_cost_per_mtok": 3.0,
+    "cache_read_cost_per_mtok": 0.05
+  },
+  {
+    "model": "gemini-3-pro-image-preview",
+    "provider": "google",
+    "input_cost_per_mtok": 2.0,
+    "output_cost_per_mtok": 120.0
+  },
+  {
+    "model": "gemini-3-pro-preview",
+    "provider": "google",
+    "input_cost_per_mtok": 2.0,
+    "output_cost_per_mtok": 12.0,
+    "cache_read_cost_per_mtok": 0.2
+  },
+  {
+    "model": "gemini-3.1-flash-image-preview",
+    "provider": "google",
+    "input_cost_per_mtok": 0.5,
+    "output_cost_per_mtok": 60.0
+  },
+  {
+    "model": "gemini-3.1-flash-lite-preview",
+    "provider": "google",
+    "input_cost_per_mtok": 0.25,
+    "output_cost_per_mtok": 1.5,
+    "cache_read_cost_per_mtok": 0.025
+  },
+  {
+    "model": "gemini-3.1-pro-preview",
+    "provider": "google",
+    "input_cost_per_mtok": 2.0,
+    "output_cost_per_mtok": 12.0,
+    "cache_read_cost_per_mtok": 0.2
+  },
+  {
+    "model": "gemini-embedding-001",
+    "provider": "google",
+    "input_cost_per_mtok": 0.15,
+    "output_cost_per_mtok": 0.0
+  },
+  {
+    "model": "gemini-flash-1.5",
+    "provider": "google",
+    "input_cost_per_mtok": 0.075,
+    "output_cost_per_mtok": 0.3,
+    "cache_read_cost_per_mtok": 0.01875
+  },
+  {
+    "model": "gemini-flash-1.5-8b",
+    "provider": "google",
+    "input_cost_per_mtok": 0.0375,
+    "output_cost_per_mtok": 0.15,
+    "cache_read_cost_per_mtok": 0.01
+  },
+  {
+    "model": "gemini-live-2.5-flash-preview",
+    "provider": "google",
+    "input_cost_per_mtok": 0.5,
+    "output_cost_per_mtok": 2.0
+  },
+  {
+    "model": "gemini-pro",
+    "provider": "google",
+    "input_cost_per_mtok": 0.125,
+    "output_cost_per_mtok": 0.375
+  },
+  {
+    "model": "gemini-pro-1.5",
+    "provider": "google",
+    "input_cost_per_mtok": 1.25,
+    "output_cost_per_mtok": 5.0,
+    "cache_read_cost_per_mtok": 0.3125
+  },
+  {
+    "model": "deepseek-r1-distill-llama-70b",
+    "provider": "groq",
+    "input_cost_per_mtok": 0.75,
+    "output_cost_per_mtok": 0.99
+  },
+  {
+    "model": "gemma-7b-it",
+    "provider": "groq",
+    "input_cost_per_mtok": 0.07,
+    "output_cost_per_mtok": 0.07
+  },
+  {
+    "model": "gemma2-9b-it",
+    "provider": "groq",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.2
+  },
+  {
+    "model": "llama-3.1-405b-reasoning",
+    "provider": "groq",
+    "input_cost_per_mtok": 0.59,
+    "output_cost_per_mtok": 0.79
+  },
+  {
+    "model": "llama-3.1-70b-versatile",
+    "provider": "groq",
+    "input_cost_per_mtok": 0.59,
+    "output_cost_per_mtok": 0.79
+  },
+  {
+    "model": "llama-3.1-8b-instant",
+    "provider": "groq",
+    "input_cost_per_mtok": 0.05,
+    "output_cost_per_mtok": 0.08
+  },
+  {
+    "model": "llama-3.2-11b-text-preview",
+    "provider": "groq",
+    "input_cost_per_mtok": 0.18,
+    "output_cost_per_mtok": 0.18
+  },
+  {
+    "model": "llama-3.2-11b-vision-preview",
+    "provider": "groq",
+    "input_cost_per_mtok": 0.18,
+    "output_cost_per_mtok": 0.18
+  },
+  {
+    "model": "llama-3.2-1b-preview",
+    "provider": "groq",
+    "input_cost_per_mtok": 0.04,
+    "output_cost_per_mtok": 0.04
+  },
+  {
+    "model": "llama-3.2-3b-preview",
+    "provider": "groq",
+    "input_cost_per_mtok": 0.06,
+    "output_cost_per_mtok": 0.06
+  },
+  {
+    "model": "llama-3.2-90b-text-preview",
+    "provider": "groq",
+    "input_cost_per_mtok": 0.9,
+    "output_cost_per_mtok": 0.9
+  },
+  {
+    "model": "llama-3.2-90b-vision-preview",
+    "provider": "groq",
+    "input_cost_per_mtok": 0.9,
+    "output_cost_per_mtok": 0.9
+  },
+  {
+    "model": "llama-3.3-70b-specdec",
+    "provider": "groq",
+    "input_cost_per_mtok": 0.59,
+    "output_cost_per_mtok": 0.99
+  },
+  {
+    "model": "llama-3.3-70b-versatile",
+    "provider": "groq",
+    "input_cost_per_mtok": 0.59,
+    "output_cost_per_mtok": 0.79
+  },
+  {
+    "model": "llama-guard-3-8b",
+    "provider": "groq",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.2
+  },
+  {
+    "model": "llama2-70b-4096",
+    "provider": "groq",
+    "input_cost_per_mtok": 0.7,
+    "output_cost_per_mtok": 0.8
+  },
+  {
+    "model": "llama3-70b-8192",
+    "provider": "groq",
+    "input_cost_per_mtok": 0.59,
+    "output_cost_per_mtok": 0.79
+  },
+  {
+    "model": "llama3-8b-8192",
+    "provider": "groq",
+    "input_cost_per_mtok": 0.05,
+    "output_cost_per_mtok": 0.08
+  },
+  {
+    "model": "llama3-groq-70b-8192-tool-use-preview",
+    "provider": "groq",
+    "input_cost_per_mtok": 0.89,
+    "output_cost_per_mtok": 0.89
+  },
+  {
+    "model": "llama3-groq-8b-8192-tool-use-preview",
+    "provider": "groq",
+    "input_cost_per_mtok": 0.19,
+    "output_cost_per_mtok": 0.19
+  },
+  {
+    "model": "meta-llama/llama-4-maverick-17b-128e-instruct",
+    "provider": "groq",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.6
+  },
+  {
+    "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+    "provider": "groq",
+    "input_cost_per_mtok": 0.11,
+    "output_cost_per_mtok": 0.34
+  },
+  {
+    "model": "meta-llama/llama-guard-4-12b",
+    "provider": "groq",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.2
+  },
+  {
+    "model": "mistral-saba-24b",
+    "provider": "groq",
+    "input_cost_per_mtok": 0.79,
+    "output_cost_per_mtok": 0.79
+  },
+  {
+    "model": "mixtral-8x7b-32768",
+    "provider": "groq",
+    "input_cost_per_mtok": 0.24,
+    "output_cost_per_mtok": 0.24
+  },
+  {
+    "model": "moonshotai/kimi-k2-instruct",
+    "provider": "groq",
+    "input_cost_per_mtok": 1.0,
+    "output_cost_per_mtok": 3.0,
+    "cache_read_cost_per_mtok": 0.5
+  },
+  {
+    "model": "openai/gpt-oss-120b",
+    "provider": "groq",
+    "input_cost_per_mtok": 0.15,
+    "output_cost_per_mtok": 0.6,
+    "cache_read_cost_per_mtok": 0.075
+  },
+  {
+    "model": "openai/gpt-oss-20b",
+    "provider": "groq",
+    "input_cost_per_mtok": 0.075,
+    "output_cost_per_mtok": 0.3,
+    "cache_read_cost_per_mtok": 0.0375
+  },
+  {
+    "model": "qwen/qwen3-32b",
+    "provider": "groq",
+    "input_cost_per_mtok": 0.29,
+    "output_cost_per_mtok": 0.59
+  },
+  {
+    "model": "codestral",
+    "provider": "mistral",
+    "input_cost_per_mtok": 0.3,
+    "output_cost_per_mtok": 0.9
+  },
+  {
+    "model": "devstral-small",
+    "provider": "mistral",
+    "input_cost_per_mtok": 0.06,
+    "output_cost_per_mtok": 0.12
+  },
+  {
+    "model": "magistral-medium",
+    "provider": "mistral",
+    "input_cost_per_mtok": 2.0,
+    "output_cost_per_mtok": 5.0
+  },
+  {
+    "model": "magistral-small",
+    "provider": "mistral",
+    "input_cost_per_mtok": 0.5,
+    "output_cost_per_mtok": 1.5
+  },
+  {
+    "model": "ministral-3b",
+    "provider": "mistral",
+    "input_cost_per_mtok": 0.04,
+    "output_cost_per_mtok": 0.04
+  },
+  {
+    "model": "ministral-8b",
+    "provider": "mistral",
+    "input_cost_per_mtok": 0.1,
+    "output_cost_per_mtok": 1.0
+  },
+  {
+    "model": "mistral-7b",
+    "provider": "mistral",
+    "input_cost_per_mtok": 0.25,
+    "output_cost_per_mtok": 0.25
+  },
+  {
+    "model": "mistral-embed",
+    "provider": "mistral",
+    "input_cost_per_mtok": 0.1,
+    "output_cost_per_mtok": 0.1
+  },
+  {
+    "model": "mistral-large",
+    "provider": "mistral",
+    "input_cost_per_mtok": 2.0,
+    "output_cost_per_mtok": 6.0
+  },
+  {
+    "model": "mistral-medium-3",
+    "provider": "mistral",
+    "input_cost_per_mtok": 0.4,
+    "output_cost_per_mtok": 2.0
+  },
+  {
+    "model": "mistral-nemo",
+    "provider": "mistral",
+    "input_cost_per_mtok": 0.15,
+    "output_cost_per_mtok": 0.15
+  },
+  {
+    "model": "mistral-saba",
+    "provider": "mistral",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.6
+  },
+  {
+    "model": "mistral-small-24b-instruct-2501",
+    "provider": "mistral",
+    "input_cost_per_mtok": 0.05,
+    "output_cost_per_mtok": 0.08
+  },
+  {
+    "model": "mistral-small-latest",
+    "provider": "mistral",
+    "input_cost_per_mtok": 0.1,
+    "output_cost_per_mtok": 0.3
+  },
+  {
+    "model": "mixtral-8x22b-instruct",
+    "provider": "mistral",
+    "input_cost_per_mtok": 0.9,
+    "output_cost_per_mtok": 0.9
+  },
+  {
+    "model": "mixtral-8x7b",
+    "provider": "mistral",
+    "input_cost_per_mtok": 0.7,
+    "output_cost_per_mtok": 0.7
+  },
+  {
+    "model": "pixtral-12b",
+    "provider": "mistral",
+    "input_cost_per_mtok": 0.15,
+    "output_cost_per_mtok": 0.15
+  },
+  {
+    "model": "pixtral-large",
+    "provider": "mistral",
+    "input_cost_per_mtok": 2.0,
+    "output_cost_per_mtok": 6.0
+  },
+  {
+    "model": "kimi-k2-0711-preview",
+    "provider": "moonshotai",
+    "input_cost_per_mtok": 0.6,
+    "output_cost_per_mtok": 2.5,
+    "cache_read_cost_per_mtok": 0.15
+  },
+  {
+    "model": "kimi-k2-0905-preview",
+    "provider": "moonshotai",
+    "input_cost_per_mtok": 0.6,
+    "output_cost_per_mtok": 2.5,
+    "cache_read_cost_per_mtok": 0.15
+  },
+  {
+    "model": "kimi-k2-thinking",
+    "provider": "moonshotai",
+    "input_cost_per_mtok": 0.6,
+    "output_cost_per_mtok": 2.5,
+    "cache_read_cost_per_mtok": 0.15
+  },
+  {
+    "model": "kimi-k2-thinking-turbo",
+    "provider": "moonshotai",
+    "input_cost_per_mtok": 1.15,
+    "output_cost_per_mtok": 8.0,
+    "cache_read_cost_per_mtok": 0.15
+  },
+  {
+    "model": "kimi-k2-turbo-preview",
+    "provider": "moonshotai",
+    "input_cost_per_mtok": 1.15,
+    "output_cost_per_mtok": 8.0,
+    "cache_read_cost_per_mtok": 0.15
+  },
+  {
+    "model": "kimi-k2.5",
+    "provider": "moonshotai",
+    "input_cost_per_mtok": 0.6,
+    "output_cost_per_mtok": 3.0,
+    "cache_read_cost_per_mtok": 0.1
+  },
+  {
+    "model": "moonshot-v1-128k",
+    "provider": "moonshotai",
+    "input_cost_per_mtok": 2.0,
+    "output_cost_per_mtok": 5.0
+  },
+  {
+    "model": "moonshot-v1-32k",
+    "provider": "moonshotai",
+    "input_cost_per_mtok": 1.0,
+    "output_cost_per_mtok": 3.0
+  },
+  {
+    "model": "moonshot-v1-8k",
+    "provider": "moonshotai",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 2.0
+  },
+  {
+    "model": "Sao10K/L3-8B-Stheno-v3.2",
+    "provider": "novita",
+    "input_cost_per_mtok": 0.05,
+    "output_cost_per_mtok": 0.05
+  },
+  {
+    "model": "cognitivecomputations/dolphin-mixtral-8x22b",
+    "provider": "novita",
+    "input_cost_per_mtok": 0.9,
+    "output_cost_per_mtok": 0.9
+  },
+  {
+    "model": "deepseek/deepseek-r1",
+    "provider": "novita",
+    "input_cost_per_mtok": 4.0,
+    "output_cost_per_mtok": 4.0
+  },
+  {
+    "model": "deepseek/deepseek-r1-distill-llama-70b",
+    "provider": "novita",
+    "input_cost_per_mtok": 0.8,
+    "output_cost_per_mtok": 0.8
+  },
+  {
+    "model": "deepseek/deepseek-r1-distill-llama-8b",
+    "provider": "novita",
+    "input_cost_per_mtok": 0.04,
+    "output_cost_per_mtok": 0.04
+  },
+  {
+    "model": "deepseek/deepseek-r1-distill-qwen-14b",
+    "provider": "novita",
+    "input_cost_per_mtok": 0.15,
+    "output_cost_per_mtok": 0.15
+  },
+  {
+    "model": "deepseek/deepseek-r1-distill-qwen-32b",
+    "provider": "novita",
+    "input_cost_per_mtok": 0.3,
+    "output_cost_per_mtok": 0.3
+  },
+  {
+    "model": "deepseek/deepseek_v3",
+    "provider": "novita",
+    "input_cost_per_mtok": 0.89,
+    "output_cost_per_mtok": 0.89
+  },
+  {
+    "model": "google/gemma-2-9b-it",
+    "provider": "novita",
+    "input_cost_per_mtok": 0.08,
+    "output_cost_per_mtok": 0.08
+  },
+  {
+    "model": "gryphe/mythomax-l2-13b",
+    "provider": "novita",
+    "input_cost_per_mtok": 0.09,
+    "output_cost_per_mtok": 0.09
+  },
+  {
+    "model": "jondurbin/airoboros-l2-70b",
+    "provider": "novita",
+    "input_cost_per_mtok": 0.5,
+    "output_cost_per_mtok": 0.5
+  },
+  {
+    "model": "meta-llama/llama-3-70b-instruct",
+    "provider": "novita",
+    "input_cost_per_mtok": 0.51,
+    "output_cost_per_mtok": 0.74
+  },
+  {
+    "model": "meta-llama/llama-3-8b-instruct",
+    "provider": "novita",
+    "input_cost_per_mtok": 0.04,
+    "output_cost_per_mtok": 0.04
+  },
+  {
+    "model": "meta-llama/llama-3.1-70b-instruct",
+    "provider": "novita",
+    "input_cost_per_mtok": 0.34,
+    "output_cost_per_mtok": 0.39
+  },
+  {
+    "model": "meta-llama/llama-3.1-8b-instruct",
+    "provider": "novita",
+    "input_cost_per_mtok": 0.05,
+    "output_cost_per_mtok": 0.05
+  },
+  {
+    "model": "meta-llama/llama-3.1-8b-instruct-bf16",
+    "provider": "novita",
+    "input_cost_per_mtok": 0.06,
+    "output_cost_per_mtok": 0.06
+  },
+  {
+    "model": "meta-llama/llama-3.2-11b-vision-instruct",
+    "provider": "novita",
+    "input_cost_per_mtok": 0.06,
+    "output_cost_per_mtok": 0.06
+  },
+  {
+    "model": "meta-llama/llama-3.2-1b-instruct",
+    "provider": "novita",
+    "input_cost_per_mtok": 0.02,
+    "output_cost_per_mtok": 0.02
+  },
+  {
+    "model": "meta-llama/llama-3.2-3b-instruct",
+    "provider": "novita",
+    "input_cost_per_mtok": 0.03,
+    "output_cost_per_mtok": 0.05
+  },
+  {
+    "model": "meta-llama/llama-3.3-70b-instruct",
+    "provider": "novita",
+    "input_cost_per_mtok": 0.39,
+    "output_cost_per_mtok": 0.39
+  },
+  {
+    "model": "microsoft/wizardlm-2-8x22b",
+    "provider": "novita",
+    "input_cost_per_mtok": 0.62,
+    "output_cost_per_mtok": 0.62
+  },
+  {
+    "model": "mistralai/mistral-7b-instruct",
+    "provider": "novita",
+    "input_cost_per_mtok": 0.059,
+    "output_cost_per_mtok": 0.059
+  },
+  {
+    "model": "mistralai/mistral-nemo",
+    "provider": "novita",
+    "input_cost_per_mtok": 0.17,
+    "output_cost_per_mtok": 0.17
+  },
+  {
+    "model": "nousresearch/hermes-2-pro-llama-3-8b",
+    "provider": "novita",
+    "input_cost_per_mtok": 0.14,
+    "output_cost_per_mtok": 0.14
+  },
+  {
+    "model": "nousresearch/nous-hermes-llama2-13b",
+    "provider": "novita",
+    "input_cost_per_mtok": 0.17,
+    "output_cost_per_mtok": 0.17
+  },
+  {
+    "model": "openchat/openchat-7b",
+    "provider": "novita",
+    "input_cost_per_mtok": 0.06,
+    "output_cost_per_mtok": 0.06
+  },
+  {
+    "model": "qwen/qwen-2-7b-instruct",
+    "provider": "novita",
+    "input_cost_per_mtok": 0.054,
+    "output_cost_per_mtok": 0.054
+  },
+  {
+    "model": "qwen/qwen-2-vl-72b-instruct",
+    "provider": "novita",
+    "input_cost_per_mtok": 0.45,
+    "output_cost_per_mtok": 0.45
+  },
+  {
+    "model": "qwen/qwen-2.5-72b-instruct",
+    "provider": "novita",
+    "input_cost_per_mtok": 0.38,
+    "output_cost_per_mtok": 0.4
+  },
+  {
+    "model": "sao10k/l3-70b-euryale-v2.1",
+    "provider": "novita",
+    "input_cost_per_mtok": 1.48,
+    "output_cost_per_mtok": 1.48
+  },
+  {
+    "model": "sao10k/l3-8b-lunaris",
+    "provider": "novita",
+    "input_cost_per_mtok": 0.05,
+    "output_cost_per_mtok": 0.05
+  },
+  {
+    "model": "sao10k/l31-70b-euryale-v2.2",
+    "provider": "novita",
+    "input_cost_per_mtok": 1.48,
+    "output_cost_per_mtok": 1.48
+  },
+  {
+    "model": "sophosympatheia/midnight-rose-70b",
+    "provider": "novita",
+    "input_cost_per_mtok": 0.8,
+    "output_cost_per_mtok": 0.8
+  },
+  {
+    "model": "teknium/openhermes-2.5-mistral-7b",
+    "provider": "novita",
+    "input_cost_per_mtok": 0.17,
+    "output_cost_per_mtok": 0.17
+  },
+  {
+    "model": "ada",
+    "provider": "openai",
+    "input_cost_per_mtok": 0.4,
+    "output_cost_per_mtok": 0.4
+  },
+  {
+    "model": "babbage",
+    "provider": "openai",
+    "input_cost_per_mtok": 0.5,
+    "output_cost_per_mtok": 0.5
+  },
+  {
+    "model": "chatgpt-4o-latest",
+    "provider": "openai",
+    "input_cost_per_mtok": 5.0,
+    "output_cost_per_mtok": 15.0
+  },
+  {
+    "model": "codex-mini",
+    "provider": "openai",
+    "input_cost_per_mtok": 1.5,
+    "output_cost_per_mtok": 6.0,
+    "cache_read_cost_per_mtok": 0.375
+  },
+  {
+    "model": "computer-use",
+    "provider": "openai",
+    "input_cost_per_mtok": 3.0,
+    "output_cost_per_mtok": 12.0
+  },
+  {
+    "model": "curie",
+    "provider": "openai",
+    "input_cost_per_mtok": 2.0,
+    "output_cost_per_mtok": 2.0
+  },
+  {
+    "model": "davinci",
+    "provider": "openai",
+    "input_cost_per_mtok": 20.0,
+    "output_cost_per_mtok": 20.0
+  },
+  {
+    "model": "ft:gpt-3.5-turbo-",
+    "provider": "openai",
+    "input_cost_per_mtok": 3.0,
+    "output_cost_per_mtok": 6.0
+  },
+  {
+    "model": "ft:gpt-4o",
+    "provider": "openai",
+    "input_cost_per_mtok": 3.75,
+    "output_cost_per_mtok": 15.0
+  },
+  {
+    "model": "ft:gpt-4o-mini",
+    "provider": "openai",
+    "input_cost_per_mtok": 0.3,
+    "output_cost_per_mtok": 1.2
+  },
+  {
+    "model": "gpt-3.5-0301",
+    "provider": "openai",
+    "input_cost_per_mtok": 1.5,
+    "output_cost_per_mtok": 2.0
+  },
+  {
+    "model": "gpt-3.5-turbo",
+    "provider": "openai",
+    "input_cost_per_mtok": 0.5,
+    "output_cost_per_mtok": 1.5
+  },
+  {
+    "model": "gpt-3.5-turbo-0613",
+    "provider": "openai",
+    "input_cost_per_mtok": 1.5,
+    "output_cost_per_mtok": 2.0
+  },
+  {
+    "model": "gpt-3.5-turbo-1106",
+    "provider": "openai",
+    "input_cost_per_mtok": 1.0,
+    "output_cost_per_mtok": 2.0
+  },
+  {
+    "model": "gpt-3.5-turbo-16k",
+    "provider": "openai",
+    "input_cost_per_mtok": 3.0,
+    "output_cost_per_mtok": 4.0
+  },
+  {
+    "model": "gpt-3.5-turbo-instruct",
+    "provider": "openai",
+    "input_cost_per_mtok": 1.5,
+    "output_cost_per_mtok": 2.0
+  },
+  {
+    "model": "gpt-4",
+    "provider": "openai",
+    "input_cost_per_mtok": 30.0,
+    "output_cost_per_mtok": 60.0
+  },
+  {
+    "model": "gpt-4-32k",
+    "provider": "openai",
+    "input_cost_per_mtok": 60.0,
+    "output_cost_per_mtok": 120.0
+  },
+  {
+    "model": "gpt-4-turbo",
+    "provider": "openai",
+    "input_cost_per_mtok": 10.0,
+    "output_cost_per_mtok": 30.0
+  },
+  {
+    "model": "gpt-4-vision-preview",
+    "provider": "openai",
+    "input_cost_per_mtok": 10.0,
+    "output_cost_per_mtok": 30.0
+  },
+  {
+    "model": "gpt-4.1",
+    "provider": "openai",
+    "input_cost_per_mtok": 2.0,
+    "output_cost_per_mtok": 8.0,
+    "cache_read_cost_per_mtok": 0.5
+  },
+  {
+    "model": "gpt-4.1-mini",
+    "provider": "openai",
+    "input_cost_per_mtok": 0.4,
+    "output_cost_per_mtok": 1.6,
+    "cache_read_cost_per_mtok": 0.1
+  },
+  {
+    "model": "gpt-4.1-nano",
+    "provider": "openai",
+    "input_cost_per_mtok": 0.1,
+    "output_cost_per_mtok": 0.4,
+    "cache_read_cost_per_mtok": 0.025
+  },
+  {
+    "model": "gpt-4.5-preview",
+    "provider": "openai",
+    "input_cost_per_mtok": 75.0,
+    "output_cost_per_mtok": 150.0,
+    "cache_read_cost_per_mtok": 37.5
+  },
+  {
+    "model": "gpt-4o",
+    "provider": "openai",
+    "input_cost_per_mtok": 2.5,
+    "output_cost_per_mtok": 10.0,
+    "cache_read_cost_per_mtok": 1.25
+  },
+  {
+    "model": "gpt-4o-audio-preview",
+    "provider": "openai",
+    "input_cost_per_mtok": 0.0,
+    "output_cost_per_mtok": 10.0
+  },
+  {
+    "model": "gpt-4o-mini",
+    "provider": "openai",
+    "input_cost_per_mtok": 0.15,
+    "output_cost_per_mtok": 0.6,
+    "cache_read_cost_per_mtok": 0.075
+  },
+  {
+    "model": "gpt-4o-mini-2024-07-18.ft-",
+    "provider": "openai",
+    "input_cost_per_mtok": 0.3,
+    "output_cost_per_mtok": 1.2
+  },
+  {
+    "model": "gpt-4o-mini-audio-preview",
+    "provider": "openai",
+    "input_cost_per_mtok": 0.0,
+    "output_cost_per_mtok": 0.6
+  },
+  {
+    "model": "gpt-4o-mini-realtime-preview",
+    "provider": "openai",
+    "input_cost_per_mtok": 0.6,
+    "output_cost_per_mtok": 2.4,
+    "cache_read_cost_per_mtok": 0.3
+  },
+  {
+    "model": "gpt-4o-mini-transcribe",
+    "provider": "openai",
+    "input_cost_per_mtok": 1.25,
+    "output_cost_per_mtok": 5.0
+  },
+  {
+    "model": "gpt-4o-mini-tts",
+    "provider": "openai",
+    "input_cost_per_mtok": 0.6,
+    "output_cost_per_mtok": 0.0
+  },
+  {
+    "model": "gpt-4o-realtime-preview",
+    "provider": "openai",
+    "input_cost_per_mtok": 5.0,
+    "output_cost_per_mtok": 20.0,
+    "cache_read_cost_per_mtok": 2.5
+  },
+  {
+    "model": "gpt-4o-search-preview",
+    "provider": "openai",
+    "input_cost_per_mtok": 2.5,
+    "output_cost_per_mtok": 10.0
+  },
+  {
+    "model": "gpt-4o-transcribe",
+    "provider": "openai",
+    "input_cost_per_mtok": 2.5,
+    "output_cost_per_mtok": 10.0
+  },
+  {
+    "model": "gpt-4o:extended",
+    "provider": "openai",
+    "input_cost_per_mtok": 6.0,
+    "output_cost_per_mtok": 18.0
+  },
+  {
+    "model": "gpt-5",
+    "provider": "openai",
+    "input_cost_per_mtok": 1.25,
+    "output_cost_per_mtok": 10.0,
+    "cache_read_cost_per_mtok": 0.125
+  },
+  {
+    "model": "gpt-5-image",
+    "provider": "openai",
+    "input_cost_per_mtok": 10.0,
+    "output_cost_per_mtok": 10.0,
+    "cache_read_cost_per_mtok": 1.25
+  },
+  {
+    "model": "gpt-5-image-mini",
+    "provider": "openai",
+    "input_cost_per_mtok": 2.5,
+    "output_cost_per_mtok": 2.0,
+    "cache_read_cost_per_mtok": 0.25
+  },
+  {
+    "model": "gpt-5-mini",
+    "provider": "openai",
+    "input_cost_per_mtok": 0.25,
+    "output_cost_per_mtok": 2.0,
+    "cache_read_cost_per_mtok": 0.025
+  },
+  {
+    "model": "gpt-5-nano",
+    "provider": "openai",
+    "input_cost_per_mtok": 0.05,
+    "output_cost_per_mtok": 0.4,
+    "cache_read_cost_per_mtok": 0.005
+  },
+  {
+    "model": "gpt-5-pro",
+    "provider": "openai",
+    "input_cost_per_mtok": 15.0,
+    "output_cost_per_mtok": 120.0
+  },
+  {
+    "model": "gpt-5.1",
+    "provider": "openai",
+    "input_cost_per_mtok": 1.25,
+    "output_cost_per_mtok": 10.0,
+    "cache_read_cost_per_mtok": 0.125
+  },
+  {
+    "model": "gpt-5.1-codex-mini",
+    "provider": "openai",
+    "input_cost_per_mtok": 0.25,
+    "output_cost_per_mtok": 2.0,
+    "cache_read_cost_per_mtok": 0.025
+  },
+  {
+    "model": "gpt-5.2",
+    "provider": "openai",
+    "input_cost_per_mtok": 1.75,
+    "output_cost_per_mtok": 14.0,
+    "cache_read_cost_per_mtok": 0.175
+  },
+  {
+    "model": "gpt-5.2-pro",
+    "provider": "openai",
+    "input_cost_per_mtok": 21.0,
+    "output_cost_per_mtok": 168.0
+  },
+  {
+    "model": "gpt-5.3-codex",
+    "provider": "openai",
+    "input_cost_per_mtok": 1.75,
+    "output_cost_per_mtok": 14.0,
+    "cache_read_cost_per_mtok": 0.175
+  },
+  {
+    "model": "gpt-5.4",
+    "provider": "openai",
+    "input_cost_per_mtok": 2.5,
+    "output_cost_per_mtok": 15.0,
+    "cache_read_cost_per_mtok": 0.25
+  },
+  {
+    "model": "gpt-5.4-mini",
+    "provider": "openai",
+    "input_cost_per_mtok": 0.75,
+    "output_cost_per_mtok": 4.5,
+    "cache_read_cost_per_mtok": 0.075
+  },
+  {
+    "model": "gpt-5.4-nano",
+    "provider": "openai",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 1.25,
+    "cache_read_cost_per_mtok": 0.02
+  },
+  {
+    "model": "gpt-5.4-pro",
+    "provider": "openai",
+    "input_cost_per_mtok": 30.0,
+    "output_cost_per_mtok": 180.0
+  },
+  {
+    "model": "gpt-realtime",
+    "provider": "openai",
+    "input_cost_per_mtok": 4.0,
+    "output_cost_per_mtok": 16.0,
+    "cache_read_cost_per_mtok": 0.4
+  },
+  {
+    "model": "gpt-realtime-mini",
+    "provider": "openai",
+    "input_cost_per_mtok": 0.6,
+    "output_cost_per_mtok": 2.4,
+    "cache_read_cost_per_mtok": 0.06
+  },
+  {
+    "model": "o1",
+    "provider": "openai",
+    "input_cost_per_mtok": 15.0,
+    "output_cost_per_mtok": 60.0,
+    "cache_read_cost_per_mtok": 7.5
+  },
+  {
+    "model": "o1-mini",
+    "provider": "openai",
+    "input_cost_per_mtok": 1.1,
+    "output_cost_per_mtok": 4.4,
+    "cache_read_cost_per_mtok": 0.55
+  },
+  {
+    "model": "o1-pro",
+    "provider": "openai",
+    "input_cost_per_mtok": 150.0,
+    "output_cost_per_mtok": 600.0
+  },
+  {
+    "model": "o3",
+    "provider": "openai",
+    "input_cost_per_mtok": 2.0,
+    "output_cost_per_mtok": 8.0,
+    "cache_read_cost_per_mtok": 0.5
+  },
+  {
+    "model": "o3-deep-research",
+    "provider": "openai",
+    "input_cost_per_mtok": 10.0,
+    "output_cost_per_mtok": 40.0,
+    "cache_read_cost_per_mtok": 2.5
+  },
+  {
+    "model": "o3-mini",
+    "provider": "openai",
+    "input_cost_per_mtok": 1.1,
+    "output_cost_per_mtok": 4.4,
+    "cache_read_cost_per_mtok": 0.55
+  },
+  {
+    "model": "o3-pro",
+    "provider": "openai",
+    "input_cost_per_mtok": 20.0,
+    "output_cost_per_mtok": 80.0
+  },
+  {
+    "model": "o4-mini",
+    "provider": "openai",
+    "input_cost_per_mtok": 1.1,
+    "output_cost_per_mtok": 4.4,
+    "cache_read_cost_per_mtok": 0.275
+  },
+  {
+    "model": "o4-mini-deep-research",
+    "provider": "openai",
+    "input_cost_per_mtok": 2.0,
+    "output_cost_per_mtok": 8.0,
+    "cache_read_cost_per_mtok": 0.5
+  },
+  {
+    "model": "text-davinci-002",
+    "provider": "openai",
+    "input_cost_per_mtok": 20.0,
+    "output_cost_per_mtok": 20.0
+  },
+  {
+    "model": "text-davinci-003",
+    "provider": "openai",
+    "input_cost_per_mtok": 20.0,
+    "output_cost_per_mtok": 20.0
+  },
+  {
+    "model": "text-embedding-3-large",
+    "provider": "openai",
+    "input_cost_per_mtok": 0.13,
+    "output_cost_per_mtok": 0.0
+  },
+  {
+    "model": "text-embedding-3-small",
+    "provider": "openai",
+    "input_cost_per_mtok": 0.02,
+    "output_cost_per_mtok": 0.0
+  },
+  {
+    "model": "text-embedding-ada-002",
+    "provider": "openai",
+    "input_cost_per_mtok": 0.1,
+    "output_cost_per_mtok": 0.0
+  },
+  {
+    "model": "01-ai/yi-large",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 3.0,
+    "output_cost_per_mtok": 3.0
+  },
+  {
+    "model": "aetherwiing/mn-starcannon-12b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.8,
+    "output_cost_per_mtok": 1.2
+  },
+  {
+    "model": "ai21/jamba-1-5-large",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 2.0,
+    "output_cost_per_mtok": 8.0
+  },
+  {
+    "model": "ai21/jamba-1-5-mini",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.4
+  },
+  {
+    "model": "ai21/jamba-1.6-large",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 2.0,
+    "output_cost_per_mtok": 8.0
+  },
+  {
+    "model": "ai21/jamba-1.6-mini",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.4
+  },
+  {
+    "model": "ai21/jamba-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.5,
+    "output_cost_per_mtok": 0.7
+  },
+  {
+    "model": "aion-1.0",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 4.0,
+    "output_cost_per_mtok": 8.0
+  },
+  {
+    "model": "aion-1.0-mini",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.7,
+    "output_cost_per_mtok": 1.4
+  },
+  {
+    "model": "aion-labs/aion-1.0",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 4.0,
+    "output_cost_per_mtok": 8.0
+  },
+  {
+    "model": "aion-labs/aion-1.0-mini",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.7,
+    "output_cost_per_mtok": 1.4
+  },
+  {
+    "model": "aion-labs/aion-rp-llama-3.1-8b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.2
+  },
+  {
+    "model": "aion-rp-llama-3.1-8b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.2
+  },
+  {
+    "model": "alfredpros/codellama-7b-instruct-solidity",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.8,
+    "output_cost_per_mtok": 1.2
+  },
+  {
+    "model": "all-hands/openhands-lm-32b-v0.1",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 2.6,
+    "output_cost_per_mtok": 3.4
+  },
+  {
+    "model": "alpindale/goliath-120b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 6.5625,
+    "output_cost_per_mtok": 9.375
+  },
+  {
+    "model": "alpindale/magnum-72b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 1.5,
+    "output_cost_per_mtok": 2.25
+  },
+  {
+    "model": "amazon/nova-lite-v1",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.06,
+    "output_cost_per_mtok": 0.24
+  },
+  {
+    "model": "amazon/nova-micro-v1",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.035,
+    "output_cost_per_mtok": 0.14
+  },
+  {
+    "model": "amazon/nova-pro-v1",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.8,
+    "output_cost_per_mtok": 3.2
+  },
+  {
+    "model": "anthracite-org/magnum-v2-72b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 3.0,
+    "output_cost_per_mtok": 3.0
+  },
+  {
+    "model": "anthracite-org/magnum-v4-72b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 1.5,
+    "output_cost_per_mtok": 2.25
+  },
+  {
+    "model": "anthropic/claude-2",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 8.0,
+    "output_cost_per_mtok": 24.0
+  },
+  {
+    "model": "anthropic/claude-3-haiku",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.25,
+    "output_cost_per_mtok": 1.25
+  },
+  {
+    "model": "anthropic/claude-3-opus",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 15.0,
+    "output_cost_per_mtok": 75.0
+  },
+  {
+    "model": "anthropic/claude-3-sonnet",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 3.0,
+    "output_cost_per_mtok": 15.0
+  },
+  {
+    "model": "anthropic/claude-3.5-haiku",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.8,
+    "output_cost_per_mtok": 4.0
+  },
+  {
+    "model": "anthropic/claude-3.5-sonnet",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 3.0,
+    "output_cost_per_mtok": 15.0
+  },
+  {
+    "model": "anthropic/claude-3.7-sonnet",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 3.0,
+    "output_cost_per_mtok": 15.0
+  },
+  {
+    "model": "anthropic/claude-haiku-4.5",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 1.0,
+    "output_cost_per_mtok": 5.0,
+    "cache_creation_cost_per_mtok": 1.25,
+    "cache_read_cost_per_mtok": 0.1
+  },
+  {
+    "model": "anthropic/claude-opus-4.5",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 5.0,
+    "output_cost_per_mtok": 25.0,
+    "cache_creation_cost_per_mtok": 6.25,
+    "cache_read_cost_per_mtok": 0.5
+  },
+  {
+    "model": "anthropic/claude-opus-4.6",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 5.0,
+    "output_cost_per_mtok": 25.0,
+    "cache_creation_cost_per_mtok": 6.25,
+    "cache_read_cost_per_mtok": 0.5
+  },
+  {
+    "model": "anthropic/claude-sonnet-4.5",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 3.0,
+    "output_cost_per_mtok": 15.0,
+    "cache_creation_cost_per_mtok": 3.75,
+    "cache_read_cost_per_mtok": 0.3
+  },
+  {
+    "model": "anthropic/claude-sonnet-4.6",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 3.0,
+    "output_cost_per_mtok": 15.0,
+    "cache_creation_cost_per_mtok": 3.75,
+    "cache_read_cost_per_mtok": 0.3
+  },
+  {
+    "model": "anubis-pro-105b-v1",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.8,
+    "output_cost_per_mtok": 1.0
+  },
+  {
+    "model": "arcee-blitz",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.45,
+    "output_cost_per_mtok": 0.75
+  },
+  {
+    "model": "caller-large",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.55,
+    "output_cost_per_mtok": 0.85
+  },
+  {
+    "model": "chatgpt-4o-latest",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 5.0,
+    "output_cost_per_mtok": 15.0
+  },
+  {
+    "model": "claude-2",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 8.0,
+    "output_cost_per_mtok": 24.0
+  },
+  {
+    "model": "claude-3-haiku",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.25,
+    "output_cost_per_mtok": 1.25,
+    "cache_creation_cost_per_mtok": 0.3,
+    "cache_read_cost_per_mtok": 0.03
+  },
+  {
+    "model": "claude-3-opus",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 15.0,
+    "output_cost_per_mtok": 75.0,
+    "cache_creation_cost_per_mtok": 18.75,
+    "cache_read_cost_per_mtok": 1.5
+  },
+  {
+    "model": "claude-3-sonnet",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 3.0,
+    "output_cost_per_mtok": 15.0,
+    "cache_creation_cost_per_mtok": 3.75,
+    "cache_read_cost_per_mtok": 0.3
+  },
+  {
+    "model": "claude-3.5-haiku",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.8,
+    "output_cost_per_mtok": 4.0,
+    "cache_creation_cost_per_mtok": 1.0,
+    "cache_read_cost_per_mtok": 0.08
+  },
+  {
+    "model": "claude-3.5-sonnet",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 3.0,
+    "output_cost_per_mtok": 15.0,
+    "cache_creation_cost_per_mtok": 3.75,
+    "cache_read_cost_per_mtok": 0.3
+  },
+  {
+    "model": "claude-3.7-sonnet",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 3.0,
+    "output_cost_per_mtok": 15.0,
+    "cache_creation_cost_per_mtok": 3.75,
+    "cache_read_cost_per_mtok": 0.3
+  },
+  {
+    "model": "claude-opus-4",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 15.0,
+    "output_cost_per_mtok": 75.0,
+    "cache_creation_cost_per_mtok": 18.75,
+    "cache_read_cost_per_mtok": 1.5
+  },
+  {
+    "model": "claude-sonnet-4",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 3.0,
+    "output_cost_per_mtok": 15.0,
+    "cache_creation_cost_per_mtok": 3.75,
+    "cache_read_cost_per_mtok": 0.3
+  },
+  {
+    "model": "codellama-7b-instruct-solidity",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.8,
+    "output_cost_per_mtok": 1.2
+  },
+  {
+    "model": "coder-large",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.5,
+    "output_cost_per_mtok": 0.8
+  },
+  {
+    "model": "codestral-2501",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.3,
+    "output_cost_per_mtok": 0.9
+  },
+  {
+    "model": "codex-mini",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 1.5,
+    "output_cost_per_mtok": 6.0,
+    "cache_read_cost_per_mtok": 0.375
+  },
+  {
+    "model": "cognitivecomputations/dolphin-mixtral-8x22b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.9,
+    "output_cost_per_mtok": 0.9
+  },
+  {
+    "model": "cognitivecomputations/dolphin-mixtral-8x7b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.5,
+    "output_cost_per_mtok": 0.5
+  },
+  {
+    "model": "cohere/command",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 1.0,
+    "output_cost_per_mtok": 2.0
+  },
+  {
+    "model": "cohere/command-a",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 2.5,
+    "output_cost_per_mtok": 10.0
+  },
+  {
+    "model": "cohere/command-r",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.5,
+    "output_cost_per_mtok": 1.5
+  },
+  {
+    "model": "cohere/command-r-08-2024",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.15,
+    "output_cost_per_mtok": 0.6
+  },
+  {
+    "model": "cohere/command-r-plus",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 3.0,
+    "output_cost_per_mtok": 15.0
+  },
+  {
+    "model": "cohere/command-r-plus-08-2024",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 2.5,
+    "output_cost_per_mtok": 10.0
+  },
+  {
+    "model": "cohere/command-r7b-12-2024",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.0375,
+    "output_cost_per_mtok": 0.15
+  },
+  {
+    "model": "command",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 1.0,
+    "output_cost_per_mtok": 2.0
+  },
+  {
+    "model": "command-a",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 2.5,
+    "output_cost_per_mtok": 10.0
+  },
+  {
+    "model": "command-r",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.5,
+    "output_cost_per_mtok": 1.5
+  },
+  {
+    "model": "command-r-08-2024",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.15,
+    "output_cost_per_mtok": 0.6
+  },
+  {
+    "model": "command-r-plus",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 3.0,
+    "output_cost_per_mtok": 15.0
+  },
+  {
+    "model": "command-r-plus-08-2024",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 2.5,
+    "output_cost_per_mtok": 10.0
+  },
+  {
+    "model": "command-r7b-12-2024",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.0375,
+    "output_cost_per_mtok": 0.15
+  },
+  {
+    "model": "deepseek-chat",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.38,
+    "output_cost_per_mtok": 0.89
+  },
+  {
+    "model": "deepseek-chat-v3-0324",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.3,
+    "output_cost_per_mtok": 0.88
+  },
+  {
+    "model": "deepseek-prover-v2",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.5,
+    "output_cost_per_mtok": 2.18
+  },
+  {
+    "model": "deepseek-r1",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.45,
+    "output_cost_per_mtok": 2.15
+  },
+  {
+    "model": "deepseek-r1-0528",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.5,
+    "output_cost_per_mtok": 2.15
+  },
+  {
+    "model": "deepseek-r1-0528-qwen3-8b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.05,
+    "output_cost_per_mtok": 0.1
+  },
+  {
+    "model": "deepseek-r1-distill-llama-70b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.1,
+    "output_cost_per_mtok": 0.4
+  },
+  {
+    "model": "deepseek-r1-distill-llama-8b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.04,
+    "output_cost_per_mtok": 0.04
+  },
+  {
+    "model": "deepseek-r1-distill-qwen-1.5b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.18,
+    "output_cost_per_mtok": 0.18
+  },
+  {
+    "model": "deepseek-r1-distill-qwen-14b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.15,
+    "output_cost_per_mtok": 0.15
+  },
+  {
+    "model": "deepseek-r1-distill-qwen-32b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.12,
+    "output_cost_per_mtok": 0.18
+  },
+  {
+    "model": "deepseek-r1-distill-qwen-7b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.1,
+    "output_cost_per_mtok": 0.2
+  },
+  {
+    "model": "deepseek-v3.1-terminus",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.23,
+    "output_cost_per_mtok": 0.9
+  },
+  {
+    "model": "deepseek/deepseek-chat",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.38,
+    "output_cost_per_mtok": 0.89
+  },
+  {
+    "model": "deepseek/deepseek-chat-v3-0324",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.27,
+    "output_cost_per_mtok": 1.1
+  },
+  {
+    "model": "deepseek/deepseek-chat-v3.1",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.8
+  },
+  {
+    "model": "deepseek/deepseek-r1",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.5,
+    "output_cost_per_mtok": 3.0
+  },
+  {
+    "model": "deepseek/deepseek-r1-distill-llama-70b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.1,
+    "output_cost_per_mtok": 0.4
+  },
+  {
+    "model": "deepseek/deepseek-r1-distill-llama-8b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.04,
+    "output_cost_per_mtok": 0.04
+  },
+  {
+    "model": "deepseek/deepseek-r1-distill-qwen-1.5b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.18,
+    "output_cost_per_mtok": 0.18
+  },
+  {
+    "model": "deepseek/deepseek-r1-distill-qwen-14b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.15,
+    "output_cost_per_mtok": 0.15
+  },
+  {
+    "model": "deepseek/deepseek-r1-distill-qwen-32b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.12,
+    "output_cost_per_mtok": 0.18
+  },
+  {
+    "model": "deepseek/deepseek-v3.2-exp",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.27,
+    "output_cost_per_mtok": 0.4
+  },
+  {
+    "model": "devstral-small",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.06,
+    "output_cost_per_mtok": 0.12
+  },
+  {
+    "model": "dobby-mini-unhinged-plus-llama-3.1-8b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.2
+  },
+  {
+    "model": "dolphin-mixtral-8x22b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.9,
+    "output_cost_per_mtok": 0.9
+  },
+  {
+    "model": "eleutherai/llemma_7b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.8,
+    "output_cost_per_mtok": 1.2
+  },
+  {
+    "model": "eva-llama-3.33-70b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 4.0,
+    "output_cost_per_mtok": 6.0
+  },
+  {
+    "model": "eva-qwen-2.5-32b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 2.6,
+    "output_cost_per_mtok": 3.4
+  },
+  {
+    "model": "eva-qwen-2.5-72b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 4.0,
+    "output_cost_per_mtok": 6.0
+  },
+  {
+    "model": "eva-unit-01/eva-llama-3.33-70b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 4.0,
+    "output_cost_per_mtok": 6.0
+  },
+  {
+    "model": "eva-unit-01/eva-qwen-2.5-32b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 2.6,
+    "output_cost_per_mtok": 3.4
+  },
+  {
+    "model": "eva-unit-01/eva-qwen-2.5-72b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.9,
+    "output_cost_per_mtok": 1.2
+  },
+  {
+    "model": "fimbulvetr-11b-v2",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.8,
+    "output_cost_per_mtok": 1.2
+  },
+  {
+    "model": "gemini-2.0-flash-001",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.1,
+    "output_cost_per_mtok": 0.4,
+    "cache_creation_cost_per_mtok": 0.1833,
+    "cache_read_cost_per_mtok": 0.025
+  },
+  {
+    "model": "gemini-2.0-flash-lite-001",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.075,
+    "output_cost_per_mtok": 0.3
+  },
+  {
+    "model": "gemini-2.5-flash",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.3,
+    "output_cost_per_mtok": 2.5,
+    "cache_creation_cost_per_mtok": 0.3833,
+    "cache_read_cost_per_mtok": 0.075
+  },
+  {
+    "model": "gemini-2.5-flash-lite-preview-06-17",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.1,
+    "output_cost_per_mtok": 0.4
+  },
+  {
+    "model": "gemini-2.5-flash-preview",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.15,
+    "output_cost_per_mtok": 0.6,
+    "cache_creation_cost_per_mtok": 0.2333,
+    "cache_read_cost_per_mtok": 0.0375
+  },
+  {
+    "model": "gemini-2.5-flash-preview-05-20:thinking",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.15,
+    "output_cost_per_mtok": 3.5,
+    "cache_creation_cost_per_mtok": 0.2333,
+    "cache_read_cost_per_mtok": 0.0375
+  },
+  {
+    "model": "gemini-2.5-flash-preview:thinking",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.15,
+    "output_cost_per_mtok": 3.5,
+    "cache_creation_cost_per_mtok": 0.2333,
+    "cache_read_cost_per_mtok": 0.0375
+  },
+  {
+    "model": "gemini-2.5-pro",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 1.25,
+    "output_cost_per_mtok": 10.0,
+    "cache_creation_cost_per_mtok": 1.625,
+    "cache_read_cost_per_mtok": 0.31
+  },
+  {
+    "model": "gemini-flash-1.5",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.075,
+    "output_cost_per_mtok": 0.3,
+    "cache_creation_cost_per_mtok": 0.1583,
+    "cache_read_cost_per_mtok": 0.01875
+  },
+  {
+    "model": "gemini-flash-1.5-8b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.0375,
+    "output_cost_per_mtok": 0.15,
+    "cache_creation_cost_per_mtok": 0.0583,
+    "cache_read_cost_per_mtok": 0.01
+  },
+  {
+    "model": "gemini-pro-1.5",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 1.25,
+    "output_cost_per_mtok": 5.0
+  },
+  {
+    "model": "gemma-2-27b-it",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.8,
+    "output_cost_per_mtok": 0.8
+  },
+  {
+    "model": "gemma-2-9b-it",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.2
+  },
+  {
+    "model": "gemma-3-12b-it",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.05,
+    "output_cost_per_mtok": 0.1
+  },
+  {
+    "model": "gemma-3-27b-it",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.1,
+    "output_cost_per_mtok": 0.2
+  },
+  {
+    "model": "gemma-3-4b-it",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.02,
+    "output_cost_per_mtok": 0.04
+  },
+  {
+    "model": "glm-4-32b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.24,
+    "output_cost_per_mtok": 0.24
+  },
+  {
+    "model": "glm-z1-32b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.24,
+    "output_cost_per_mtok": 0.24
+  },
+  {
+    "model": "glm-z1-rumination-32b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.24,
+    "output_cost_per_mtok": 0.24
+  },
+  {
+    "model": "goliath-120b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 10.0,
+    "output_cost_per_mtok": 12.5
+  },
+  {
+    "model": "google/gemini-2.0-flash-001",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.1,
+    "output_cost_per_mtok": 0.4
+  },
+  {
+    "model": "google/gemini-2.0-flash-lite-001",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.075,
+    "output_cost_per_mtok": 0.3
+  },
+  {
+    "model": "google/gemini-2.5-flash-image",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.3,
+    "output_cost_per_mtok": 2.5
+  },
+  {
+    "model": "google/gemini-2.5-flash-lite",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.1,
+    "output_cost_per_mtok": 0.4,
+    "cache_creation_cost_per_mtok": 0.183,
+    "cache_read_cost_per_mtok": 0.025
+  },
+  {
+    "model": "google/gemini-2.5-flash-lite-preview-09-2025",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.1,
+    "output_cost_per_mtok": 0.4
+  },
+  {
+    "model": "google/gemini-2.5-flash-preview",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.15,
+    "output_cost_per_mtok": 0.6
+  },
+  {
+    "model": "google/gemini-2.5-flash-preview-09-2025",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.3,
+    "output_cost_per_mtok": 2.5,
+    "cache_creation_cost_per_mtok": 0.383,
+    "cache_read_cost_per_mtok": 0.075
+  },
+  {
+    "model": "google/gemini-2.5-flash-preview:thinking",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.15,
+    "output_cost_per_mtok": 3.5
+  },
+  {
+    "model": "google/gemini-2.5-pro-preview-03-25",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 1.25,
+    "output_cost_per_mtok": 10.0
+  },
+  {
+    "model": "google/gemini-flash-1.5",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.075,
+    "output_cost_per_mtok": 0.3
+  },
+  {
+    "model": "google/gemini-flash-1.5-8b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.0375,
+    "output_cost_per_mtok": 0.15
+  },
+  {
+    "model": "google/gemini-pro",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.5,
+    "output_cost_per_mtok": 1.5
+  },
+  {
+    "model": "google/gemini-pro-1.5",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 1.25,
+    "output_cost_per_mtok": 5.0
+  },
+  {
+    "model": "google/gemma-2-27b-it",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.8,
+    "output_cost_per_mtok": 0.8
+  },
+  {
+    "model": "google/gemma-2-9b-it",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.07,
+    "output_cost_per_mtok": 0.07
+  },
+  {
+    "model": "google/gemma-3-12b-it",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.05,
+    "output_cost_per_mtok": 0.1
+  },
+  {
+    "model": "google/gemma-3-27b-it",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.1,
+    "output_cost_per_mtok": 0.2
+  },
+  {
+    "model": "google/gemma-3-4b-it",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.02,
+    "output_cost_per_mtok": 0.04
+  },
+  {
+    "model": "google/palm-2-chat-bison",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 1.0,
+    "output_cost_per_mtok": 2.0
+  },
+  {
+    "model": "google/palm-2-codechat-bison",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 1.0,
+    "output_cost_per_mtok": 2.0
+  },
+  {
+    "model": "gpt-3.5-turbo",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.5,
+    "output_cost_per_mtok": 1.5
+  },
+  {
+    "model": "gpt-3.5-turbo-0613",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 1.0,
+    "output_cost_per_mtok": 2.0
+  },
+  {
+    "model": "gpt-3.5-turbo-1106",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 1.0,
+    "output_cost_per_mtok": 2.0
+  },
+  {
+    "model": "gpt-3.5-turbo-16k",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 3.0,
+    "output_cost_per_mtok": 4.0
+  },
+  {
+    "model": "gpt-3.5-turbo-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 1.5,
+    "output_cost_per_mtok": 2.0
+  },
+  {
+    "model": "gpt-4",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 30.0,
+    "output_cost_per_mtok": 60.0
+  },
+  {
+    "model": "gpt-4-1106-preview",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 10.0,
+    "output_cost_per_mtok": 30.0
+  },
+  {
+    "model": "gpt-4-turbo",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 10.0,
+    "output_cost_per_mtok": 30.0
+  },
+  {
+    "model": "gpt-4.1",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 2.0,
+    "output_cost_per_mtok": 8.0,
+    "cache_read_cost_per_mtok": 0.5
+  },
+  {
+    "model": "gpt-4.1-mini",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.4,
+    "output_cost_per_mtok": 1.6,
+    "cache_read_cost_per_mtok": 0.1
+  },
+  {
+    "model": "gpt-4.1-nano",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.1,
+    "output_cost_per_mtok": 0.4,
+    "cache_read_cost_per_mtok": 0.025
+  },
+  {
+    "model": "gpt-4.5-preview",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 75.0,
+    "output_cost_per_mtok": 150.0,
+    "cache_read_cost_per_mtok": 37.5
+  },
+  {
+    "model": "gpt-4o",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 2.5,
+    "output_cost_per_mtok": 10.0,
+    "cache_read_cost_per_mtok": 1.25
+  },
+  {
+    "model": "gpt-4o-2024-05-13",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 5.0,
+    "output_cost_per_mtok": 15.0
+  },
+  {
+    "model": "gpt-4o-mini",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.15,
+    "output_cost_per_mtok": 0.6,
+    "cache_read_cost_per_mtok": 0.075
+  },
+  {
+    "model": "gpt-4o-mini-search-preview",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.15,
+    "output_cost_per_mtok": 0.6
+  },
+  {
+    "model": "gpt-4o-search-preview",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 2.5,
+    "output_cost_per_mtok": 10.0
+  },
+  {
+    "model": "gpt-4o:extended",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 6.0,
+    "output_cost_per_mtok": 18.0
+  },
+  {
+    "model": "grok-2-1212",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 2.0,
+    "output_cost_per_mtok": 10.0
+  },
+  {
+    "model": "grok-2-vision-1212",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 2.0,
+    "output_cost_per_mtok": 10.0
+  },
+  {
+    "model": "grok-3",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 3.0,
+    "output_cost_per_mtok": 15.0,
+    "cache_read_cost_per_mtok": 0.75
+  },
+  {
+    "model": "grok-3-mini",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.3,
+    "output_cost_per_mtok": 0.5,
+    "cache_read_cost_per_mtok": 0.075
+  },
+  {
+    "model": "grok-beta",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 5.0,
+    "output_cost_per_mtok": 15.0
+  },
+  {
+    "model": "grok-vision-beta",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 5.0,
+    "output_cost_per_mtok": 15.0
+  },
+  {
+    "model": "gryphe/mythomax-l2-13b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.065,
+    "output_cost_per_mtok": 0.065
+  },
+  {
+    "model": "hermes-2-pro-llama-3-8b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.025,
+    "output_cost_per_mtok": 0.04
+  },
+  {
+    "model": "hermes-3-llama-3.1-405b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.7,
+    "output_cost_per_mtok": 0.8
+  },
+  {
+    "model": "hermes-3-llama-3.1-70b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.12,
+    "output_cost_per_mtok": 0.3
+  },
+  {
+    "model": "infermatic/mn-inferor-12b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.8,
+    "output_cost_per_mtok": 1.2
+  },
+  {
+    "model": "inflection-3-pi",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 2.5,
+    "output_cost_per_mtok": 10.0
+  },
+  {
+    "model": "inflection-3-productivity",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 2.5,
+    "output_cost_per_mtok": 10.0
+  },
+  {
+    "model": "inflection/inflection-3-pi",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 2.5,
+    "output_cost_per_mtok": 10.0
+  },
+  {
+    "model": "inflection/inflection-3-productivity",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 2.5,
+    "output_cost_per_mtok": 10.0
+  },
+  {
+    "model": "jamba-1.6-large",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 2.0,
+    "output_cost_per_mtok": 8.0
+  },
+  {
+    "model": "jamba-1.6-mini",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.4
+  },
+  {
+    "model": "jondurbin/airoboros-l2-70b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.5,
+    "output_cost_per_mtok": 0.5
+  },
+  {
+    "model": "l3-euryale-70b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 1.48,
+    "output_cost_per_mtok": 1.48
+  },
+  {
+    "model": "l3-lunaris-8b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.02,
+    "output_cost_per_mtok": 0.05
+  },
+  {
+    "model": "l3.1-euryale-70b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.7,
+    "output_cost_per_mtok": 0.8
+  },
+  {
+    "model": "l3.3-euryale-70b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.7,
+    "output_cost_per_mtok": 0.8
+  },
+  {
+    "model": "latitudegames/wayfarer-large-70b-llama-3.3",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.8,
+    "output_cost_per_mtok": 0.9
+  },
+  {
+    "model": "lfm-3b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.02,
+    "output_cost_per_mtok": 0.02
+  },
+  {
+    "model": "lfm-40b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.15,
+    "output_cost_per_mtok": 0.15
+  },
+  {
+    "model": "lfm-7b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.01,
+    "output_cost_per_mtok": 0.01
+  },
+  {
+    "model": "liquid/lfm-3b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.02,
+    "output_cost_per_mtok": 0.02
+  },
+  {
+    "model": "liquid/lfm-40b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.15,
+    "output_cost_per_mtok": 0.15
+  },
+  {
+    "model": "liquid/lfm-7b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.01,
+    "output_cost_per_mtok": 0.01
+  },
+  {
+    "model": "llama-3-70b-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.3,
+    "output_cost_per_mtok": 0.4
+  },
+  {
+    "model": "llama-3-8b-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.03,
+    "output_cost_per_mtok": 0.06
+  },
+  {
+    "model": "llama-3-lumimaid-70b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 4.0,
+    "output_cost_per_mtok": 6.0
+  },
+  {
+    "model": "llama-3-lumimaid-8b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 1.25
+  },
+  {
+    "model": "llama-3.1-405b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 2.0,
+    "output_cost_per_mtok": 2.0
+  },
+  {
+    "model": "llama-3.1-405b-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.8,
+    "output_cost_per_mtok": 0.8
+  },
+  {
+    "model": "llama-3.1-70b-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.1,
+    "output_cost_per_mtok": 0.28
+  },
+  {
+    "model": "llama-3.1-8b-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.016,
+    "output_cost_per_mtok": 0.029
+  },
+  {
+    "model": "llama-3.1-lumimaid-70b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 2.5,
+    "output_cost_per_mtok": 3.0
+  },
+  {
+    "model": "llama-3.1-lumimaid-8b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 1.25
+  },
+  {
+    "model": "llama-3.1-nemotron-70b-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.12,
+    "output_cost_per_mtok": 0.3
+  },
+  {
+    "model": "llama-3.1-nemotron-ultra-253b-v1",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.6,
+    "output_cost_per_mtok": 1.8
+  },
+  {
+    "model": "llama-3.1-sonar-large-128k-online",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 1.0,
+    "output_cost_per_mtok": 1.0
+  },
+  {
+    "model": "llama-3.1-sonar-small-128k-online",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.2
+  },
+  {
+    "model": "llama-3.2-11b-vision-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.049,
+    "output_cost_per_mtok": 0.049
+  },
+  {
+    "model": "llama-3.2-1b-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.005,
+    "output_cost_per_mtok": 0.01
+  },
+  {
+    "model": "llama-3.2-3b-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.01,
+    "output_cost_per_mtok": 0.02
+  },
+  {
+    "model": "llama-3.2-90b-vision-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 1.2,
+    "output_cost_per_mtok": 1.2
+  },
+  {
+    "model": "llama-3.3-70b-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.05,
+    "output_cost_per_mtok": 0.24
+  },
+  {
+    "model": "llama-3.3-nemotron-super-49b-v1",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.13,
+    "output_cost_per_mtok": 0.4
+  },
+  {
+    "model": "llama-4-maverick",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.15,
+    "output_cost_per_mtok": 0.6
+  },
+  {
+    "model": "llama-4-scout",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.08,
+    "output_cost_per_mtok": 0.3
+  },
+  {
+    "model": "llama-guard-2-8b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.2
+  },
+  {
+    "model": "llama-guard-3-8b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.02,
+    "output_cost_per_mtok": 0.06
+  },
+  {
+    "model": "llama-guard-4-12b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.05,
+    "output_cost_per_mtok": 0.05
+  },
+  {
+    "model": "llama3.1-typhoon2-70b-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.88,
+    "output_cost_per_mtok": 0.88
+  },
+  {
+    "model": "llemma_7b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.8,
+    "output_cost_per_mtok": 1.2
+  },
+  {
+    "model": "maestro-reasoning",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.9,
+    "output_cost_per_mtok": 3.3
+  },
+  {
+    "model": "magistral-medium-2506",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 2.0,
+    "output_cost_per_mtok": 5.0
+  },
+  {
+    "model": "magistral-small-2506",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.5,
+    "output_cost_per_mtok": 1.5
+  },
+  {
+    "model": "magnum-72b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 4.0,
+    "output_cost_per_mtok": 6.0
+  },
+  {
+    "model": "magnum-v2-72b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 3.0,
+    "output_cost_per_mtok": 3.0
+  },
+  {
+    "model": "magnum-v4-72b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 2.5,
+    "output_cost_per_mtok": 3.0
+  },
+  {
+    "model": "mancer/weaver",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 1.125,
+    "output_cost_per_mtok": 1.125
+  },
+  {
+    "model": "mercury-coder-small-beta",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.25,
+    "output_cost_per_mtok": 1.0
+  },
+  {
+    "model": "meta-llama/llama-2-13b-chat",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.22,
+    "output_cost_per_mtok": 0.22
+  },
+  {
+    "model": "meta-llama/llama-2-70b-chat",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.9,
+    "output_cost_per_mtok": 0.9
+  },
+  {
+    "model": "meta-llama/llama-3-70b-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.3,
+    "output_cost_per_mtok": 0.4
+  },
+  {
+    "model": "meta-llama/llama-3-8b-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.03,
+    "output_cost_per_mtok": 0.06
+  },
+  {
+    "model": "meta-llama/llama-3.1-405b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 2.0,
+    "output_cost_per_mtok": 2.0
+  },
+  {
+    "model": "meta-llama/llama-3.1-405b-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.8,
+    "output_cost_per_mtok": 0.8
+  },
+  {
+    "model": "meta-llama/llama-3.1-70b-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.119,
+    "output_cost_per_mtok": 0.39
+  },
+  {
+    "model": "meta-llama/llama-3.1-8b-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.02,
+    "output_cost_per_mtok": 0.03
+  },
+  {
+    "model": "meta-llama/llama-3.2-11b-vision-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.049,
+    "output_cost_per_mtok": 0.049
+  },
+  {
+    "model": "meta-llama/llama-3.2-1b-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.01,
+    "output_cost_per_mtok": 0.01
+  },
+  {
+    "model": "meta-llama/llama-3.2-3b-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.015,
+    "output_cost_per_mtok": 0.025
+  },
+  {
+    "model": "meta-llama/llama-3.2-90b-vision-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.9,
+    "output_cost_per_mtok": 0.9
+  },
+  {
+    "model": "meta-llama/llama-3.3-70b-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.1,
+    "output_cost_per_mtok": 0.25
+  },
+  {
+    "model": "meta-llama/llama-4-maverick",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.17,
+    "output_cost_per_mtok": 0.85
+  },
+  {
+    "model": "meta-llama/llama-4-scout",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.08,
+    "output_cost_per_mtok": 0.3
+  },
+  {
+    "model": "meta-llama/llama-guard-2-8b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.2
+  },
+  {
+    "model": "meta-llama/llama-guard-3-8b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.1,
+    "output_cost_per_mtok": 0.1
+  },
+  {
+    "model": "microsoft/phi-3-medium-128k-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 1.0,
+    "output_cost_per_mtok": 1.0
+  },
+  {
+    "model": "microsoft/phi-3-mini-128k-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.1,
+    "output_cost_per_mtok": 0.1
+  },
+  {
+    "model": "microsoft/phi-3.5-mini-128k-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.1,
+    "output_cost_per_mtok": 0.1
+  },
+  {
+    "model": "microsoft/phi-4",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.07,
+    "output_cost_per_mtok": 0.14
+  },
+  {
+    "model": "microsoft/phi-4-multimodal-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.05,
+    "output_cost_per_mtok": 0.1
+  },
+  {
+    "model": "microsoft/wizardlm-2-7b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.07,
+    "output_cost_per_mtok": 0.07
+  },
+  {
+    "model": "microsoft/wizardlm-2-8x22b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.5,
+    "output_cost_per_mtok": 0.5
+  },
+  {
+    "model": "midnight-rose-70b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.8,
+    "output_cost_per_mtok": 0.8
+  },
+  {
+    "model": "minimax-01",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 1.1
+  },
+  {
+    "model": "minimax-m1",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.3,
+    "output_cost_per_mtok": 1.65
+  },
+  {
+    "model": "minimax-m1:extended",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.55,
+    "output_cost_per_mtok": 2.2
+  },
+  {
+    "model": "minimax/minimax-01",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 1.1
+  },
+  {
+    "model": "ministral-3b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.04,
+    "output_cost_per_mtok": 0.04
+  },
+  {
+    "model": "ministral-8b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.1,
+    "output_cost_per_mtok": 0.1
+  },
+  {
+    "model": "mistral-7b-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.028,
+    "output_cost_per_mtok": 0.054
+  },
+  {
+    "model": "mistral-7b-instruct-v0.1",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.11,
+    "output_cost_per_mtok": 0.19
+  },
+  {
+    "model": "mistral-7b-instruct-v0.2",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.2
+  },
+  {
+    "model": "mistral-large",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 2.0,
+    "output_cost_per_mtok": 6.0
+  },
+  {
+    "model": "mistral-medium",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 2.75,
+    "output_cost_per_mtok": 8.1
+  },
+  {
+    "model": "mistral-medium-3",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.4,
+    "output_cost_per_mtok": 2.0
+  },
+  {
+    "model": "mistral-nemo",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.01,
+    "output_cost_per_mtok": 0.019
+  },
+  {
+    "model": "mistral-saba",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.6
+  },
+  {
+    "model": "mistral-small",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.6
+  },
+  {
+    "model": "mistral-small-24b-instruct-2501",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.05,
+    "output_cost_per_mtok": 0.09
+  },
+  {
+    "model": "mistral-small-3.1-24b-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.05,
+    "output_cost_per_mtok": 0.15
+  },
+  {
+    "model": "mistral-tiny",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.25,
+    "output_cost_per_mtok": 0.25
+  },
+  {
+    "model": "mistral/ministral-8b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.1,
+    "output_cost_per_mtok": 0.1
+  },
+  {
+    "model": "mistralai/codestral-2501",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.3,
+    "output_cost_per_mtok": 0.9
+  },
+  {
+    "model": "mistralai/codestral-mamba",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.25,
+    "output_cost_per_mtok": 0.25
+  },
+  {
+    "model": "mistralai/ministral-3b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.04,
+    "output_cost_per_mtok": 0.04
+  },
+  {
+    "model": "mistralai/ministral-8b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.1,
+    "output_cost_per_mtok": 0.1
+  },
+  {
+    "model": "mistralai/mistral-7b-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.029,
+    "output_cost_per_mtok": 0.059
+  },
+  {
+    "model": "mistralai/mistral-7b-instruct-v0.1",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.2
+  },
+  {
+    "model": "mistralai/mistral-7b-instruct-v0.2",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.2
+  },
+  {
+    "model": "mistralai/mistral-large",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 2.0,
+    "output_cost_per_mtok": 6.0
+  },
+  {
+    "model": "mistralai/mistral-medium",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 2.75,
+    "output_cost_per_mtok": 8.1
+  },
+  {
+    "model": "mistralai/mistral-nemo",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.035,
+    "output_cost_per_mtok": 0.08
+  },
+  {
+    "model": "mistralai/mistral-saba",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.6
+  },
+  {
+    "model": "mistralai/mistral-small",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.6
+  },
+  {
+    "model": "mistralai/mistral-small-24b-instruct-2501",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.07,
+    "output_cost_per_mtok": 0.14
+  },
+  {
+    "model": "mistralai/mistral-small-3.1-24b-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.1,
+    "output_cost_per_mtok": 0.3
+  },
+  {
+    "model": "mistralai/mistral-tiny",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.25,
+    "output_cost_per_mtok": 0.25
+  },
+  {
+    "model": "mistralai/mixtral-8x22b-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.9,
+    "output_cost_per_mtok": 0.9
+  },
+  {
+    "model": "mistralai/mixtral-8x7b-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.24,
+    "output_cost_per_mtok": 0.24
+  },
+  {
+    "model": "mistralai/pixtral-12b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.1,
+    "output_cost_per_mtok": 0.1
+  },
+  {
+    "model": "mistralai/pixtral-large-2411",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 2.0,
+    "output_cost_per_mtok": 6.0
+  },
+  {
+    "model": "mixtral-8x22b-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.9,
+    "output_cost_per_mtok": 0.9
+  },
+  {
+    "model": "mixtral-8x7b-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.08,
+    "output_cost_per_mtok": 0.24
+  },
+  {
+    "model": "mn-celeste-12b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.8,
+    "output_cost_per_mtok": 1.2
+  },
+  {
+    "model": "mn-inferor-12b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.8,
+    "output_cost_per_mtok": 1.2
+  },
+  {
+    "model": "mn-starcannon-12b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.8,
+    "output_cost_per_mtok": 1.2
+  },
+  {
+    "model": "moonshotai/kimi-k2.5",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.6,
+    "output_cost_per_mtok": 3.0
+  },
+  {
+    "model": "mythalion-13b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.8,
+    "output_cost_per_mtok": 1.2
+  },
+  {
+    "model": "mythomax-l2-13b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.065,
+    "output_cost_per_mtok": 0.065
+  },
+  {
+    "model": "neversleep/llama-3-lumimaid-70b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 3.375,
+    "output_cost_per_mtok": 4.5
+  },
+  {
+    "model": "neversleep/llama-3-lumimaid-8b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.09375,
+    "output_cost_per_mtok": 0.75
+  },
+  {
+    "model": "neversleep/llama-3.1-lumimaid-70b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 1.5,
+    "output_cost_per_mtok": 2.25
+  },
+  {
+    "model": "neversleep/llama-3.1-lumimaid-8b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.09375,
+    "output_cost_per_mtok": 0.75
+  },
+  {
+    "model": "neversleep/noromaid-20b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.75,
+    "output_cost_per_mtok": 1.5
+  },
+  {
+    "model": "noromaid-20b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 1.25,
+    "output_cost_per_mtok": 2.0
+  },
+  {
+    "model": "nothingiisreal/mn-celeste-12b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.8,
+    "output_cost_per_mtok": 1.2
+  },
+  {
+    "model": "nous-hermes-2-mixtral-8x7b-dpo",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.6,
+    "output_cost_per_mtok": 0.6
+  },
+  {
+    "model": "nousresearch/hermes-2-pro-llama-3-8b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.025,
+    "output_cost_per_mtok": 0.04
+  },
+  {
+    "model": "nousresearch/hermes-3-llama-3.1-405b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.8,
+    "output_cost_per_mtok": 0.8
+  },
+  {
+    "model": "nousresearch/hermes-3-llama-3.1-70b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.12,
+    "output_cost_per_mtok": 0.3
+  },
+  {
+    "model": "nousresearch/nous-hermes-2-mixtral-8x7b-dpo",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.6,
+    "output_cost_per_mtok": 0.6
+  },
+  {
+    "model": "nousresearch/nous-hermes-llama2-13b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.18,
+    "output_cost_per_mtok": 0.18
+  },
+  {
+    "model": "nova-lite-v1",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.06,
+    "output_cost_per_mtok": 0.24
+  },
+  {
+    "model": "nova-micro-v1",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.035,
+    "output_cost_per_mtok": 0.14
+  },
+  {
+    "model": "nova-pro-v1",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.8,
+    "output_cost_per_mtok": 3.2
+  },
+  {
+    "model": "nvidia/llama-3.1-nemotron-70b-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.12,
+    "output_cost_per_mtok": 0.3
+  },
+  {
+    "model": "o1",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 15.0,
+    "output_cost_per_mtok": 60.0,
+    "cache_read_cost_per_mtok": 7.5
+  },
+  {
+    "model": "o1-mini",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 1.1,
+    "output_cost_per_mtok": 4.4,
+    "cache_read_cost_per_mtok": 0.55
+  },
+  {
+    "model": "o1-pro",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 150.0,
+    "output_cost_per_mtok": 600.0
+  },
+  {
+    "model": "o3",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 2.0,
+    "output_cost_per_mtok": 8.0,
+    "cache_read_cost_per_mtok": 0.5
+  },
+  {
+    "model": "o3-mini",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 1.1,
+    "output_cost_per_mtok": 4.4,
+    "cache_read_cost_per_mtok": 0.55
+  },
+  {
+    "model": "o3-pro",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 20.0,
+    "output_cost_per_mtok": 80.0
+  },
+  {
+    "model": "o4-mini",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 1.1,
+    "output_cost_per_mtok": 4.4,
+    "cache_read_cost_per_mtok": 0.275
+  },
+  {
+    "model": "openai/chatgpt-4o-latest",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 5.0,
+    "output_cost_per_mtok": 15.0
+  },
+  {
+    "model": "openai/codex-mini",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 1.5,
+    "output_cost_per_mtok": 6.0,
+    "cache_read_cost_per_mtok": 0.375
+  },
+  {
+    "model": "openai/gpt-3.5-turbo",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.5,
+    "output_cost_per_mtok": 1.5
+  },
+  {
+    "model": "openai/gpt-3.5-turbo-0613",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 1.0,
+    "output_cost_per_mtok": 2.0
+  },
+  {
+    "model": "openai/gpt-3.5-turbo-1106",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 1.0,
+    "output_cost_per_mtok": 2.0
+  },
+  {
+    "model": "openai/gpt-3.5-turbo-16k",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 3.0,
+    "output_cost_per_mtok": 4.0
+  },
+  {
+    "model": "openai/gpt-3.5-turbo-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 1.5,
+    "output_cost_per_mtok": 2.0
+  },
+  {
+    "model": "openai/gpt-4",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 30.0,
+    "output_cost_per_mtok": 60.0
+  },
+  {
+    "model": "openai/gpt-4-1106-preview",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 10.0,
+    "output_cost_per_mtok": 30.0
+  },
+  {
+    "model": "openai/gpt-4-32k",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 60.0,
+    "output_cost_per_mtok": 120.0
+  },
+  {
+    "model": "openai/gpt-4-turbo",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 10.0,
+    "output_cost_per_mtok": 30.0
+  },
+  {
+    "model": "openai/gpt-4.1",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 2.0,
+    "output_cost_per_mtok": 8.0
+  },
+  {
+    "model": "openai/gpt-4.1-mini",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.4,
+    "output_cost_per_mtok": 1.6
+  },
+  {
+    "model": "openai/gpt-4.1-nano",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.1,
+    "output_cost_per_mtok": 0.4
+  },
+  {
+    "model": "openai/gpt-4.5-preview",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 75.0,
+    "output_cost_per_mtok": 150.0
+  },
+  {
+    "model": "openai/gpt-4o",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 2.5,
+    "output_cost_per_mtok": 10.0
+  },
+  {
+    "model": "openai/gpt-4o-2024-05-13",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 5.0,
+    "output_cost_per_mtok": 15.0
+  },
+  {
+    "model": "openai/gpt-4o-mini",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.15,
+    "output_cost_per_mtok": 0.6
+  },
+  {
+    "model": "openai/gpt-4o:extended",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 6.0,
+    "output_cost_per_mtok": 18.0
+  },
+  {
+    "model": "openai/gpt-5",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 1.25,
+    "output_cost_per_mtok": 10.0,
+    "cache_read_cost_per_mtok": 0.125
+  },
+  {
+    "model": "openai/gpt-5-image",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 10.0,
+    "output_cost_per_mtok": 10.0,
+    "cache_read_cost_per_mtok": 1.25
+  },
+  {
+    "model": "openai/gpt-5-image-mini",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 2.5,
+    "output_cost_per_mtok": 2.0,
+    "cache_read_cost_per_mtok": 0.25
+  },
+  {
+    "model": "openai/gpt-5-mini",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.25,
+    "output_cost_per_mtok": 2.0,
+    "cache_read_cost_per_mtok": 0.025
+  },
+  {
+    "model": "openai/gpt-5-nano",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.05,
+    "output_cost_per_mtok": 0.4,
+    "cache_read_cost_per_mtok": 0.005
+  },
+  {
+    "model": "openai/gpt-5-pro",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 15.0,
+    "output_cost_per_mtok": 120.0
+  },
+  {
+    "model": "openai/gpt-5.1-codex-mini",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.25,
+    "output_cost_per_mtok": 2.0,
+    "cache_read_cost_per_mtok": 0.025
+  },
+  {
+    "model": "openai/gpt-oss-120b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.04,
+    "output_cost_per_mtok": 0.2
+  },
+  {
+    "model": "openai/gpt-oss-20b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.03,
+    "output_cost_per_mtok": 0.14
+  },
+  {
+    "model": "openai/gpt-oss-safeguard-20b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.075,
+    "output_cost_per_mtok": 0.3,
+    "cache_read_cost_per_mtok": 0.037
+  },
+  {
+    "model": "openai/o1",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 15.0,
+    "output_cost_per_mtok": 60.0
+  },
+  {
+    "model": "openai/o1-mini",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 1.1,
+    "output_cost_per_mtok": 4.4
+  },
+  {
+    "model": "openai/o1-pro",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 150.0,
+    "output_cost_per_mtok": 600.0
+  },
+  {
+    "model": "openai/o3",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 10.0,
+    "output_cost_per_mtok": 40.0
+  },
+  {
+    "model": "openai/o3-deep-research",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 10.0,
+    "output_cost_per_mtok": 40.0,
+    "cache_read_cost_per_mtok": 2.5
+  },
+  {
+    "model": "openai/o3-mini",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 1.1,
+    "output_cost_per_mtok": 4.4
+  },
+  {
+    "model": "openai/o3-pro",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 20.0,
+    "output_cost_per_mtok": 80.0
+  },
+  {
+    "model": "openai/o4-mini",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 1.1,
+    "output_cost_per_mtok": 4.4
+  },
+  {
+    "model": "openai/o4-mini-deep-research",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 2.0,
+    "output_cost_per_mtok": 8.0,
+    "cache_read_cost_per_mtok": 0.5
+  },
+  {
+    "model": "openchat/openchat-7b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.07,
+    "output_cost_per_mtok": 0.07
+  },
+  {
+    "model": "openhands-lm-32b-v0.1",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 2.6,
+    "output_cost_per_mtok": 3.4
+  },
+  {
+    "model": "perplexity/llama-3.1-sonar-large-128k-online",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 1.0,
+    "output_cost_per_mtok": 1.0
+  },
+  {
+    "model": "perplexity/llama-3.1-sonar-small-128k-online",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.2
+  },
+  {
+    "model": "perplexity/r1-1776",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 2.0,
+    "output_cost_per_mtok": 8.0
+  },
+  {
+    "model": "perplexity/sonar",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 1.0,
+    "output_cost_per_mtok": 1.0
+  },
+  {
+    "model": "perplexity/sonar-deep-research",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 2.0,
+    "output_cost_per_mtok": 8.0
+  },
+  {
+    "model": "perplexity/sonar-pro",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 3.0,
+    "output_cost_per_mtok": 15.0
+  },
+  {
+    "model": "perplexity/sonar-reasoning",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 1.0,
+    "output_cost_per_mtok": 5.0
+  },
+  {
+    "model": "perplexity/sonar-reasoning-pro",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 2.0,
+    "output_cost_per_mtok": 8.0
+  },
+  {
+    "model": "phi-3-medium-128k-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 1.0,
+    "output_cost_per_mtok": 1.0
+  },
+  {
+    "model": "phi-3-mini-128k-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.1,
+    "output_cost_per_mtok": 0.1
+  },
+  {
+    "model": "phi-3.5-mini-128k-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.1,
+    "output_cost_per_mtok": 0.1
+  },
+  {
+    "model": "phi-4",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.07,
+    "output_cost_per_mtok": 0.14
+  },
+  {
+    "model": "phi-4-multimodal-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.05,
+    "output_cost_per_mtok": 0.1
+  },
+  {
+    "model": "phi-4-reasoning-plus",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.07,
+    "output_cost_per_mtok": 0.35
+  },
+  {
+    "model": "pixtral-12b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.1,
+    "output_cost_per_mtok": 0.1
+  },
+  {
+    "model": "pixtral-large-2411",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 2.0,
+    "output_cost_per_mtok": 6.0
+  },
+  {
+    "model": "pygmalionai/mythalion-13b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.5625,
+    "output_cost_per_mtok": 1.125
+  },
+  {
+    "model": "qwen-2-72b-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.9,
+    "output_cost_per_mtok": 0.9
+  },
+  {
+    "model": "qwen-2.5-72b-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.12,
+    "output_cost_per_mtok": 0.39
+  },
+  {
+    "model": "qwen-2.5-7b-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.04,
+    "output_cost_per_mtok": 0.1
+  },
+  {
+    "model": "qwen-2.5-coder-32b-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.06,
+    "output_cost_per_mtok": 0.15
+  },
+  {
+    "model": "qwen-2.5-vl-7b-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.2
+  },
+  {
+    "model": "qwen-max",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 1.6,
+    "output_cost_per_mtok": 6.4,
+    "cache_read_cost_per_mtok": 0.64
+  },
+  {
+    "model": "qwen-plus",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.4,
+    "output_cost_per_mtok": 1.2,
+    "cache_read_cost_per_mtok": 0.16
+  },
+  {
+    "model": "qwen-turbo",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.05,
+    "output_cost_per_mtok": 0.2,
+    "cache_read_cost_per_mtok": 0.02
+  },
+  {
+    "model": "qwen-vl-max",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.8,
+    "output_cost_per_mtok": 3.2
+  },
+  {
+    "model": "qwen-vl-plus",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.21,
+    "output_cost_per_mtok": 0.63
+  },
+  {
+    "model": "qwen/qwen-2-72b-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.9,
+    "output_cost_per_mtok": 0.9
+  },
+  {
+    "model": "qwen/qwen-2.5-72b-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.12,
+    "output_cost_per_mtok": 0.39
+  },
+  {
+    "model": "qwen/qwen-2.5-7b-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.05,
+    "output_cost_per_mtok": 0.1
+  },
+  {
+    "model": "qwen/qwen-2.5-coder-32b-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.07,
+    "output_cost_per_mtok": 0.15
+  },
+  {
+    "model": "qwen/qwen-2.5-vl-72b-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.6,
+    "output_cost_per_mtok": 0.6
+  },
+  {
+    "model": "qwen/qwen-2.5-vl-7b-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.2
+  },
+  {
+    "model": "qwen/qwen-max",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 1.6,
+    "output_cost_per_mtok": 6.4
+  },
+  {
+    "model": "qwen/qwen-plus",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.4,
+    "output_cost_per_mtok": 1.2
+  },
+  {
+    "model": "qwen/qwen-turbo",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.05,
+    "output_cost_per_mtok": 0.2
+  },
+  {
+    "model": "qwen/qwen-vl-max",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.8,
+    "output_cost_per_mtok": 3.2
+  },
+  {
+    "model": "qwen/qwen-vl-plus",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.21,
+    "output_cost_per_mtok": 0.63
+  },
+  {
+    "model": "qwen/qwen2.5-coder-7b-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.2
+  },
+  {
+    "model": "qwen/qwen2.5-vl-32b-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.9,
+    "output_cost_per_mtok": 0.9
+  },
+  {
+    "model": "qwen/qwen2.5-vl-72b-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.7,
+    "output_cost_per_mtok": 0.7
+  },
+  {
+    "model": "qwen/qwen3-max",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 1.2,
+    "output_cost_per_mtok": 6.0
+  },
+  {
+    "model": "qwen/qwq-32b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.15,
+    "output_cost_per_mtok": 0.2
+  },
+  {
+    "model": "qwen/qwq-32b-preview",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.2
+  },
+  {
+    "model": "qwen2.5-vl-32b-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.9,
+    "output_cost_per_mtok": 0.9
+  },
+  {
+    "model": "qwen2.5-vl-72b-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.25,
+    "output_cost_per_mtok": 0.75
+  },
+  {
+    "model": "qwen3-14b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.06,
+    "output_cost_per_mtok": 0.24
+  },
+  {
+    "model": "qwen3-235b-a22b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.13,
+    "output_cost_per_mtok": 0.6
+  },
+  {
+    "model": "qwen3-30b-a3b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.08,
+    "output_cost_per_mtok": 0.29
+  },
+  {
+    "model": "qwen3-32b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.1,
+    "output_cost_per_mtok": 0.3
+  },
+  {
+    "model": "qwen3-8b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.035,
+    "output_cost_per_mtok": 0.138
+  },
+  {
+    "model": "qwen3.5-plus-02-15",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.4,
+    "output_cost_per_mtok": 2.4
+  },
+  {
+    "model": "qwq-32b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.15,
+    "output_cost_per_mtok": 0.2
+  },
+  {
+    "model": "qwq-32b-preview",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.2
+  },
+  {
+    "model": "r1-1776",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 2.0,
+    "output_cost_per_mtok": 8.0
+  },
+  {
+    "model": "raifle/sorcererlm-8x22b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 4.5,
+    "output_cost_per_mtok": 4.5
+  },
+  {
+    "model": "remm-slerp-l2-13b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.8,
+    "output_cost_per_mtok": 1.2
+  },
+  {
+    "model": "rocinante-12b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.25,
+    "output_cost_per_mtok": 0.5
+  },
+  {
+    "model": "sao10k/fimbulvetr-11b-v2",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.8,
+    "output_cost_per_mtok": 1.2
+  },
+  {
+    "model": "sao10k/l3-euryale-70b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 1.48,
+    "output_cost_per_mtok": 1.48
+  },
+  {
+    "model": "sao10k/l3-lunaris-8b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.02,
+    "output_cost_per_mtok": 0.05
+  },
+  {
+    "model": "sao10k/l3.1-euryale-70b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.7,
+    "output_cost_per_mtok": 0.8
+  },
+  {
+    "model": "sao10k/l3.3-euryale-70b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.7,
+    "output_cost_per_mtok": 0.8
+  },
+  {
+    "model": "scb10x/llama3.1-typhoon2-70b-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.88,
+    "output_cost_per_mtok": 0.88
+  },
+  {
+    "model": "scb10x/llama3.1-typhoon2-8b-instruct",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.18,
+    "output_cost_per_mtok": 0.18
+  },
+  {
+    "model": "skyfall-36b-v2",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.5,
+    "output_cost_per_mtok": 0.8
+  },
+  {
+    "model": "sonar",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 1.0,
+    "output_cost_per_mtok": 1.0
+  },
+  {
+    "model": "sonar-deep-research",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 2.0,
+    "output_cost_per_mtok": 8.0
+  },
+  {
+    "model": "sonar-pro",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 3.0,
+    "output_cost_per_mtok": 15.0
+  },
+  {
+    "model": "sonar-reasoning",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 1.0,
+    "output_cost_per_mtok": 5.0
+  },
+  {
+    "model": "sonar-reasoning-pro",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 2.0,
+    "output_cost_per_mtok": 8.0
+  },
+  {
+    "model": "sophosympatheia/midnight-rose-70b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.8,
+    "output_cost_per_mtok": 0.8
+  },
+  {
+    "model": "sorcererlm-8x22b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 4.5,
+    "output_cost_per_mtok": 4.5
+  },
+  {
+    "model": "spotlight",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.18,
+    "output_cost_per_mtok": 0.18
+  },
+  {
+    "model": "steelskull/l3.3-electra-r1-70b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.7,
+    "output_cost_per_mtok": 0.95
+  },
+  {
+    "model": "thedrummer/anubis-pro-105b-v1",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.8,
+    "output_cost_per_mtok": 1.0
+  },
+  {
+    "model": "thedrummer/rocinante-12b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.25,
+    "output_cost_per_mtok": 0.5
+  },
+  {
+    "model": "thedrummer/skyfall-36b-v2",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.5,
+    "output_cost_per_mtok": 0.8
+  },
+  {
+    "model": "thedrummer/unslopnemo-12b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.5,
+    "output_cost_per_mtok": 0.5
+  },
+  {
+    "model": "toppy-m-7b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.8,
+    "output_cost_per_mtok": 1.2
+  },
+  {
+    "model": "undi95/remm-slerp-l2-13b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.5625,
+    "output_cost_per_mtok": 1.125
+  },
+  {
+    "model": "undi95/toppy-m-7b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.07,
+    "output_cost_per_mtok": 0.07
+  },
+  {
+    "model": "unslopnemo-12b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.45,
+    "output_cost_per_mtok": 0.45
+  },
+  {
+    "model": "valkyrie-49b-v1",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.5,
+    "output_cost_per_mtok": 0.8
+  },
+  {
+    "model": "virtuoso-large",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.75,
+    "output_cost_per_mtok": 1.2
+  },
+  {
+    "model": "virtuoso-medium-v2",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.5,
+    "output_cost_per_mtok": 0.8
+  },
+  {
+    "model": "weaver",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 1.5,
+    "output_cost_per_mtok": 1.5
+  },
+  {
+    "model": "wizardlm-2-8x22b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.48,
+    "output_cost_per_mtok": 0.48
+  },
+  {
+    "model": "x-ai/grok-2-1212",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 2.0,
+    "output_cost_per_mtok": 10.0
+  },
+  {
+    "model": "x-ai/grok-2-vision-1212",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 2.0,
+    "output_cost_per_mtok": 10.0
+  },
+  {
+    "model": "x-ai/grok-3-beta",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 3.0,
+    "output_cost_per_mtok": 15.0
+  },
+  {
+    "model": "x-ai/grok-3-mini-beta",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.3,
+    "output_cost_per_mtok": 0.5
+  },
+  {
+    "model": "x-ai/grok-4-fast",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.5,
+    "cache_read_cost_per_mtok": 0.05
+  },
+  {
+    "model": "x-ai/grok-beta",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 5.0,
+    "output_cost_per_mtok": 15.0
+  },
+  {
+    "model": "x-ai/grok-code-fast-1",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 1.5,
+    "cache_read_cost_per_mtok": 0.02
+  },
+  {
+    "model": "x-ai/grok-vision-beta",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 5.0,
+    "output_cost_per_mtok": 15.0
+  },
+  {
+    "model": "xwin-lm/xwin-lm-70b",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 3.75,
+    "output_cost_per_mtok": 3.75
+  },
+  {
+    "model": "yi-large",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 3.0,
+    "output_cost_per_mtok": 3.0
+  },
+  {
+    "model": "z-ai/glm-4.5",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.35,
+    "output_cost_per_mtok": 1.55
+  },
+  {
+    "model": "z-ai/glm-4.6",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 0.4,
+    "output_cost_per_mtok": 1.75
+  },
+  {
+    "model": "DeepSeek-R1-Distill-Llama-70B",
+    "provider": "ovhcloud",
+    "input_cost_per_mtok": 0.74,
+    "output_cost_per_mtok": 0.74
+  },
+  {
+    "model": "Llama-3.1-8B-Instruct",
+    "provider": "ovhcloud",
+    "input_cost_per_mtok": 0.11,
+    "output_cost_per_mtok": 0.11
+  },
+  {
+    "model": "Meta-Llama-3_3-70B-Instruct",
+    "provider": "ovhcloud",
+    "input_cost_per_mtok": 0.74,
+    "output_cost_per_mtok": 0.74
+  },
+  {
+    "model": "Mistral-7B-Instruct-v0.3",
+    "provider": "ovhcloud",
+    "input_cost_per_mtok": 0.11,
+    "output_cost_per_mtok": 0.11
+  },
+  {
+    "model": "Mistral-Nemo-Instruct-2407",
+    "provider": "ovhcloud",
+    "input_cost_per_mtok": 0.14,
+    "output_cost_per_mtok": 0.14
+  },
+  {
+    "model": "Mistral-Small-3.2-24B-Instruct-2506",
+    "provider": "ovhcloud",
+    "input_cost_per_mtok": 0.1,
+    "output_cost_per_mtok": 0.31
+  },
+  {
+    "model": "Mixtral-8x7B-Instruct-v0.1",
+    "provider": "ovhcloud",
+    "input_cost_per_mtok": 0.7,
+    "output_cost_per_mtok": 0.7
+  },
+  {
+    "model": "Qwen2.5-VL-72B-Instruct",
+    "provider": "ovhcloud",
+    "input_cost_per_mtok": 1.01,
+    "output_cost_per_mtok": 1.01
+  },
+  {
+    "model": "Qwen3-32B",
+    "provider": "ovhcloud",
+    "input_cost_per_mtok": 0.09,
+    "output_cost_per_mtok": 0.25
+  },
+  {
+    "model": "Qwen3-Coder-30B-A3B-Instruct",
+    "provider": "ovhcloud",
+    "input_cost_per_mtok": 0.07,
+    "output_cost_per_mtok": 0.26
+  },
+  {
+    "model": "bge-base-en-v1.5",
+    "provider": "ovhcloud",
+    "input_cost_per_mtok": 0.01,
+    "output_cost_per_mtok": 0.0
+  },
+  {
+    "model": "bge-m3",
+    "provider": "ovhcloud",
+    "input_cost_per_mtok": 0.01,
+    "output_cost_per_mtok": 0.0
+  },
+  {
+    "model": "bge-multilingual-gemma2",
+    "provider": "ovhcloud",
+    "input_cost_per_mtok": 0.01,
+    "output_cost_per_mtok": 0.0
+  },
+  {
+    "model": "gpt-oss-120b",
+    "provider": "ovhcloud",
+    "input_cost_per_mtok": 0.09,
+    "output_cost_per_mtok": 0.47
+  },
+  {
+    "model": "gpt-oss-20b",
+    "provider": "ovhcloud",
+    "input_cost_per_mtok": 0.05,
+    "output_cost_per_mtok": 0.18
+  },
+  {
+    "model": "llama-3.1-sonar-large-128k-online",
+    "provider": "perplexity",
+    "input_cost_per_mtok": 1.0,
+    "output_cost_per_mtok": 1.0
+  },
+  {
+    "model": "llama-3.1-sonar-small-128k-online",
+    "provider": "perplexity",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.2
+  },
+  {
+    "model": "r1-1776",
+    "provider": "perplexity",
+    "input_cost_per_mtok": 2.0,
+    "output_cost_per_mtok": 8.0
+  },
+  {
+    "model": "sonar",
+    "provider": "perplexity",
+    "input_cost_per_mtok": 1.0,
+    "output_cost_per_mtok": 1.0
+  },
+  {
+    "model": "sonar-deep-research",
+    "provider": "perplexity",
+    "input_cost_per_mtok": 2.0,
+    "output_cost_per_mtok": 8.0
+  },
+  {
+    "model": "sonar-pro",
+    "provider": "perplexity",
+    "input_cost_per_mtok": 3.0,
+    "output_cost_per_mtok": 15.0
+  },
+  {
+    "model": "sonar-reasoning",
+    "provider": "perplexity",
+    "input_cost_per_mtok": 1.0,
+    "output_cost_per_mtok": 5.0
+  },
+  {
+    "model": "sonar-reasoning-pro",
+    "provider": "perplexity",
+    "input_cost_per_mtok": 2.0,
+    "output_cost_per_mtok": 8.0
+  },
+  {
+    "model": "Austism/chronos-hermes-13b",
+    "provider": "together",
+    "input_cost_per_mtok": 0.3,
+    "output_cost_per_mtok": 0.3
+  },
+  {
+    "model": "Gryphe/MythoMax-L2-13b",
+    "provider": "together",
+    "input_cost_per_mtok": 0.3,
+    "output_cost_per_mtok": 0.3
+  },
+  {
+    "model": "Nexusflow/NexusRaven-V2-13B",
+    "provider": "together",
+    "input_cost_per_mtok": 0.3,
+    "output_cost_per_mtok": 0.3
+  },
+  {
+    "model": "NousResearch/Nous-Capybara-7B-V1p9",
+    "provider": "together",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.2
+  },
+  {
+    "model": "NousResearch/Nous-Hermes-2-Mixtral-8x7B-DPO",
+    "provider": "together",
+    "input_cost_per_mtok": 0.9,
+    "output_cost_per_mtok": 0.9
+  },
+  {
+    "model": "NousResearch/Nous-Hermes-2-Mixtral-8x7B-SFT",
+    "provider": "together",
+    "input_cost_per_mtok": 0.9,
+    "output_cost_per_mtok": 0.9
+  },
+  {
+    "model": "NousResearch/Nous-Hermes-2-Yi-34B",
+    "provider": "together",
+    "input_cost_per_mtok": 0.8,
+    "output_cost_per_mtok": 0.8
+  },
+  {
+    "model": "NousResearch/Nous-Hermes-Llama2-13b",
+    "provider": "together",
+    "input_cost_per_mtok": 0.225,
+    "output_cost_per_mtok": 0.225
+  },
+  {
+    "model": "NousResearch/Nous-Hermes-llama-2-7b",
+    "provider": "together",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.2
+  },
+  {
+    "model": "Open-Orca/Mistral-7B-OpenOrca",
+    "provider": "together",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.2
+  },
+  {
+    "model": "Qwen/Qwen1.5-0.5B",
+    "provider": "together",
+    "input_cost_per_mtok": 0.1,
+    "output_cost_per_mtok": 0.1
+  },
+  {
+    "model": "Qwen/Qwen1.5-1.8B",
+    "provider": "together",
+    "input_cost_per_mtok": 0.1,
+    "output_cost_per_mtok": 0.1
+  },
+  {
+    "model": "Qwen/Qwen1.5-14B",
+    "provider": "together",
+    "input_cost_per_mtok": 0.3,
+    "output_cost_per_mtok": 0.3
+  },
+  {
+    "model": "Qwen/Qwen1.5-4B",
+    "provider": "together",
+    "input_cost_per_mtok": 0.1,
+    "output_cost_per_mtok": 0.1
+  },
+  {
+    "model": "Qwen/Qwen1.5-72B",
+    "provider": "together",
+    "input_cost_per_mtok": 0.9,
+    "output_cost_per_mtok": 0.9
+  },
+  {
+    "model": "Qwen/Qwen1.5-7B",
+    "provider": "together",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.2
+  },
+  {
+    "model": "Undi95/ReMM-SLERP-L2-13B",
+    "provider": "together",
+    "input_cost_per_mtok": 0.3,
+    "output_cost_per_mtok": 0.3
+  },
+  {
+    "model": "Undi95/Toppy-M-7B",
+    "provider": "together",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.2
+  },
+  {
+    "model": "WizardLM/WizardLM-13B-V1.2",
+    "provider": "together",
+    "input_cost_per_mtok": 0.3,
+    "output_cost_per_mtok": 0.3
+  },
+  {
+    "model": "allenai/OLMo-7B",
+    "provider": "together",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.2
+  },
+  {
+    "model": "codellama/CodeLlama-13b-Instruct-hf",
+    "provider": "together",
+    "input_cost_per_mtok": 0.225,
+    "output_cost_per_mtok": 0.225
+  },
+  {
+    "model": "codellama/CodeLlama-34b-Instruct-hf",
+    "provider": "together",
+    "input_cost_per_mtok": 0.776,
+    "output_cost_per_mtok": 0.776
+  },
+  {
+    "model": "codellama/CodeLlama-70b-Instruct-hf",
+    "provider": "together",
+    "input_cost_per_mtok": 0.9,
+    "output_cost_per_mtok": 0.9
+  },
+  {
+    "model": "codellama/CodeLlama-7b-Instruct-hf",
+    "provider": "together",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.2
+  },
+  {
+    "model": "deepseek-ai/deepseek-coder-33b-instruct",
+    "provider": "together",
+    "input_cost_per_mtok": 0.8,
+    "output_cost_per_mtok": 0.8
+  },
+  {
+    "model": "garage-bAInd/Platypus2-70B-instruct",
+    "provider": "together",
+    "input_cost_per_mtok": 0.9,
+    "output_cost_per_mtok": 0.9
+  },
+  {
+    "model": "google/gemma-2b",
+    "provider": "together",
+    "input_cost_per_mtok": 0.1,
+    "output_cost_per_mtok": 0.1
+  },
+  {
+    "model": "google/gemma-7b",
+    "provider": "together",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.2
+  },
+  {
+    "model": "lmsys/vicuna-13b-v1.5",
+    "provider": "together",
+    "input_cost_per_mtok": 0.3,
+    "output_cost_per_mtok": 0.3
+  },
+  {
+    "model": "lmsys/vicuna-7b-v1.5",
+    "provider": "together",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.2
+  },
+  {
+    "model": "meta-llama/Llama-2-13b-chat-hf",
+    "provider": "together",
+    "input_cost_per_mtok": 0.225,
+    "output_cost_per_mtok": 0.225
+  },
+  {
+    "model": "meta-llama/Llama-2-70b-chat-hf",
+    "provider": "together",
+    "input_cost_per_mtok": 0.9,
+    "output_cost_per_mtok": 0.9
+  },
+  {
+    "model": "meta-llama/Llama-2-7b-chat-hf",
+    "provider": "together",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.2
+  },
+  {
+    "model": "meta-llama/Llama-3-70b-chat-hf",
+    "provider": "together",
+    "input_cost_per_mtok": 0.9,
+    "output_cost_per_mtok": 0.9
+  },
+  {
+    "model": "meta-llama/Llama-3-8b-chat-hf",
+    "provider": "together",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.2
+  },
+  {
+    "model": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
+    "provider": "together",
+    "input_cost_per_mtok": 0.88,
+    "output_cost_per_mtok": 0.88
+  },
+  {
+    "model": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+    "provider": "together",
+    "input_cost_per_mtok": 0.27,
+    "output_cost_per_mtok": 0.85
+  },
+  {
+    "model": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+    "provider": "together",
+    "input_cost_per_mtok": 0.18,
+    "output_cost_per_mtok": 0.59
+  },
+  {
+    "model": "meta-llama/Meta-Llama-3-70B-Instruct-Lite",
+    "provider": "together",
+    "input_cost_per_mtok": 0.54,
+    "output_cost_per_mtok": 0.54
+  },
+  {
+    "model": "meta-llama/Meta-Llama-3-70B-Instruct-Turbo",
+    "provider": "together",
+    "input_cost_per_mtok": 0.88,
+    "output_cost_per_mtok": 0.88
+  },
+  {
+    "model": "meta-llama/Meta-Llama-3-8B-Instruct-Lite",
+    "provider": "together",
+    "input_cost_per_mtok": 0.1,
+    "output_cost_per_mtok": 0.1
+  },
+  {
+    "model": "meta-llama/Meta-Llama-3-8B-Instruct-Turbo",
+    "provider": "together",
+    "input_cost_per_mtok": 0.18,
+    "output_cost_per_mtok": 0.18
+  },
+  {
+    "model": "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo",
+    "provider": "together",
+    "input_cost_per_mtok": 3.5,
+    "output_cost_per_mtok": 3.5
+  },
+  {
+    "model": "meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo",
+    "provider": "together",
+    "input_cost_per_mtok": 0.88,
+    "output_cost_per_mtok": 0.88
+  },
+  {
+    "model": "meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo",
+    "provider": "together",
+    "input_cost_per_mtok": 0.18,
+    "output_cost_per_mtok": 0.18
+  },
+  {
+    "model": "meta-llama/Meta-Llama-3.3-70B-Instruct-Turbo",
+    "provider": "together",
+    "input_cost_per_mtok": 0.88,
+    "output_cost_per_mtok": 0.88
+  },
+  {
+    "model": "microsoft/WizardLM-2-8x22B",
+    "provider": "together",
+    "input_cost_per_mtok": 1.2,
+    "output_cost_per_mtok": 1.2
+  },
+  {
+    "model": "microsoft/phi-2",
+    "provider": "together",
+    "input_cost_per_mtok": 0.1,
+    "output_cost_per_mtok": 0.1
+  },
+  {
+    "model": "mistralai/Mistral-7B-Instruct-v0.1",
+    "provider": "together",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.2
+  },
+  {
+    "model": "mistralai/Mistral-7B-Instruct-v0.2",
+    "provider": "together",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.2
+  },
+  {
+    "model": "mistralai/Mistral-7B-v0.1",
+    "provider": "together",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.2
+  },
+  {
+    "model": "mistralai/Mixtral-8x22B-Instruct-v0.1",
+    "provider": "together",
+    "input_cost_per_mtok": 2.4,
+    "output_cost_per_mtok": 2.4
+  },
+  {
+    "model": "mistralai/Mixtral-8x7B-Instruct-v0.1",
+    "provider": "together",
+    "input_cost_per_mtok": 0.9,
+    "output_cost_per_mtok": 0.9
+  },
+  {
+    "model": "mistralai/Mixtral-8x7B-v0.1",
+    "provider": "together",
+    "input_cost_per_mtok": 0.9,
+    "output_cost_per_mtok": 0.9
+  },
+  {
+    "model": "openchat/openchat-3.5-1210",
+    "provider": "together",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.2
+  },
+  {
+    "model": "snorkelai/Snorkel-Mistral-PairRM-DPO",
+    "provider": "together",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.2
+  },
+  {
+    "model": "teknium/OpenHermes-2-Mistral-7B",
+    "provider": "together",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.2
+  },
+  {
+    "model": "teknium/OpenHermes-2p5-Mistral-7B",
+    "provider": "together",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.2
+  },
+  {
+    "model": "togethercomputer/GPT-JT-Moderation-6B",
+    "provider": "together",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.2
+  },
+  {
+    "model": "togethercomputer/Llama-2-7B-32K-Instruct",
+    "provider": "together",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.2
+  },
+  {
+    "model": "togethercomputer/RedPajama-INCITE-7B-Base",
+    "provider": "together",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.2
+  },
+  {
+    "model": "togethercomputer/RedPajama-INCITE-7B-Chat",
+    "provider": "together",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.2
+  },
+  {
+    "model": "togethercomputer/RedPajama-INCITE-7B-Instruct",
+    "provider": "together",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.2
+  },
+  {
+    "model": "togethercomputer/RedPajama-INCITE-Base-3B-v1",
+    "provider": "together",
+    "input_cost_per_mtok": 0.1,
+    "output_cost_per_mtok": 0.1
+  },
+  {
+    "model": "togethercomputer/RedPajama-INCITE-Chat-3B-v1",
+    "provider": "together",
+    "input_cost_per_mtok": 0.1,
+    "output_cost_per_mtok": 0.1
+  },
+  {
+    "model": "togethercomputer/RedPajama-INCITE-Instruct-3B-v1",
+    "provider": "together",
+    "input_cost_per_mtok": 0.1,
+    "output_cost_per_mtok": 0.1
+  },
+  {
+    "model": "togethercomputer/StripedHyena-Hessian-7B",
+    "provider": "together",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.2
+  },
+  {
+    "model": "togethercomputer/StripedHyena-Nous-7B",
+    "provider": "together",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.2
+  },
+  {
+    "model": "togethercomputer/alpaca-7b",
+    "provider": "together",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.2
+  },
+  {
+    "model": "upstage/SOLAR-10.7B-Instruct-v1.0",
+    "provider": "together",
+    "input_cost_per_mtok": 0.3,
+    "output_cost_per_mtok": 0.3
+  },
+  {
+    "model": "zero-one-ai/Yi-34B",
+    "provider": "together",
+    "input_cost_per_mtok": 0.8,
+    "output_cost_per_mtok": 0.8
+  },
+  {
+    "model": "zero-one-ai/Yi-6B",
+    "provider": "together",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.2
+  },
+  {
+    "model": "grok-2-vision-1212",
+    "provider": "x-ai",
+    "input_cost_per_mtok": 2.0,
+    "output_cost_per_mtok": 10.0
+  },
+  {
+    "model": "grok-3",
+    "provider": "x-ai",
+    "input_cost_per_mtok": 3.0,
+    "output_cost_per_mtok": 15.0,
+    "cache_read_cost_per_mtok": 0.75
+  },
+  {
+    "model": "grok-3-fast",
+    "provider": "x-ai",
+    "input_cost_per_mtok": 5.0,
+    "output_cost_per_mtok": 25.0,
+    "cache_read_cost_per_mtok": 1.25
+  },
+  {
+    "model": "grok-3-mini",
+    "provider": "x-ai",
+    "input_cost_per_mtok": 0.3,
+    "output_cost_per_mtok": 0.5,
+    "cache_read_cost_per_mtok": 0.075
+  },
+  {
+    "model": "grok-3-mini-fast",
+    "provider": "x-ai",
+    "input_cost_per_mtok": 0.6,
+    "output_cost_per_mtok": 4.0,
+    "cache_read_cost_per_mtok": 0.15
+  },
+  {
+    "model": "grok-4-0709",
+    "provider": "x-ai",
+    "input_cost_per_mtok": 3.0,
+    "output_cost_per_mtok": 15.0,
+    "cache_read_cost_per_mtok": 0.75
+  },
+  {
+    "model": "grok-4-1-fast-non-reasoning",
+    "provider": "x-ai",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.5,
+    "cache_read_cost_per_mtok": 0.05
+  },
+  {
+    "model": "grok-4-1-fast-reasoning",
+    "provider": "x-ai",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.5,
+    "cache_read_cost_per_mtok": 0.05
+  },
+  {
+    "model": "grok-4-fast-non-reasoning",
+    "provider": "x-ai",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.5,
+    "cache_read_cost_per_mtok": 0.05
+  },
+  {
+    "model": "grok-4-fast-reasoning",
+    "provider": "x-ai",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 0.5,
+    "cache_read_cost_per_mtok": 0.05
+  },
+  {
+    "model": "grok-code-fast-1",
+    "provider": "x-ai",
+    "input_cost_per_mtok": 0.2,
+    "output_cost_per_mtok": 1.5,
+    "cache_read_cost_per_mtok": 0.02
+  }
+]

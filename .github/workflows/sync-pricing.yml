@@ -1,0 +1,32 @@
+name: Sync Pricing Data
+
+on:
+  schedule:
+    - cron: '0 0 * * 1' # Every Monday 00:00 UTC
+  workflow_dispatch: # Manual trigger
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: astral-sh/setup-uv@v7
+
+      - name: Sync pricing data
+        run: uv run python scripts/sync_pricing.py
+
+      - name: Create PR if changed
+        uses: peter-evans/create-pull-request@v8
+        with:
+          title: "chore: sync pricing data from pydantic/genai-prices"
+          body: |
+            Automated weekly pricing sync from [pydantic/genai-prices](https://github.com/pydantic/genai-prices).
+
+            Review the diff before merging.
+          branch: chore/sync-pricing
+          commit-message: "chore: sync pricing data"
+          labels: dependencies

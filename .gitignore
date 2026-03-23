@@ -1,0 +1,31 @@
+# * Environment
+.env
+
+# * Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+
+# * IDE
+.idea/
+.vscode/
+*.swp
+
+# * Testing
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# * Project instructions (not for public repo)
+CLAUDE.md
+
+# * MAC OS
+.DS_Store
+
+# * MCP
+.serena/

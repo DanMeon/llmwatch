@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="50%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+    <linearGradient id="accent2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#818cf8"/>
+    </linearGradient>
+    <linearGradient id="bar1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0ea5e9"/>
+    </linearGradient>
+    <linearGradient id="bar2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+    <linearGradient id="bar3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#c084fc"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+    <linearGradient id="bar4" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f0abfc"/>
+      <stop offset="100%" stop-color="#d946ef"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softglow">
+      <feGaussianBlur stdDeviation="20" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="300" rx="16" fill="url(#bg)"/>
+
+  <!-- Subtle grid pattern -->
+  <g opacity="0.04" stroke="#94a3b8" stroke-width="0.5">
+    <line x1="0" y1="60" x2="1200" y2="60"/>
+    <line x1="0" y1="120" x2="1200" y2="120"/>
+    <line x1="0" y1="180" x2="1200" y2="180"/>
+    <line x1="0" y1="240" x2="1200" y2="240"/>
+    <line x1="200" y1="0" x2="200" y2="300"/>
+    <line x1="400" y1="0" x2="400" y2="300"/>
+    <line x1="600" y1="0" x2="600" y2="300"/>
+    <line x1="800" y1="0" x2="800" y2="300"/>
+    <line x1="1000" y1="0" x2="1000" y2="300"/>
+  </g>
+
+  <!-- Decorative glow orbs -->
+  <circle cx="150" cy="150" r="120" fill="#38bdf8" opacity="0.03" filter="url(#softglow)"/>
+  <circle cx="1050" cy="150" r="120" fill="#c084fc" opacity="0.03" filter="url(#softglow)"/>
+
+  <!-- Icon: chart/meter graphic -->
+  <g transform="translate(283, 85)">
+    <!-- Chart base line -->
+    <line x1="0" y1="130" x2="180" y2="130" stroke="#334155" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- Bars -->
+    <rect x="10" y="70" width="24" height="60" rx="4" fill="url(#bar1)" opacity="0.9"/>
+    <rect x="44" y="40" width="24" height="90" rx="4" fill="url(#bar2)" opacity="0.9"/>
+    <rect x="78" y="55" width="24" height="75" rx="4" fill="url(#bar3)" opacity="0.9"/>
+    <rect x="112" y="20" width="24" height="110" rx="4" fill="url(#bar4)" opacity="0.9"/>
+    <rect x="146" y="45" width="24" height="85" rx="4" fill="url(#bar1)" opacity="0.9"/>
+
+    <!-- Trend line -->
+    <polyline points="22,65 56,35 90,50 124,15 158,40"
+              stroke="url(#accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+              fill="none" filter="url(#glow)"/>
+
+    <!-- Trend dots -->
+    <circle cx="22" cy="65" r="3.5" fill="#38bdf8"/>
+    <circle cx="56" cy="35" r="3.5" fill="#818cf8"/>
+    <circle cx="90" cy="50" r="3.5" fill="#a78bfa"/>
+    <circle cx="124" cy="15" r="3.5" fill="#c084fc"/>
+    <circle cx="158" cy="40" r="3.5" fill="#38bdf8"/>
+
+    <!-- Dollar sign badge -->
+    <circle cx="165" cy="10" r="16" fill="#1e293b" stroke="url(#accent2)" stroke-width="1.5"/>
+    <text x="165" y="16" text-anchor="middle" font-family="'SF Pro Display', 'Inter', system-ui, sans-serif" font-size="16" font-weight="700" fill="url(#accent2)">$</text>
+  </g>
+
+  <!-- Title -->
+  <text x="523" y="135" font-family="'SF Pro Display', 'Inter', system-ui, sans-serif" font-size="72" font-weight="800" letter-spacing="-2">
+    <tspan fill="#f1f5f9">llm</tspan><tspan fill="url(#accent)">watch</tspan>
+  </text>
+
+  <!-- Tagline -->
+  <text x="528" y="175" font-family="'SF Pro Display', 'Inter', system-ui, sans-serif" font-size="20" font-weight="400" fill="#94a3b8" letter-spacing="0.5">
+    LLM Cost Attribution for Python
+  </text>
+
+  <!-- Feature pills -->
+  <g transform="translate(528, 200)">
+    <!-- Pill: Track -->
+    <rect x="0" y="0" width="90" height="30" rx="15" fill="#38bdf820" stroke="#38bdf850" stroke-width="1"/>
+    <text x="45" y="20" text-anchor="middle" font-family="'SF Mono', 'JetBrains Mono', monospace" font-size="12" font-weight="500" fill="#38bdf8">track</text>
+
+    <!-- Pill: Tag -->
+    <rect x="100" y="0" width="75" height="30" rx="15" fill="#818cf820" stroke="#818cf850" stroke-width="1"/>
+    <text x="137" y="20" text-anchor="middle" font-family="'SF Mono', 'JetBrains Mono', monospace" font-size="12" font-weight="500" fill="#818cf8">tag</text>
+
+    <!-- Pill: Report -->
+    <rect x="185" y="0" width="95" height="30" rx="15" fill="#c084fc20" stroke="#c084fc50" stroke-width="1"/>
+    <text x="232" y="20" text-anchor="middle" font-family="'SF Mono', 'JetBrains Mono', monospace" font-size="12" font-weight="500" fill="#c084fc">report</text>
+
+    <!-- Pill: Budget -->
+    <rect x="290" y="0" width="100" height="30" rx="15" fill="#f0abfc20" stroke="#f0abfc50" stroke-width="1"/>
+    <text x="340" y="20" text-anchor="middle" font-family="'SF Mono', 'JetBrains Mono', monospace" font-size="12" font-weight="500" fill="#f0abfc">budget</text>
+  </g>
+
+  <!-- Bottom accent line -->
+  <rect x="0" y="292" width="1200" height="8" rx="0" fill="url(#accent)" opacity="0.6"/>
+  <!-- Round bottom corners mask -->
+  <rect x="0" y="292" width="16" height="8" fill="url(#bg)"/>
+  <rect x="1184" y="292" width="16" height="8" fill="url(#bg)"/>
+  <rect x="0" y="284" width="16" height="16" rx="16" fill="url(#accent)" opacity="0.6"/>
+  <rect x="1184" y="284" width="16" height="16" rx="16" fill="url(#accent)" opacity="0.6"/>
+</svg>
