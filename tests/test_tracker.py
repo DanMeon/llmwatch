@@ -189,7 +189,7 @@ class TestBudgetAlert:
         alerts: list = []
         self.watcher.budget.add_rule(
             max_cost_usd=0.001,
-            callback=lambda record: alerts.append(record),
+            callback=lambda record, **kwargs: alerts.append(record),
         )
 
         @self.watcher.tracked(feature="expensive")
@@ -204,7 +204,7 @@ class TestBudgetAlert:
         alerts: list = []
         self.watcher.budget.add_rule(
             max_cost_usd=0.001,
-            callback=lambda record: alerts.append(record),
+            callback=lambda record, **kwargs: alerts.append(record),
             feature="expensive",
         )
 
@@ -218,7 +218,7 @@ class TestBudgetAlert:
     async def test_budget_alert_async_callback(self):
         alerts: list = []
 
-        async def on_alert(record):
+        async def on_alert(record, **kwargs):
             alerts.append(record)
 
         self.watcher.budget.add_rule(max_cost_usd=0.001, callback=on_alert)
@@ -286,7 +286,7 @@ class TestSafety:
         client = FakeAsyncOpenAI()
         watcher = LLMWatch(storage=storage, client=client)
 
-        def bad_callback(record):
+        def bad_callback(record, **kwargs):
             raise RuntimeError("Slack webhook failed")
 
         watcher.budget.add_rule(max_cost_usd=0.0, callback=bad_callback)

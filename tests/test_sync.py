@@ -146,7 +146,7 @@ class TestSyncBudgetAlert:
         alerts: list = []
         self.watcher.budget.add_rule(
             max_cost_usd=0.001,
-            callback=lambda record: alerts.append(record),
+            callback=lambda record, **kwargs: alerts.append(record),
         )
 
         @self.watcher.tracked(feature="expensive")
