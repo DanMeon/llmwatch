@@ -12,6 +12,147 @@ if TYPE_CHECKING:
     from llmwatch.tracker import LLMWatch
 
 
+class _TrackedAsyncStream:
+    """Async stream wrapper that collects chunks and records usage on completion."""
+
+    def __init__(
+        self,
+        stream: Any,
+        *,
+        tracker: "LLMWatch",
+        provider: str,
+        start: float,
+    ) -> None:
+        self._stream = stream
+        self._tracker = tracker
+        self._provider = provider
+        self._start = start
+        self._recorded = False
+
+    def __aiter__(self) -> "_TrackedAsyncStream":
+        return self
+
+    async def __anext__(self) -> Any:
+        try:
+            return await self._stream.__anext__()
+        except StopAsyncIteration:
+            if not self._recorded:
+                self._recorded = True
+                await self._record_from_stream()
+            raise
+
+    async def _record_from_stream(self) -> None:
+        elapsed_ms = (time.monotonic() - self._start) * 1000
+        # ^ If the stream exposes a final response (OpenAI stream.get_final_completion()),
+        # ^ use it. Otherwise the per-chunk usage was already the best we could capture.
+        final = getattr(self._stream, "get_final_completion", None)
+        if final and callable(final):
+            try:
+                response = final()
+                await self._tracker._safe_record(
+                    response, provider=self._provider, latency_ms=elapsed_ms
+                )
+                return
+            except Exception:
+                pass
+        # ^ Fallback: record with whatever usage the stream accumulated
+        final_response = getattr(self._stream, "response", None)
+        if final_response is not None:
+            await self._tracker._safe_record(
+                final_response, provider=self._provider, latency_ms=elapsed_ms
+            )
+
+    async def __aenter__(self) -> "_TrackedAsyncStream":
+        if hasattr(self._stream, "__aenter__"):
+            await self._stream.__aenter__()
+        return self
+
+    async def __aexit__(self, *args: Any) -> None:
+        if not self._recorded:
+            self._recorded = True
+            await self._record_from_stream()
+        if hasattr(self._stream, "__aexit__"):
+            await self._stream.__aexit__(*args)
+
+    def __getattr__(self, name: str) -> Any:
+        return getattr(self._stream, name)
+
+
+class _TrackedSyncStream:
+    """Sync stream wrapper that collects chunks and records usage on completion."""
+
+    def __init__(
+        self,
+        stream: Any,
+        *,
+        tracker: "LLMWatch",
+        provider: str,
+        start: float,
+    ) -> None:
+        self._stream = stream
+        self._tracker = tracker
+        self._provider = provider
+        self._start = start
+        self._recorded = False
+
+    def __iter__(self) -> "_TrackedSyncStream":
+        return self
+
+    def __next__(self) -> Any:
+        try:
+            return next(self._stream)
+        except StopIteration:
+            if not self._recorded:
+                self._recorded = True
+                self._record_from_stream()
+            raise
+
+    def _record_from_stream(self) -> None:
+        elapsed_ms = (time.monotonic() - self._start) * 1000
+        final = getattr(self._stream, "get_final_completion", None)
+        if final and callable(final):
+            try:
+                response = final()
+                self._tracker._safe_record_sync(
+                    response, provider=self._provider, latency_ms=elapsed_ms
+                )
+                return
+            except Exception:
+                pass
+        final_response = getattr(self._stream, "response", None)
+        if final_response is not None:
+            self._tracker._safe_record_sync(
+                final_response, provider=self._provider, latency_ms=elapsed_ms
+            )
+
+    def __enter__(self) -> "_TrackedSyncStream":
+        if hasattr(self._stream, "__enter__"):
+            self._stream.__enter__()
+        return self
+
+    def __exit__(self, *args: Any) -> None:
+        if not self._recorded:
+            self._recorded = True
+            self._record_from_stream()
+        if hasattr(self._stream, "__exit__"):
+            self._stream.__exit__(*args)
+
+    def __getattr__(self, name: str) -> Any:
+        return getattr(self._stream, name)
+
+
+def _wrap_async_stream(
+    stream: Any, *, tracker: "LLMWatch", provider: str, start: float
+) -> _TrackedAsyncStream:
+    return _TrackedAsyncStream(stream, tracker=tracker, provider=provider, start=start)
+
+
+def _wrap_sync_stream(
+    stream: Any, *, tracker: "LLMWatch", provider: str, start: float
+) -> _TrackedSyncStream:
+    return _TrackedSyncStream(stream, tracker=tracker, provider=provider, start=start)
+
+
 def detect_client_type(client: Any) -> str:
     """Auto-detect SDK client type from its module path."""
     module = type(client).__module__
@@ -43,6 +184,8 @@ def instrument_openai_async(client: Any, *, tracker: "LLMWatch") -> None:
         start = time.monotonic()
         response = await original_create(*args, **kwargs)
         elapsed_ms = (time.monotonic() - start) * 1000
+        if kwargs.get("stream"):
+            return _wrap_async_stream(response, tracker=tracker, provider="openai", start=start)
         await tracker._safe_record(response, provider="openai", latency_ms=elapsed_ms)
         return response
 
@@ -57,6 +200,8 @@ def instrument_anthropic_async(client: Any, *, tracker: "LLMWatch") -> None:
         start = time.monotonic()
         response = await original_create(*args, **kwargs)
         elapsed_ms = (time.monotonic() - start) * 1000
+        if kwargs.get("stream"):
+            return _wrap_async_stream(response, tracker=tracker, provider="anthropic", start=start)
         await tracker._safe_record(response, provider="anthropic", latency_ms=elapsed_ms)
         return response
 
@@ -74,6 +219,8 @@ def instrument_openai_sync(client: Any, *, tracker: "LLMWatch") -> None:
         start = time.monotonic()
         response = original_create(*args, **kwargs)
         elapsed_ms = (time.monotonic() - start) * 1000
+        if kwargs.get("stream"):
+            return _wrap_sync_stream(response, tracker=tracker, provider="openai", start=start)
         tracker._safe_record_sync(response, provider="openai", latency_ms=elapsed_ms)
         return response
 
@@ -88,6 +235,8 @@ def instrument_anthropic_sync(client: Any, *, tracker: "LLMWatch") -> None:
         start = time.monotonic()
         response = original_create(*args, **kwargs)
         elapsed_ms = (time.monotonic() - start) * 1000
+        if kwargs.get("stream"):
+            return _wrap_sync_stream(response, tracker=tracker, provider="anthropic", start=start)
         tracker._safe_record_sync(response, provider="anthropic", latency_ms=elapsed_ms)
         return response
 
@@ -105,6 +254,8 @@ def instrument_google_async(client: Any, *, tracker: "LLMWatch") -> None:
         start = time.monotonic()
         response = await original_generate(*args, **kwargs)
         elapsed_ms = (time.monotonic() - start) * 1000
+        if kwargs.get("stream"):
+            return _wrap_async_stream(response, tracker=tracker, provider="google", start=start)
         await tracker._safe_record(response, provider="google", latency_ms=elapsed_ms)
         return response
 
@@ -119,6 +270,8 @@ def instrument_google_sync(client: Any, *, tracker: "LLMWatch") -> None:
         start = time.monotonic()
         response = original_generate(*args, **kwargs)
         elapsed_ms = (time.monotonic() - start) * 1000
+        if kwargs.get("stream"):
+            return _wrap_sync_stream(response, tracker=tracker, provider="google", start=start)
         tracker._safe_record_sync(response, provider="google", latency_ms=elapsed_ms)
         return response
 
