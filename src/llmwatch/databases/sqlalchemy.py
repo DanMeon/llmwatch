@@ -72,11 +72,18 @@ class Storage:
             return
 
         existing = {col["name"] for col in inspector.get_columns(table_name, schema=schema)}
+        dialect = conn.engine.dialect
         for column in self._table.columns:
             if column.name not in existing:
-                col_type = column.type.compile(conn.engine.dialect)
-                quoted_table = f'"{schema}"."{table_name}"' if schema else f'"{table_name}"'
-                sql = f'ALTER TABLE {quoted_table} ADD COLUMN "{column.name}" {col_type}'
+                col_type = column.type.compile(dialect)
+                # ^ Use dialect-specific identifier quoting to prevent SQL injection
+                preparer = dialect.identifier_preparer
+                if schema:
+                    quoted_table = f"{preparer.quote_identifier(schema)}.{preparer.quote_identifier(table_name)}"
+                else:
+                    quoted_table = preparer.quote_identifier(table_name)
+                quoted_col = preparer.quote_identifier(column.name)
+                sql = f"ALTER TABLE {quoted_table} ADD COLUMN {quoted_col} {col_type}"
                 conn.execute(text(sql))
                 logger.info("Auto-migrated: added column %s.%s", table_name, column.name)
 
