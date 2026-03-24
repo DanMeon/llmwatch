@@ -106,7 +106,7 @@ def create_dashboard_app(storage_url: str | None = None) -> Any:
         group_by = request.query_params.get("group_by", "feature")
         period = request.query_params.get("period", "30d")
 
-        valid_groups = {"feature", "user_id", "model", "provider"}
+        valid_groups = {"feature", "user_id", "model", "provider", "environment"}
         if group_by not in valid_groups:
             return JSONResponse(
                 {"error": f"group_by must be one of: {', '.join(sorted(valid_groups))}"},

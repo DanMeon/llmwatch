@@ -407,6 +407,7 @@ DASHBOARD_HTML = """<!DOCTYPE html>
         <button class="tab-btn" data-group="user_id">User</button>
         <button class="tab-btn" data-group="model">Model</button>
         <button class="tab-btn" data-group="provider">Provider</button>
+        <button class="tab-btn" data-group="environment">Environment</button>
       </div>
     </div>
     <div class="table-scroll">
