@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "llmwatch"
-version = "0.1.0"
+version = "0.2.0"
 description = "Track, tag, and report LLM API costs by feature, user, and model."
 license = "MIT"
 readme = "README.md"
