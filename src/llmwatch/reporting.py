@@ -7,14 +7,20 @@ from pathlib import Path as PathLibPath
 from typing import Any
 
 from llmwatch.databases.base import BaseStorage
-from llmwatch.schemas.reporting import CostSummary
+from llmwatch.schemas.reporting import AggregationPeriod, CostSummary
 
 
 def _period_to_start(period: str) -> datetime:
     """Convert a period string to a start datetime. e.g. '7d', '24h', '30d'."""
+    if len(period) < 2:
+        msg = f"Invalid period string: {period!r}. Expected format like '7d', '24h'."
+        raise ValueError(msg)
     now = datetime.now(UTC)
     unit = period[-1]
     value = int(period[:-1])
+    if value <= 0:
+        msg = f"Period value must be positive, got: {value}"
+        raise ValueError(msg)
     if unit == "h":
         return now - timedelta(hours=value)
     if unit == "d":
@@ -40,6 +46,7 @@ class Reporter:
         period: str | None = None,
         start_time: datetime | None = None,
         end_time: datetime | None = None,
+        aggregation_period: AggregationPeriod | None = None,
     ) -> CostSummary:
         """Generate an aggregated summary report."""
         if period is not None:
@@ -49,6 +56,7 @@ class Reporter:
             group_by=group_by,
             start_time=start_time,
             end_time=end_time,
+            period=aggregation_period,
         )
 
         total_cost = sum(b.total_cost_usd for b in breakdowns)

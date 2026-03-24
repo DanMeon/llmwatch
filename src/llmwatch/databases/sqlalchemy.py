@@ -249,19 +249,27 @@ class Storage:
         t = self._table
         group_col = getattr(t.c, group_by)
 
-        stmt = (
-            select(
-                func.coalesce(group_col, "(untagged)").label("group_value"),
-                func.coalesce(func.sum(t.c.cost_usd), 0).label("total_cost_usd"),
-                func.coalesce(func.sum(t.c.prompt_tokens), 0).label("total_prompt_tokens"),
-                func.coalesce(func.sum(t.c.completion_tokens), 0).label("total_completion_tokens"),
-                func.count().label("total_requests"),
-                func.min(t.c.timestamp).label("period_start"),
-                func.max(t.c.timestamp).label("period_end"),
-            )
-            .group_by(group_col)
-            .order_by(func.sum(t.c.cost_usd).desc())
-        )
+        # * Build SELECT columns list
+        select_cols = [
+            func.coalesce(group_col, "(untagged)").label("group_value"),
+            func.coalesce(func.sum(t.c.cost_usd), 0).label("total_cost_usd"),
+            func.coalesce(func.sum(t.c.prompt_tokens), 0).label("total_prompt_tokens"),
+            func.coalesce(func.sum(t.c.completion_tokens), 0).label("total_completion_tokens"),
+            func.count().label("total_requests"),
+            func.min(t.c.timestamp).label("period_start"),
+            func.max(t.c.timestamp).label("period_end"),
+        ]
+
+        # * Add time-bucket column when AggregationPeriod is specified
+        group_by_cols = [group_col]
+        if period is not None:
+            from llmwatch.databases.functions import date_trunc as dt_func
+
+            bucket_col = dt_func(period.value, t.c.timestamp).label("time_bucket")
+            select_cols.append(bucket_col)
+            group_by_cols.append(bucket_col)
+
+        stmt = select(*select_cols).group_by(*group_by_cols).order_by(func.sum(t.c.cost_usd).desc())
 
         if start_time is not None:
             stmt = stmt.where(t.c.timestamp >= start_time)
@@ -270,19 +278,22 @@ class Storage:
 
         async with self._engine.connect() as conn:
             result = await conn.execute(stmt)
-            return [
-                CostReport(
-                    group_key=group_by,
-                    group_value=row.group_value,
-                    total_cost_usd=row.total_cost_usd,
-                    total_prompt_tokens=row.total_prompt_tokens,
-                    total_completion_tokens=row.total_completion_tokens,
-                    total_requests=row.total_requests,
-                    period_start=row.period_start,
-                    period_end=row.period_end,
-                )
-                for row in result.fetchall()
-            ]
+            rows = result.fetchall()
+
+        return [
+            CostReport(
+                group_key=group_by,
+                group_value=row.group_value,
+                total_cost_usd=row.total_cost_usd,
+                total_prompt_tokens=row.total_prompt_tokens,
+                total_completion_tokens=row.total_completion_tokens,
+                total_requests=row.total_requests,
+                # ^ Use time_bucket as period_start when period bucketing is active
+                period_start=row.time_bucket if period is not None else row.period_start,
+                period_end=row.period_end,
+            )
+            for row in rows
+        ]
 
     async def delete(
         self,

@@ -230,11 +230,28 @@ class MongoStorage:
         if match_filter:
             pipeline.append({"$match": match_filter})
 
-        # * Group stage
+        # * Group stage — build _id with optional time-bucket
+        _MONGO_UNITS: dict[str, str] = {
+            "hour": "hour",
+            "day": "day",
+            "week": "week",
+            "month": "month",
+        }
+
+        if period is not None:
+            unit = _MONGO_UNITS[period.value]
+            # ^ $dateTrunc truncates timestamp to the bucket boundary
+            group_id: dict[str, object] = {
+                "group_value": {"$ifNull": [f"${group_by}", "(untagged)"]},
+                "time_bucket": {"$dateTrunc": {"date": "$timestamp", "unit": unit}},
+            }
+        else:
+            group_id = {"$ifNull": [f"${group_by}", "(untagged)"]}
+
         pipeline.append(
             {
                 "$group": {
-                    "_id": {"$ifNull": [f"${group_by}", "(untagged)"]},
+                    "_id": group_id,
                     "total_cost_usd": {"$sum": "$cost_usd"},
                     "total_prompt_tokens": {"$sum": "$prompt_tokens"},
                     "total_completion_tokens": {"$sum": "$completion_tokens"},
@@ -250,19 +267,30 @@ class MongoStorage:
 
         results = await UsageDocument.aggregate(pipeline).to_list()
 
-        return [
-            CostReport(
-                group_key=group_by,
-                group_value=str(r["_id"]),
-                total_cost_usd=r["total_cost_usd"],
-                total_prompt_tokens=r["total_prompt_tokens"],
-                total_completion_tokens=r["total_completion_tokens"],
-                total_requests=r["total_requests"],
-                period_start=r.get("period_start"),
-                period_end=r.get("period_end"),
+        reports: list[CostReport] = []
+        for r in results:
+            raw_id = r["_id"]
+            if isinstance(raw_id, dict):
+                # ^ period bucketing active — _id is {"group_value": ..., "time_bucket": ...}
+                group_value = str(raw_id.get("group_value", "(untagged)"))
+                bucket_start = raw_id.get("time_bucket")
+            else:
+                group_value = str(raw_id)
+                bucket_start = None
+
+            reports.append(
+                CostReport(
+                    group_key=group_by,
+                    group_value=group_value,
+                    total_cost_usd=r["total_cost_usd"],
+                    total_prompt_tokens=r["total_prompt_tokens"],
+                    total_completion_tokens=r["total_completion_tokens"],
+                    total_requests=r["total_requests"],
+                    period_start=bucket_start if period is not None else r.get("period_start"),
+                    period_end=r.get("period_end"),
+                )
             )
-            for r in results
-        ]
+        return reports
 
     async def delete(
         self,
