@@ -78,3 +78,56 @@ class TestSerializeInput:
         result = serialize_input(func, (), {"model": "gpt-4"})
         assert result is not None
         assert result["temperature"] == 0.7
+
+    def test_redacts_nested_dict_sensitive_keys(self):
+        def func(config: dict):
+            pass
+
+        result = serialize_input(
+            func,
+            (),
+            {"config": {"api_key": "sk-secret", "model": "gpt-4"}},
+        )
+        assert result is not None
+        assert result["config"]["api_key"] == "***REDACTED***"
+        assert result["config"]["model"] == "gpt-4"
+
+    def test_redacts_deeply_nested_sensitive_keys(self):
+        def func(payload: dict):
+            pass
+
+        result = serialize_input(
+            func,
+            (),
+            {"payload": {"outer": {"password": "hunter2", "data": "ok"}}},
+        )
+        assert result is not None
+        assert result["payload"]["outer"]["password"] == "***REDACTED***"
+        assert result["payload"]["outer"]["data"] == "ok"
+
+    def test_redacts_sensitive_keys_in_list_of_dicts(self):
+        def func(items: list):
+            pass
+
+        result = serialize_input(
+            func,
+            (),
+            {"items": [{"token": "abc123", "name": "foo"}, {"name": "bar"}]},
+        )
+        assert result is not None
+        assert result["items"][0]["token"] == "***REDACTED***"
+        assert result["items"][0]["name"] == "foo"
+        assert result["items"][1]["name"] == "bar"
+
+    def test_redacts_case_insensitive_nested_keys(self):
+        def func(headers: dict):
+            pass
+
+        result = serialize_input(
+            func,
+            (),
+            {"headers": {"Authorization": "Bearer tok", "Content-Type": "application/json"}},
+        )
+        assert result is not None
+        assert result["headers"]["Authorization"] == "***REDACTED***"
+        assert result["headers"]["Content-Type"] == "application/json"
