@@ -80,20 +80,36 @@ class MongoStorage:
         self._client: AsyncMongoClient[dict[str, Any]] | None = None
         self._initialized = False
 
-        # ^ Apply custom collection name
-        UsageDocument.Settings.name = collection_name
+        # * Create a per-instance document class to avoid mutating the shared
+        #   UsageDocument.Settings.name class attribute. Each MongoStorage instance
+        #   gets its own subclass with the correct collection name baked in, so
+        #   two instances with different collection_name values never interfere.
+        _settings_cls = type(
+            "Settings",
+            (object,),
+            {
+                "name": collection_name,
+                "indexes": UsageDocument.Settings.indexes,
+            },
+        )
+        # ^ type() dynamically creates a subclass of UsageDocument with a fresh
+        #   Settings inner class; the original UsageDocument is left untouched.
+        self._doc_cls: type[UsageDocument] = type(
+            f"UsageDocument_{collection_name}",
+            (UsageDocument,),
+            {"Settings": _settings_cls},
+        )
 
     async def _ensure_init(self) -> None:
         if self._initialized:
             return
         self._client = AsyncMongoClient(self._connection_url)
         db = self._client[self._database]
-        await init_beanie(database=db, document_models=[UsageDocument])
+        await init_beanie(database=db, document_models=[self._doc_cls])
         self._initialized = True
 
-    @staticmethod
-    def _record_to_doc(record: UsageRecord) -> UsageDocument:
-        return UsageDocument(
+    def _record_to_doc(self, record: UsageRecord) -> UsageDocument:
+        return self._doc_cls(
             doc_id=record.id,
             timestamp=record.timestamp,
             feature=record.tags.feature,
@@ -160,7 +176,7 @@ class MongoStorage:
     async def save_batch(self, records: list[UsageRecord]) -> None:
         await self._ensure_init()
         docs = [self._record_to_doc(r) for r in records]
-        await UsageDocument.insert_many(docs)
+        await self._doc_cls.insert_many(docs)
 
     async def query(
         self,
@@ -197,7 +213,7 @@ class MongoStorage:
             filters["timestamp"] = ts_filter
 
         docs = (
-            await UsageDocument.find(filters)
+            await self._doc_cls.find(filters)
             .sort([("timestamp", pymongo.DESCENDING)])  # type: ignore[list-item]
             .skip(offset)
             .limit(limit)
@@ -265,7 +281,7 @@ class MongoStorage:
         # * Sort by total cost descending
         pipeline.append({"$sort": {"total_cost_usd": -1}})
 
-        results = await UsageDocument.aggregate(pipeline).to_list()
+        results = await self._doc_cls.aggregate(pipeline).to_list()
 
         reports: list[CostReport] = []
         for r in results:
@@ -310,12 +326,12 @@ class MongoStorage:
             msg = "At least one filter required for delete"
             raise ValueError(msg)
 
-        result = await UsageDocument.find(filters).delete()
+        result = await self._doc_cls.find(filters).delete()
         return result.deleted_count if result else 0
 
     async def count(self) -> int:
         await self._ensure_init()
-        return int(await UsageDocument.count())
+        return int(await self._doc_cls.count())
 
     async def close(self) -> None:
         if self._client:

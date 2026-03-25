@@ -18,7 +18,7 @@ async def collect_stream(
     if provider == "openai":
         from llmwatch.extractors.openai import collect_openai_stream
 
-        return await collect_openai_stream(stream)
+        return await collect_openai_stream(stream, provider=provider)
     if provider == "anthropic":
         from llmwatch.extractors.anthropic import collect_anthropic_stream
 

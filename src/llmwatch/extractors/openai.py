@@ -42,7 +42,9 @@ def extract_openai(response: Any, provider: str) -> ExtractedResponse:
     )
 
 
-async def collect_openai_stream(stream: AsyncIterator[Any]) -> ExtractedResponse:
+async def collect_openai_stream(
+    stream: AsyncIterator[Any], provider: str = "openai"
+) -> ExtractedResponse:
     chunks: list[str] = []
     model = "unknown"
     response_id = None
@@ -72,7 +74,7 @@ async def collect_openai_stream(stream: AsyncIterator[Any]) -> ExtractedResponse
                     chunks.append(content)
 
     return ExtractedResponse(
-        provider="openai",
+        provider=provider,
         model=model,
         token_usage=token_usage,
         output_text="".join(chunks),
