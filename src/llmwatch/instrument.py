@@ -154,14 +154,19 @@ def _wrap_sync_stream(
 
 
 def detect_client_type(client: Any) -> str:
-    """Auto-detect SDK client type from its module path."""
+    """Auto-detect SDK client type from its module path.
+
+    Uses the shared module-prefix registry from extractors.base so that adding
+    a provider via register_extractor() automatically enables client detection.
+    Falls back to _INSTRUMENTORS keys for providers without an extractor.
+    """
+    from llmwatch.extractors.base import _MODULE_PREFIXES
+
     module = type(client).__module__
-    if module.startswith("openai"):
-        return "openai"
-    if module.startswith("anthropic"):
-        return "anthropic"
-    if module.startswith("google"):
-        return "google"
+    # ^ Check shared prefix registry first (kept in sync with register_extractor)
+    for prefix, provider in _MODULE_PREFIXES.items():
+        if module.startswith(prefix) and provider in _INSTRUMENTORS:
+            return provider
     raise ValueError(f"Unsupported client type: {type(client).__name__} (module: {module})")
 
 
@@ -302,8 +307,106 @@ def _instrument_google(client: Any, *, tracker: "LLMWatch") -> None:
         instrument_google_sync(client, tracker=tracker)
 
 
-_INSTRUMENTORS: dict[str, Callable[..., None]] = {
-    "openai": _instrument_openai,
-    "anthropic": _instrument_anthropic,
-    "google": _instrument_google,
-}
+# * Cohere instrumentors
+
+
+def instrument_cohere_async(client: Any, *, tracker: "LLMWatch") -> None:
+    """Patch async Cohere client to track rerank calls."""
+    # ^ Cohere v2 client exposes rerank on client.v2 namespace; v1 directly on client
+    target = getattr(client, "v2", client)
+    original_rerank = target.rerank
+
+    async def patched_rerank(*args: Any, **kwargs: Any) -> Any:
+        start = time.monotonic()
+        response = await original_rerank(*args, **kwargs)
+        elapsed_ms = (time.monotonic() - start) * 1000
+        await tracker._safe_record(response, provider="cohere", latency_ms=elapsed_ms)
+        return response
+
+    target.rerank = patched_rerank
+
+
+def instrument_cohere_sync(client: Any, *, tracker: "LLMWatch") -> None:
+    """Patch sync Cohere client to track rerank calls."""
+    target = getattr(client, "v2", client)
+    original_rerank = target.rerank
+
+    def patched_rerank(*args: Any, **kwargs: Any) -> Any:
+        start = time.monotonic()
+        response = original_rerank(*args, **kwargs)
+        elapsed_ms = (time.monotonic() - start) * 1000
+        tracker._safe_record_sync(response, provider="cohere", latency_ms=elapsed_ms)
+        return response
+
+    target.rerank = patched_rerank
+
+
+def _instrument_cohere(client: Any, *, tracker: "LLMWatch") -> None:
+    target = getattr(client, "v2", client)
+    if asyncio.iscoroutinefunction(target.rerank):
+        instrument_cohere_async(client, tracker=tracker)
+    else:
+        instrument_cohere_sync(client, tracker=tracker)
+
+
+# * VoyageAI instrumentors
+
+
+def instrument_voyageai_async(client: Any, *, tracker: "LLMWatch") -> None:
+    """Patch async VoyageAI client to track rerank calls."""
+    original_rerank = client.rerank
+
+    async def patched_rerank(*args: Any, **kwargs: Any) -> Any:
+        start = time.monotonic()
+        response = await original_rerank(*args, **kwargs)
+        elapsed_ms = (time.monotonic() - start) * 1000
+        await tracker._safe_record(response, provider="voyageai", latency_ms=elapsed_ms)
+        return response
+
+    client.rerank = patched_rerank
+
+
+def instrument_voyageai_sync(client: Any, *, tracker: "LLMWatch") -> None:
+    """Patch sync VoyageAI client to track rerank calls."""
+    original_rerank = client.rerank
+
+    def patched_rerank(*args: Any, **kwargs: Any) -> Any:
+        start = time.monotonic()
+        response = original_rerank(*args, **kwargs)
+        elapsed_ms = (time.monotonic() - start) * 1000
+        tracker._safe_record_sync(response, provider="voyageai", latency_ms=elapsed_ms)
+        return response
+
+    client.rerank = patched_rerank
+
+
+def _instrument_voyageai(client: Any, *, tracker: "LLMWatch") -> None:
+    if asyncio.iscoroutinefunction(client.rerank):
+        instrument_voyageai_async(client, tracker=tracker)
+    else:
+        instrument_voyageai_sync(client, tracker=tracker)
+
+
+_INSTRUMENTORS: dict[str, Callable[..., None]] = {}
+
+
+def register_instrumentor(provider: str, instrumentor: Callable[..., None]) -> None:
+    """Register a provider instrumentor.
+
+    Args:
+        provider: Provider name (must match the name used in register_extractor).
+        instrumentor: Function(client, *, tracker) that patches the client.
+
+    Example::
+
+        register_instrumentor("cohere", _instrument_cohere)
+    """
+    _INSTRUMENTORS[provider] = instrumentor
+
+
+# * Built-in instrumentor registrations
+register_instrumentor("openai", _instrument_openai)
+register_instrumentor("anthropic", _instrument_anthropic)
+register_instrumentor("google", _instrument_google)
+register_instrumentor("cohere", _instrument_cohere)
+register_instrumentor("voyageai", _instrument_voyageai)

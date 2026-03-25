@@ -93,7 +93,7 @@ class LLMWatch:
         """Instrument an SDK client for automatic cost tracking.
 
         Patches the client's API methods so every call is recorded automatically.
-        Currently supports AsyncOpenAI and AsyncAnthropic.
+        Supports OpenAI, Anthropic, Google, Cohere (rerank), and VoyageAI (rerank).
         """
         from llmwatch.instrument import _INSTRUMENTORS, detect_client_type
 
@@ -203,6 +203,59 @@ class LLMWatch:
             latency_ms=latency_ms,
             raw_response_id=extracted.response_id,
             output_data=extracted.output_text if self._save_io else None,
+        )
+
+        if self._batch_size <= 1:
+            await self._storage.save(record)
+        else:
+            async with self._buffer_lock:
+                self._buffer.append(record)
+                if len(self._buffer) >= self._batch_size:
+                    await self._flush()
+
+        await self._budget.check(record)
+        return record
+
+    async def record_usage(
+        self,
+        *,
+        model: str,
+        provider: str,
+        input_tokens: int = 0,
+        output_tokens: int = 0,
+        total_tokens: int | None = None,
+        cost_usd: float | None = None,
+        latency_ms: float | None = None,
+        feature: str | None = None,
+        user_id: str | None = None,
+        environment: str | None = None,
+        **extra: str,
+    ) -> UsageRecord:
+        """Manually record usage for providers without SDK instrumentation (e.g. Jina reranker via httpx)."""
+        from llmwatch.schemas.usage import TokenUsage
+
+        computed_total = total_tokens if total_tokens is not None else input_tokens + output_tokens
+        token_usage = TokenUsage(
+            prompt_tokens=input_tokens,
+            completion_tokens=output_tokens,
+            total_tokens=computed_total,
+        )
+
+        if cost_usd is None:
+            pricing = self._pricing.get_pricing(model, provider)
+            cost_usd = calculate_cost(token_usage, pricing) if pricing else 0.0
+
+        tags = get_current_tags()
+        explicit_tags = Tags(feature=feature, user_id=user_id, environment=environment, extra=extra)
+        merged_tags = tags.merge(explicit_tags)
+
+        record = UsageRecord(
+            tags=merged_tags,
+            model=model,
+            provider=provider,
+            token_usage=token_usage,
+            cost_usd=cost_usd,
+            latency_ms=latency_ms,
         )
 
         if self._batch_size <= 1:
