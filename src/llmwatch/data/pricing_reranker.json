@@ -1,0 +1,50 @@
+[
+  {
+    "model": "rerank-2.5",
+    "provider": "voyageai",
+    "input_cost_per_mtok": 0.05,
+    "output_cost_per_mtok": 0.0
+  },
+  {
+    "model": "rerank-2.5-lite",
+    "provider": "voyageai",
+    "input_cost_per_mtok": 0.02,
+    "output_cost_per_mtok": 0.0
+  },
+  {
+    "model": "rerank-2",
+    "provider": "voyageai",
+    "input_cost_per_mtok": 0.05,
+    "output_cost_per_mtok": 0.0
+  },
+  {
+    "model": "rerank-2-lite",
+    "provider": "voyageai",
+    "input_cost_per_mtok": 0.02,
+    "output_cost_per_mtok": 0.0
+  },
+  {
+    "model": "jina-reranker-v3",
+    "provider": "jina",
+    "input_cost_per_mtok": 0.02,
+    "output_cost_per_mtok": 0.0
+  },
+  {
+    "model": "jina-reranker-m0",
+    "provider": "jina",
+    "input_cost_per_mtok": 0.02,
+    "output_cost_per_mtok": 0.0
+  },
+  {
+    "model": "jina-reranker-v2-base-multilingual",
+    "provider": "jina",
+    "input_cost_per_mtok": 0.02,
+    "output_cost_per_mtok": 0.0
+  },
+  {
+    "model": "jina-colbert-v2",
+    "provider": "jina",
+    "input_cost_per_mtok": 0.02,
+    "output_cost_per_mtok": 0.0
+  }
+]

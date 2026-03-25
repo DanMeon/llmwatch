@@ -1,0 +1,54 @@
+name: Sync Reranker Pricing Data
+
+on:
+  schedule:
+    - cron: '0 0 * * 0' # Every Sunday 00:00 UTC (09:00 KST)
+  workflow_dispatch: # Manual trigger
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Research and update reranker pricing
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          claude_args: |
+            --model claude-opus-4-6
+            --allowedTools "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,Bash(git:*),Bash(gh:*)"
+            --max-turns 25
+          prompt: |
+            You are a pricing data researcher for the llmwatch project.
+
+            Your task: Update src/llmwatch/data/pricing_reranker.json with the latest
+            reranker model pricing from official sources, then open a PR if anything changed.
+
+            Steps:
+            1. Read the current pricing_reranker.json to understand the format and existing models.
+            2. Research current pricing for these reranker providers by visiting their official pricing pages:
+               - VoyageAI (voyage.ai) — rerank-2, rerank-2.5, and all variants
+               - Jina AI (jina.ai) — jina-reranker models, jina-colbert
+               - Cohere (cohere.com) — rerank models (add if not already present)
+            3. Compare found prices with current file.
+            4. If any price changed or new models exist:
+               - Update pricing_reranker.json (keep the same JSON schema)
+               - Create a new branch `chore/sync-reranker-pricing`, commit, and push
+               - Open a PR to main with:
+                 - Title: "chore: update reranker pricing data"
+                 - Body MUST include a "## Changes" section listing EVERY changed or added price with:
+                   - Model name
+                   - Old price → New price (or "NEW" if newly added)
+                   - The exact URL where you found the price
+                 - And a "## Skipped" section for any models where pricing was unavailable
+            5. If no changes found, do nothing — do NOT create an empty PR.
+
+            IMPORTANT:
+            - Prices are in USD per million tokens (input_cost_per_mtok, output_cost_per_mtok)
+            - Reranker models typically have input cost only (output_cost_per_mtok is 0 or null)
+            - EVERY price change in the PR MUST have a source URL as evidence
+            - If a pricing page is unavailable or ambiguous, skip that model
