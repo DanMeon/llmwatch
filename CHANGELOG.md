@@ -9,11 +9,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Cohere and VoyageAI reranker SDK auto-instrumentation (sync + async)
+- `record_usage()` API for manual cost tracking of HTTP-based APIs (e.g. Jina reranker)
+- Extensible provider registry pattern (`register_extractor()`, `register_instrumentor()`)
 - Deep recursive redaction of sensitive keys in nested dicts/lists (`serialize_input`)
 - Supplementary pricing file loading (`pricing_*.json`) alongside main `pricing.json`
 - Reranker model pricing data (`pricing_reranker.json`) for VoyageAI and Jina models
 - Automated weekly reranker pricing sync via Claude Code Action (GitHub Actions + OAuth)
-- Comprehensive CLI test suite and serializer redaction tests
+- Comprehensive CLI, serializer redaction, and reranker test suites
 
 ### Fixed
 
