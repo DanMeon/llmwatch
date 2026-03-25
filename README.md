@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.svg" alt="llmwatch banner" width="100%">
+  <img src="https://raw.githubusercontent.com/DanMeon/llmwatch/main/assets/banner.svg" alt="llmwatch banner" width="800"/>
 </p>
 
 # llmwatch
