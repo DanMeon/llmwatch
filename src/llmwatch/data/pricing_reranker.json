@@ -24,6 +24,18 @@
     "output_cost_per_mtok": 0.0
   },
   {
+    "model": "rerank-1",
+    "provider": "voyageai",
+    "input_cost_per_mtok": 0.05,
+    "output_cost_per_mtok": 0.0
+  },
+  {
+    "model": "rerank-lite-1",
+    "provider": "voyageai",
+    "input_cost_per_mtok": 0.02,
+    "output_cost_per_mtok": 0.0
+  },
+  {
     "model": "jina-reranker-v3",
     "provider": "jina",
     "input_cost_per_mtok": 0.02,
