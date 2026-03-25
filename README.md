@@ -21,7 +21,7 @@ Key differentiators:
 
 - **No proxy or gateway needed** — Unlike LiteLLM and Helicone, which sit between your code and LLM APIs
 - **No external platform** — Unlike Langfuse and LangSmith, which require cloud infrastructure
-- **Works with your existing SDK** — Patch your OpenAI, Anthropic, or Google clients with `instrument(client)`
+- **Works with your existing SDK** — Patch your OpenAI, Anthropic, Google, Cohere, or VoyageAI clients with `instrument(client)`
 - **Feature-level cost attribution** — Tag LLM calls by feature, user, environment, and any custom dimension
 - **Minimal setup** — 3 lines of code to get started
 - **1000+ models** — Bundled pricing data covering OpenAI, Anthropic, Google, and more
@@ -72,7 +72,8 @@ result = summarize("Long document text...")
 
 - **Automatic cost tracking** — Instrument SDK clients to capture token usage and calculate costs without modifying your LLM calls
 - **Flexible tagging** — Attach metadata to tracked calls with `@watcher.tracked(feature=..., user_id=..., environment=...)`
-- **Multi-provider support** — OpenAI, Anthropic, Google Generative AI (sync, async, and streaming)
+- **Multi-provider support** — OpenAI, Anthropic, Google, Cohere, VoyageAI (sync, async, and streaming)
+- **Reranker support** — Auto-instrument Cohere and VoyageAI reranker SDKs, or use `record_usage()` for any HTTP-based API
 - **Bundled pricing** — 1000+ models with up-to-date pricing data synced from pydantic/genai-prices
 - **Multiple database backends** — SQLite (default), PostgreSQL, MySQL, MongoDB (Beanie ODM), Oracle, MSSQL
 - **Budget alerts** — Set thresholds and trigger callbacks when spending exceeds limits
@@ -88,6 +89,8 @@ result = summarize("Long document text...")
 | OpenAI | O | O | O | GPT-5.4, o4-mini, o3, o1, GPT-4o, etc. |
 | Anthropic | O | O | O | Claude Opus 4.6, Claude Sonnet 4.6, Claude Haiku 4.5, etc. |
 | Google | O | O | O | Gemini 3.1, Gemini 2.5, Gemini 2.0, etc. |
+| Cohere | O | O | - | Rerank v3.5, Rerank v4.0, etc. |
+| VoyageAI | O | O | - | Rerank 2.5, Rerank 2, etc. |
 
 ## Installation
 
@@ -209,6 +212,40 @@ watcher = LLMWatch(
 )
 ```
 
+### Manual Recording (for HTTP-based APIs)
+
+For providers without a Python SDK (e.g., Jina reranker via httpx), use `record_usage()`:
+
+```python
+import httpx
+
+response = await httpx.AsyncClient().post(
+    "https://api.jina.ai/v1/rerank",
+    headers={"Authorization": f"Bearer {JINA_API_KEY}"},
+    json={"model": "jina-reranker-v3", "query": query, "documents": docs},
+)
+data = response.json()
+
+await watcher.record_usage(
+    model="jina-reranker-v3",
+    provider="jina",
+    input_tokens=data["usage"]["total_tokens"],
+    feature="search",
+)
+```
+
+### Custom Provider Registration
+
+Register your own provider extractor and instrumentor:
+
+```python
+from llmwatch.extractors.base import register_extractor
+from llmwatch.instrument import register_instrumentor
+
+register_extractor("my_llm", my_extract_fn, module_prefix="my_llm_sdk")
+register_instrumentor("my_llm", my_instrumentor_fn)
+```
+
 ## CLI Reference
 
 | Command | Description |
@@ -224,7 +261,7 @@ watcher = LLMWatch(
 ## How It Works
 
 1. **Instrument** — `LLMWatch(client=client)` patches the SDK client's methods
-2. **Extract** — On each LLM call, extractors normalize the response (handles OpenAI, Anthropic, Google, streaming)
+2. **Extract** — On each LLM call, extractors normalize the response (handles OpenAI, Anthropic, Google, Cohere, VoyageAI, streaming)
 3. **Calculate** — `calculate_cost()` computes USD cost using bundled pricing data
 4. **Store** — `Storage.save()` persists the `UsageRecord` to your database
 5. **Tag** — `@watcher.tracked()` provides tag context (feature, user_id, environment)

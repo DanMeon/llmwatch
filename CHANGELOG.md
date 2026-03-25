@@ -5,6 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.0] - 2026-03-25
+
+### Added
+
+- Deep recursive redaction of sensitive keys in nested dicts/lists (`serialize_input`)
+- Supplementary pricing file loading (`pricing_*.json`) alongside main `pricing.json`
+- Reranker model pricing data (`pricing_reranker.json`) for VoyageAI and Jina models
+- Automated weekly reranker pricing sync via Claude Code Action (GitHub Actions + OAuth)
+- Comprehensive CLI test suite and serializer redaction tests
+
+### Fixed
+
+- MongoStorage mutated shared class-level `Settings.name`, causing cross-instance collection routing issues
+- SQLAlchemy `cost_usd` column used `Float` — now uses `Numeric(20,10)` for precision
+- `Tags` accepted blank strings as valid values — now converts empty strings to `None`
+- OpenAI streaming collector hardcoded `provider="openai"` instead of passing through detected provider
+
 ## [0.2.0] - 2026-03-24
 
 ### Added
