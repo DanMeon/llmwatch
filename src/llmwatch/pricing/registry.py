@@ -8,7 +8,8 @@ from llmwatch.schemas.pricing import ModelPricing
 
 logger = logging.getLogger("llmwatch")
 
-PRICING_FILE = PathLibPath(__file__).parent.parent / "data" / "pricing.json"
+PRICING_DIR = PathLibPath(__file__).parent.parent / "data"
+PRICING_FILE = PRICING_DIR / "pricing.json"
 
 
 class PricingRegistry:
@@ -19,6 +20,10 @@ class PricingRegistry:
         path = pricing_path or PRICING_FILE
         if path.exists():
             self._load_from_file(path)
+        # ^ Load supplementary pricing files (pricing_*.json)
+        if pricing_path is None:
+            for extra in sorted(PRICING_DIR.glob("pricing_*.json")):
+                self._load_from_file(extra)
 
     def _load_from_file(self, path: PathLibPath) -> None:
         with path.open() as f:

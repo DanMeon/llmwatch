@@ -24,6 +24,19 @@ _SENSITIVE_KEYS = {
 _MAX_VALUE_LENGTH = 10_000
 
 
+def _redact_value(value: Any, sensitive: set[str]) -> Any:
+    """Recursively redact sensitive keys in nested dicts and lists."""
+    if isinstance(value, dict):
+        return {
+            # ^ Case-insensitive match against sensitive set
+            k: "***REDACTED***" if k.lower() in sensitive else _redact_value(v, sensitive)
+            for k, v in value.items()
+        }
+    if isinstance(value, list):
+        return [_redact_value(item, sensitive) for item in value]
+    return value
+
+
 def serialize_input(
     func: Any,
     args: tuple[Any, ...],
@@ -41,12 +54,14 @@ def serialize_input(
             if key.lower() in sensitive:
                 result[key] = "***REDACTED***"
                 continue
+            # * Recursively redact sensitive keys in nested structures
+            redacted = _redact_value(value, sensitive)
             try:
-                serialized = json.dumps(value, ensure_ascii=False, default=str)
+                serialized = json.dumps(redacted, ensure_ascii=False, default=str)
                 if len(serialized) > _MAX_VALUE_LENGTH:
                     result[key] = serialized[:_MAX_VALUE_LENGTH] + "...(truncated)"
                 else:
-                    result[key] = value
+                    result[key] = redacted
             except (TypeError, ValueError):
                 result[key] = repr(value)[:_MAX_VALUE_LENGTH]
         return result
