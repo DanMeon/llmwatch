@@ -94,6 +94,14 @@
     "cache_read_cost_per_mtok": 0.5
   },
   {
+    "model": "claude-opus-4-7",
+    "provider": "anthropic",
+    "input_cost_per_mtok": 5.0,
+    "output_cost_per_mtok": 25.0,
+    "cache_creation_cost_per_mtok": 6.25,
+    "cache_read_cost_per_mtok": 0.5
+  },
+  {
     "model": "claude-sonnet-4-0",
     "provider": "anthropic",
     "input_cost_per_mtok": 3.0,
@@ -199,6 +207,14 @@
   },
   {
     "model": "global.anthropic.claude-opus-4-6-v1:0",
+    "provider": "aws",
+    "input_cost_per_mtok": 5.0,
+    "output_cost_per_mtok": 25.0,
+    "cache_creation_cost_per_mtok": 6.25,
+    "cache_read_cost_per_mtok": 0.5
+  },
+  {
+    "model": "global.anthropic.claude-opus-4-7-v1:0",
     "provider": "aws",
     "input_cost_per_mtok": 5.0,
     "output_cost_per_mtok": 25.0,
@@ -326,6 +342,24 @@
     "output_cost_per_mtok": 6.0
   },
   {
+    "model": "nvidia.nemotron-nano-3-30b:0",
+    "provider": "aws",
+    "input_cost_per_mtok": 0.06,
+    "output_cost_per_mtok": 0.24
+  },
+  {
+    "model": "nvidia.nemotron-nano-9b-v2:0",
+    "provider": "aws",
+    "input_cost_per_mtok": 0.06,
+    "output_cost_per_mtok": 0.23
+  },
+  {
+    "model": "nvidia.nemotron-super-3-120b:0",
+    "provider": "aws",
+    "input_cost_per_mtok": 0.15,
+    "output_cost_per_mtok": 0.65
+  },
+  {
     "model": "openai.gpt-oss-120b-1:0",
     "provider": "aws",
     "input_cost_per_mtok": 0.15,
@@ -447,6 +481,14 @@
   },
   {
     "model": "regional.anthropic.claude-opus-4-6-v1:0",
+    "provider": "aws",
+    "input_cost_per_mtok": 5.5,
+    "output_cost_per_mtok": 27.5,
+    "cache_creation_cost_per_mtok": 6.875,
+    "cache_read_cost_per_mtok": 0.55
+  },
+  {
+    "model": "regional.anthropic.claude-opus-4-7-v1:0",
     "provider": "aws",
     "input_cost_per_mtok": 5.5,
     "output_cost_per_mtok": 27.5,
@@ -804,6 +846,14 @@
   },
   {
     "model": "claude-opus-4-6",
+    "provider": "google",
+    "input_cost_per_mtok": 5.0,
+    "output_cost_per_mtok": 25.0,
+    "cache_creation_cost_per_mtok": 6.25,
+    "cache_read_cost_per_mtok": 0.5
+  },
+  {
+    "model": "claude-opus-4-7",
     "provider": "google",
     "input_cost_per_mtok": 5.0,
     "output_cost_per_mtok": 25.0,
@@ -1825,6 +1875,19 @@
     "output_cost_per_mtok": 180.0
   },
   {
+    "model": "gpt-5.5",
+    "provider": "openai",
+    "input_cost_per_mtok": 5.0,
+    "output_cost_per_mtok": 30.0,
+    "cache_read_cost_per_mtok": 0.5
+  },
+  {
+    "model": "gpt-5.5-pro",
+    "provider": "openai",
+    "input_cost_per_mtok": 30.0,
+    "output_cost_per_mtok": 180.0
+  },
+  {
     "model": "gpt-realtime",
     "provider": "openai",
     "input_cost_per_mtok": 4.0,
@@ -2121,6 +2184,14 @@
   },
   {
     "model": "anthropic/claude-opus-4.6",
+    "provider": "openrouter",
+    "input_cost_per_mtok": 5.0,
+    "output_cost_per_mtok": 25.0,
+    "cache_creation_cost_per_mtok": 6.25,
+    "cache_read_cost_per_mtok": 0.5
+  },
+  {
+    "model": "anthropic/claude-opus-4.7",
     "provider": "openrouter",
     "input_cost_per_mtok": 5.0,
     "output_cost_per_mtok": 25.0,
